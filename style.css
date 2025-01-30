@@ -59,6 +59,12 @@
     }
 }
 
+@font-face
+{
+    font-family: gummy;
+    src: url(Resources/Fonts/SourGummy.ttf);
+}
+
 *
 {
     margin: 0;
@@ -68,11 +74,22 @@ body, html{
     height: 100%;
 }
 
+a 
+{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+
+}
+
 .wrapper
 {
     background-color: #fef1e2;
     height: 100%;
-    
+    position: relative;
 }
 
 .header
@@ -93,6 +110,13 @@ body, html{
     border-radius: 50px;
     padding: 0.6em;
     font-size: var(--fs-500);
+    font-family: gummy;
+    font-weight: bold;
+}
+
+.header button:hover
+{
+    background-color: rgb(171, 171, 171);
 }
 
 .main
@@ -195,7 +219,7 @@ h3{
     height: 100%;
     margin: auto;
     padding: 0;
-
+    
 }
 
 .project
@@ -209,6 +233,7 @@ h3{
     justify-content: space-between;
     align-items: center;
     gap: 7em;
+    border: 1px solid rgb(147, 147, 147);
 }
 
 .project-description
@@ -233,6 +258,7 @@ h3{
     height: 80%;
     width: 100%;
     box-sizing: border-box;
+    
 }
 
 .project-pic img{
@@ -255,7 +281,9 @@ h3{
     align-items: center;
     justify-content: center;
     gap: 5%;
-    font-size: var(--fs-500);
+    font-size: var(--fs-400);
+    font-family: gummy;
+    font-weight: bold;
     width: 25%;
     aspect-ratio: 2.5;
     background-color: #a4bd2d;
@@ -269,8 +297,8 @@ h3{
 
 .project-button button img
 {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 40%;
+    max-height: 40%;
     width: var(--fs-400);
 }
 
@@ -282,5 +310,178 @@ h3{
     width: 100%;
     position: absolute;
     height: 10%;
+    overflow: hidden;
+    z-index: 11;
+}
 
+.wrapper-mini
+{
+    width: 100%;
+    min-height: 30%;
+    padding-block: 5%;
+    background-color: #fef1e2;
+}
+
+.gamejams
+{
+    max-width: 80%;
+    margin: auto;
+    padding-inline: 4rem;
+    padding-block: 2rem;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background-color: white;
+ 
+}
+
+.gamejam-unit
+{
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    max-width: 70%;
+    gap: 1rem;
+}
+
+.short
+{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.8rem ;
+}
+
+.gamejam-pic
+{
+    max-width: 90%;
+}
+
+.gamejam-pic img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+.contain{
+    background-color: #fef1e2;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+#main
+{
+    max-width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5rem;
+    background-color: white;
+    padding: 4rem;
+    border: 1px solid rgb(147, 147, 147);
+}
+
+.picname
+{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    width: 100%;
+
+}
+
+.picname-slide
+{
+
+}
+
+.picname-name
+{
+    font-size: var(--fs-400);
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    gap: 2rem;
+}
+
+.picname-name tr
+{
+    text-align: center;
+}
+
+td ,th{
+    border: 1px solid #4b4b4b;
+    margin: 0;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+th
+{
+    background-color: rgb(207, 207, 207);
+}
+
+/*tr:nth-child(even) {background-color: #d1d1d1;}*/
+
+.description-pro
+{
+    font-size: var(--fs-400);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cutout
+{
+    max-width: 7%;
+    max-height: 7%;
+    position: absolute;
+    z-index: 10;
+}
+
+.center
+{
+    left: 50%;
+    top: 90%;
+}
+
+.left
+{
+    left: 10%;
+    top: 90%;
+}
+
+.right
+{
+    right: 10%;
+    top: 90%;
+}
+
+.cutout-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#shameful-afterthought
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 1rem;
 }
