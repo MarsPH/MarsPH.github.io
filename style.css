@@ -364,17 +364,14 @@ h3{
     max-height: 100%;
 }
 
-
-
-
-
 .contain{
     background-color: #fef1e2;
     width: 100%;
     min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;}
+    align-items: center;
+}
 
 #main
 {
@@ -505,3 +502,433 @@ th
     line-height: 1.5;
     font-weight: 500;
 }
+
+/* Increase project description text size for better readability */
+.project-description p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* =========================
+   Mario-Pacman Theme Overrides
+   (No deletion of existing code – just additions/overrides)
+========================= */
+
+/* Define new theme variables */
+:root {
+    --primary-color: #ff0000; /* Mario red */
+    --secondary-color: #ffd700; /* Coin yellow */
+    --accent-color: #0055ff; /* Retro blue accent */
+    --bg-color: #7ec0ee; /* Sky blue background */
+
+      
+  /* New variable for border fallback */
+  --border-fallback: transparent;
+}
+
+/* Body background: apply a Mario-level background pattern */
+body {
+    background: var(--bg-color) url('Resources/img/mario_bg.png') repeat;
+    background-size: auto;
+}
+
+/* Header: override with a retro gradient reminiscent of Mario's palette */
+.header {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important;
+    border-bottom: 0.15rem solid black;
+}
+
+/* Header buttons: add pixelated box-shadow and a playful hover effect */
+.header button {
+    box-shadow: 2px 2px 0 var(--accent-color);
+    transition: transform 0.2s, background 0.2s;
+}
+.header button:hover {
+    transform: scale(1.05);
+    background-color: #ff7f50;
+}
+
+/* Add retro text shadow to info headings */
+.info h1, .info h3 {
+    text-shadow: 1px 1px 0 black;
+}
+
+/* Profile image: add a coin-like border and round shape */
+.profile img {
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+}
+
+/* Description sections: add a subtle background and pixel-dashed border */
+.description {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    border: 2px dashed var(--primary-color);
+}
+
+/* Education section: enhance with retro game style */
+.education-section {
+    background: var(--secondary-color);
+    border: 3px dashed var(--primary-color);
+}
+
+/* Projects: add retro borders and shadow effects */
+.project {
+    border: 4px solid var(--accent-color);
+    background-color: #fffbe6;
+}
+
+/* Project headings: use a pixel-style font for extra retro feel */
+.project-description h1, .project-description h3 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Project buttons: add a pixelated style and smooth hover transitions */
+.project-button button {
+    border: 3px solid var(--primary-color);
+    background-color: var(--accent-color);
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.project-button button:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color);
+}
+
+/* Cloud animations: simulate slow, retro–style drifting */
+@keyframes moveClouds {
+    from { transform: translateX(-150%); }
+    to { transform: translateX(150%); }
+}
+.cloud img {
+    animation: moveClouds 60s linear infinite;
+}
+
+/* Cutout images: add a pixel-art border and shadow effect */
+.cutout-img {
+    border: 2px solid var(--accent-color);
+    box-shadow: 2px 2px 0 var(--primary-color);
+}
+
+/* Location indicator: use retro font styling */
+.location {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 0 #fff;
+}
+
+/* Game Jams section: add a retro arcade vibe */
+.gamejams {
+    background-color: #fffbe6;
+    border: 4px dotted var(--accent-color);
+    box-shadow: 4px 4px 0 var(--secondary-color);
+}
+
+/* Game Jam unit: add playful borders and a shadow for a coin-like look */
+.gamejam-unit {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px dashed var(--primary-color);
+    padding: 1rem;
+    box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* =========================
+   End Mario-Pacman Theme Overrides
+========================= */
+
+/* =========================
+   Mario-Pacman Theme Overrides (Updated – Cool Retro Accents)
+   (No deletion of existing code – just additions/overrides)
+========================= */
+
+/* --- Remove frame for non–project images (e.g. snake, ladder) --- */
+.cutout-img {
+    border: none;
+    box-shadow: none;
+}
+
+/* --- Better frame for project pictures --- */
+.project-pic img {
+    /* Replace the plain frame with a pixel-art–inspired dashed border */
+    border: 4px dashed var(--accent-color);
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+}
+.project-pic img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Add a decorative pseudo-element to each project container --- */
+.project {
+    position: relative;
+}
+.project::after {
+    content: "";
+    /* Use a pixel-corner graphic for a retro accent – ensure the asset exists at the given path */
+    background: url('Resources/img/pixel_corner.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    opacity: 0.8;
+}
+
+/* --- Optional: Add a subtle hover outline to project containers --- */
+.project:hover {
+    outline: 3px dotted var(--accent-color);
+    transition: outline 0.2s;
+}
+
+/* --- Add a subtle scanline effect over the entire page for extra retro flair --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+}
+
+/* --- (Retain your other cool animations, button hover/bounce, and cloud animations as before) --- */
+/* =========================
+   Additional Cool Retro Enhancements
+   (No deletion of existing code – only additions/overrides)
+========================= */
+
+/* 1. Reworked framing for project pictures using a pixel-art frame graphic */
+/* (Replace the previous project-pic img framing with this, if desired) */
+.project-pic img {
+    border: 8px solid transparent;
+    /* Use a pixel-art frame image – ensure the asset exists at the given path */
+    border-image: url('Resources/img/pixel_frame.png') 30 round;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.project-pic img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+/* 2. Glitch effect for headings (subtle retro vibe) */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0 var(--secondary-color), -2px -2px 0 var(--accent-color);
+  }
+  50% {
+    text-shadow: -2px 2px 0 var(--secondary-color), 2px -2px 0 var(--accent-color);
+  }
+  100% {
+    text-shadow: 2px 2px 0 var(--secondary-color), -2px -2px 0 var(--accent-color);
+  }
+}
+.info h1, .info h3, .project-description h1, .project-description h3 {
+    animation: glitch 2s infinite alternate;
+}
+
+/* 3. Floating coin particles effect */
+/* 
+   To use this effect, add one or more elements with class "coin" to your HTML,
+   e.g. <div class="coin"></div>
+*/
+@keyframes floatCoin {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(-20px) rotate(360deg); opacity: 0.4; }
+}
+.coin {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background: url('Resources/img/coin.png') no-repeat center;
+    background-size: contain;
+    animation: floatCoin 3s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+/* 4. Floating animation for cutout images (e.g., snake, ladder) */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.cutout-img {
+    /*animation: float 3s ease-in-out infinite;*/
+}
+
+
+/* === Overrides: Remove glitch effect from name and email === */
+.info h1, .info h3 {
+    animation: none !important;
+    text-shadow: 1px 1px 0 black !important;
+}
+
+/* === Overrides: Creative pixel-art border for project images === */
+.project-pic img {
+    border: 8px solid transparent !important;
+    /* Use a pixel-art frame graphic – ensure 'pixel_frame.png' is in Resources/img/ */
+    border-image: url('Resources/img/pixel_frame.png') 30 round !important;
+    padding: 0.1rem !important;
+    transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+.project-pic img:hover {
+    transform: scale(1.05) !important;
+    filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+}
+
+.project-pic img {
+  /* Keep your pixel-art frame (which uses border-image) intact, but override the fallback colors */
+  border-bottom-color: transparent !important;
+  border-right-color: transparent !important;
+}
+
+  
+.project-pic img {
+  /* Ensure the border is fully transparent as a fallback */
+  border: 8px solid transparent !important;
+  border-color: transparent !important;
+  
+  /* Apply the pixel-art frame using border-image */
+  border-image: url('Resources/img/pixel_frame.png') 30 round !important;
+  
+  /* Minimal padding and smooth transition */
+  padding: 0.1rem !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+
+.project-pic img:hover {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+}
+.project-pic img {
+  /* Ensure the border is fully transparent as a fallback */
+  border: 8px solid transparent !important;
+  border-color: transparent !important;
+  
+  /* Apply the pixel-art frame using border-image */
+  border-image: url('Resources/img/pixel_frame.png') 30 round !important;
+  
+  /* Minimal padding and smooth transition */
+  padding: 0.1rem !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+
+.project-pic img:hover {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+}
+.project-pic img {
+  /* Set an 8px transparent border as a fallback */
+  border: 8px solid transparent !important;
+  border-color: transparent !important;
+  
+  /* Use the pixel-art frame with no extra outset so the fallback doesn't show */
+  border-image-source: url('Resources/img/pixel_frame.png') !important;
+  border-image-slice: 30 !important;
+  border-image-repeat: round !important;
+  border-image-outset: 0 !important;
+  
+  /* Minimal padding and smooth transition */
+  padding: 0.1rem !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+
+.project-pic img:hover {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+}
+.project-pic img {
+  border: 8px solid transparent !important;
+  /* The 'fill' keyword forces the border image to cover the entire border area */
+  border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
+  padding: 0.1rem !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+
+.project-pic img:hover {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+}
+
+.project-pic img {
+  /* Use the new variable for the fallback color */
+  border: 8px solid var(--border-fallback) !important;
+  
+  /* Apply your pixel-art frame image with the fill keyword so it covers the whole border */
+  border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
+  
+  padding: 0.1rem !important;
+  transition: transform 0.2s ease, filter 0.2s ease !important;
+}
+
+.project-pic img:hover {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+}
+
+.project-pic img {
+    /* Use the new variable for the fallback color */
+    border: 8px solid var(--border-fallback) !important;
+    
+    /* Apply your pixel-art frame image with the fill keyword so it covers the whole border */
+    border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
+    
+    padding: 0.1rem !important;
+    transition: transform 0.2s ease, filter 0.2s ease !important;
+  }
+  
+  .project-pic img:hover {
+    transform: scale(1.05) !important;
+    filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+  }
+  /* --- Revised Styling for Description Sections --- */
+.description {
+    /* Use a subtle diagonal gradient to evoke a retro feel */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+    padding: 1rem;
+    border: 2px dashed var(--primary-color); /* Retain your theme’s primary color for the dash */
+    border-radius: 8px;
+    /* A subtle shadow for depth */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Ensure the text remains legible on the gradient */
+    color: #000;
+  }
+  
+  /* --- Revised Styling for the Education Section --- */
+  .education-section {
+    /* Apply a retro-inspired gradient using the coin yellow */
+    background: linear-gradient(135deg, var(--secondary-color), rgba(255, 215, 0, 0.9));
+    padding: 1.5rem;
+    border: 3px dashed var(--primary-color); /* Use the primary color for a playful contrast */
+    border-radius: 12px;
+    /* Add a stronger shadow for a classic retro "pop" effect */
+    box-shadow: 4px 4px 0 var(--accent-color);
+    /* Maintain legibility */
+    color: #000;
+  }
+  
+  /* Optional: You can add a subtle texture overlay via a pseudo-element if desired */
+ 
+  .education-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Resources/img/retro_texture.png') repeat;
+    opacity: 0.1;
+    border-radius: 12px;
+    pointer-events: none;
+  }
+ 
+  
