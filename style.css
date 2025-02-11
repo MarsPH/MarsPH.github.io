@@ -1,99 +1,95 @@
-:root{
+/* =====================================
+   Global Variables and Media Queries
+===================================== */
+:root {
     --fs-xl: 4.5rem;
     --fs-500: 1.2rem;
     --fs-400: 1.1rem;
-
     --fp-10: 15rem;
-}
-
-@media (min-width: 1900px)
-{
-    :root{
-        --fs-xl: 5rem;
-        --fs-500: 1.9rem;
-        --fs-400: 1.6rem;
+    
+    /* Theme Colors */
+    --primary-color: #ff0000; /* Mario red */
+    --secondary-color: #ffd700; /* Coin yellow */
+    --accent-color: #0055ff; /* Retro blue accent */
+    --bg-color: #7ec0ee; /* Sky blue background */
+    
+    /* New variable for border fallback */
+    --border-fallback: transparent;
+  }
+  
+  @media (min-width: 1900px) {
+    :root {
+      --fs-xl: 5rem;
+      --fs-500: 1.9rem;
+      --fs-400: 1.6rem;
     }
-
-    .poster
-    {
-        width: 50%;
+    .poster {
+      width: 50%;
     }
-
-    .edu
-    {
-        padding-left: 6rem;
+    .edu {
+      padding-left: 6rem;
     }
-}
-
-@media (min-width: 2300px)
-{
-    :root{
-        --fs-xl: 7rem;
-        --fs-500: 2.4rem;
-        --fs-400: 2rem;
-        --fp-10: 19rem;
+  }
+  
+  @media (min-width: 2300px) {
+    :root {
+      --fs-xl: 7rem;
+      --fs-500: 2.4rem;
+      --fs-400: 2rem;
+      --fp-10: 19rem;
     }
-
-    .poster img
-    {
-        width: 40rem;
+    .poster img {
+      width: 40rem;
     }
-
-    .edu
-    {
-        padding-left: 6rem;
+    .edu {
+      padding-left: 6rem;
     }
-
-    .line
-    {
-        height: 100px;
+    .line {
+      height: 100px;
     }
-
-}
-
-@media (max-width: 1300px)
-{
-    .poster img 
-    {
-        visibility: hidden;
+  }
+  
+  @media (max-width: 1300px) {
+    .poster img {
+      visibility: hidden;
     }
-}
-
-@font-face
-{
+  }
+  
+  /* =====================================
+     Font-Face and Reset
+  ===================================== */
+  @font-face {
     font-family: gummy;
     src: url(Resources/Fonts/SourGummy.ttf);
-}
-
-*
-{
+  }
+  
+  * {
     margin: 0;
-}
-
-body, html{
+  }
+  
+  body, html {
     height: 100%;
-}
-
-a 
-{
+  }
+  
+  a {
     text-decoration: none;
     color: inherit;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 5%;
-
-}
-
-.wrapper
-{
+  }
+  
+  /* =====================================
+     Base Structure & Layout
+  ===================================== */
+  .wrapper {
     background-color: #fef1e2;
     height: 100%;
     position: relative;
-}
-
-.header
-{
+  }
+  
+  .header {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -101,10 +97,9 @@ a
     border-bottom: 0.15rem black solid;
     padding: 1em;
     height: 7%;
-}
-
-.header button
-{
+  }
+  
+  .header button {
     background: white;
     border: none;
     border-radius: 50px;
@@ -112,15 +107,13 @@ a
     font-size: var(--fs-500);
     font-family: gummy;
     font-weight: bold;
-}
-
-.header button:hover
-{
+  }
+  
+  .header button:hover {
     background-color: rgb(171, 171, 171);
-}
-
-.main
-{
+  }
+  
+  .main {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -128,77 +121,65 @@ a
     margin-inline: auto;
     height: 75%;
     padding-inline: 5%;
-}
-
-.info
-{
+  }
+  
+  .info {
     display: flex;
     flex-direction: column;
-    gap: 2em   ;
-}
-
-.top
-{
+    gap: 2em;
+  }
+  
+  .top {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 1em;
-}
-
-h1{
+  }
+  
+  h1 {
     font-size: var(--fs-xl);
-}
-
-h3{
+  }
+  
+  h3 {
     font-size: var(--fs-500);
-}
-
-
-.profile img
-{
- 
+  }
+  
+  .profile img {
     padding: 0;
     margin: 0;
     height: var(--fp-10);
-}
-
-.description
-{
+  }
+  
+  .description {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 1em;
     font-size: var(--fs-400);
-}
-
-.vertical
-{
-    writing-mode:vertical-rl;
+  }
+  
+  .vertical {
+    writing-mode: vertical-rl;
     font-style: bold;
-}
-
-.line
-{
+  }
+  
+  .line {
     border: 1px solid black;
     height: 50px;
-}
-
-.poster
-{
+  }
+  
+  .poster {
     width: 50%;
     padding: 0;
     margin: 0;
-}
-
-.edu
-{
+  }
+  
+  .edu {
     font-size: var(--fs-400);
     padding-left: 3.5rem;
-}
-
-
-.location
-{
+  }
+  
+  .location {
     position: absolute;
     display: flex;
     justify-content: end;
@@ -208,22 +189,18 @@ h3{
     right: var(--fs-400);
     font-size: var(--fs-400);
     font-style: bold;
-}
-
-
-.project-main
-{
+  }
+  
+  .project-main {
     display: flex;
     align-items: center;
     max-width: 80%;
     height: 100%;
     margin: auto;
     padding: 0;
-    
-}
-
-.project
-{
+  }
+  
+  .project {
     background-color: white;
     max-width: 100%;
     height: 80%;
@@ -234,10 +211,9 @@ h3{
     align-items: center;
     gap: 7em;
     border: 1px solid rgb(147, 147, 147);
-}
-
-.project-description
-{
+  }
+  
+  .project-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -245,11 +221,9 @@ h3{
     gap: 1em;
     height: 80%;
     width: 100%;
-    
-}
-
-.project-pic
-{
+  }
+  
+  .project-pic {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -258,25 +232,22 @@ h3{
     height: 80%;
     width: 100%;
     box-sizing: border-box;
-    
-}
-
-.project-pic img{
+  }
+  
+  .project-pic img {
     max-width: 100%;
     max-height: 100%;
     padding: 2rem;
-}
-
-.project-button
-{
+  }
+  
+  .project-button {
     padding-top: 1em;
     display: flex;
     width: 100%;
     gap: 2em;
-}
-
-.project-button button
-{
+  }
+  
+  .project-button button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,22 +259,19 @@ h3{
     aspect-ratio: 2.5;
     background-color: #a4bd2d;
     border: black 2px solid;
-}
-
-.project-button button:hover
-{
+  }
+  
+  .project-button button:hover {
     background-color: #7c8e23;
-}
-
-.project-button button img
-{
+  }
+  
+  .project-button button img {
     max-width: 40%;
     max-height: 40%;
     width: var(--fs-400);
-}
-
-.cloud
-{
+  }
+  
+  .cloud {
     display: flex;
     justify-content: center;
     gap: 0;
@@ -312,18 +280,16 @@ h3{
     height: 10%;
     overflow: hidden;
     z-index: 11;
-}
-
-.wrapper-mini
-{
+  }
+  
+  .wrapper-mini {
     width: 100%;
     min-height: 30%;
     padding-block: 5%;
     background-color: #fef1e2;
-}
-
-.gamejams
-{
+  }
+  
+  .gamejams {
     max-width: 80%;
     margin: auto;
     padding-inline: 4rem;
@@ -332,49 +298,43 @@ h3{
     gap: 4rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     background-color: white;
- 
-}
-
-.gamejam-unit
-{
+  }
+  
+  .gamejam-unit {
     margin: auto;
-    display:flex;
+    display: flex;
     flex-direction: column;
     max-width: 70%;
     gap: 1rem;
-}
-
-.short
-{
+  }
+  
+  .short {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
-    gap: 0.8rem ;
-}
-
-.gamejam-pic
-{
+    gap: 0.8rem;
+  }
+  
+  .gamejam-pic {
     max-width: 90%;
-}
-
-.gamejam-pic img
-{
+  }
+  
+  .gamejam-pic img {
     max-width: 100%;
     max-height: 100%;
-}
-
-.contain{
+  }
+  
+  .contain {
     background-color: #fef1e2;
     width: 100%;
     min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#main
-{
+  }
+  
+  #main {
     max-width: 80%;
     margin: auto;
     margin-top: 4rem;
@@ -386,92 +346,77 @@ h3{
     background-color: white;
     padding: 4rem;
     border: 1px solid rgb(147, 147, 147);
-}
-
-.picname
-{
-
+  }
+  
+  .picname {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     width: 100%;
-
-}
-
-.picname-slide
-{
-
-}
-
-.picname-name
-{
+  }
+  
+  .picname-slide {
+    /* (no additional rules provided) */
+  }
+  
+  .picname-name {
     font-size: var(--fs-400);
     display: flex;
     flex-direction: column;
     justify-content: baseline;
     gap: 2rem;
-}
-
-.picname-name tr
-{
+  }
+  
+  .picname-name tr {
     text-align: center;
-}
-
-td ,th{
+  }
+  
+  td, th {
     border: 1px solid #4b4b4b;
     margin: 0;
     padding: 0.5rem;
     width: 50%;
-}
-
-th
-{
+  }
+  
+  th {
     background-color: rgb(207, 207, 207);
-}
-
-/*tr:nth-child(even) {background-color: #d1d1d1;}*/
-
-.description-pro
-{
+  }
+  
+  .description-pro {
     font-size: var(--fs-400);
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-
-.cutout
-{
+  }
+  
+  .cutout {
     max-width: 7%;
     max-height: 7%;
     position: absolute;
     z-index: 10;
-}
-
-.center
-{
+  }
+  
+  .center {
     left: 50%;
     top: 90%;
-}
-
-.left
-{
+  }
+  
+  .left {
     left: 10%;
     top: 90%;
-}
-
-.right
-{
+  }
+  
+  .right {
     right: 10%;
     top: 90%;
-}
-
-.cutout-img{
+  }
+  
+  .cutout-img {
     max-width: 100%;
     max-height: 100%;
-}
-
-#shameful-afterthought
-{
+  }
+  
+  #shameful-afterthought {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -481,407 +426,153 @@ th
     max-width: 80%;
     margin: auto;
     padding-top: 1rem;
-}
-
-.education-section {
-    background: #f4e1c4;  /* Light background to make it stand out */
+  }
+  
+  .education-section {
+    background: #f4e1c4; /* Light background to make it stand out */
     padding: 15px;
     border-radius: 10px;
     max-width: 600px;
     margin: 20px auto;
     text-align: center;
-}
-
-.education-section h3 {
+  }
+  
+  .education-section h3 {
     font-size: 20px;
     margin-bottom: 5px;
-}
-
-.education-section p {
+  }
+  
+  .education-section p {
     font-size: 16px;
     line-height: 1.5;
     font-weight: 500;
-}
-
-/* Increase project description text size for better readability */
-.project-description p {
+  }
+  
+  .project-description p {
     font-size: 1.3rem;
     line-height: 1.6;
-}
-
-/* =========================
-   Mario-Pacman Theme Overrides
-   (No deletion of existing code – just additions/overrides)
-========================= */
-
-/* Define new theme variables */
-:root {
-    --primary-color: #ff0000; /* Mario red */
-    --secondary-color: #ffd700; /* Coin yellow */
-    --accent-color: #0055ff; /* Retro blue accent */
-    --bg-color: #7ec0ee; /* Sky blue background */
-
-      
-  /* New variable for border fallback */
-  --border-fallback: transparent;
-}
-
-/* Body background: apply a Mario-level background pattern */
-body {
+  }
+  
+  /* =====================================
+     Mario-Pacman Theme Overrides
+     (No deletion of existing code – just additions/overrides)
+  ===================================== */
+  
+  /* Body Background */
+  body {
     background: var(--bg-color) url('Resources/img/mario_bg.png') repeat;
     background-size: auto;
-}
-
-/* Header: override with a retro gradient reminiscent of Mario's palette */
-.header {
+  }
+  
+  /* Header Styling */
+  .header {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important;
     border-bottom: 0.15rem solid black;
-}
-
-/* Header buttons: add pixelated box-shadow and a playful hover effect */
-.header button {
+  }
+  
+  .header button {
     box-shadow: 2px 2px 0 var(--accent-color);
     transition: transform 0.2s, background 0.2s;
-}
-.header button:hover {
+  }
+  
+  .header button:hover {
     transform: scale(1.05);
     background-color: #ff7f50;
-}
-
-/* Add retro text shadow to info headings */
-.info h1, .info h3 {
+  }
+  
+  .info h1, .info h3 {
     text-shadow: 1px 1px 0 black;
-}
-
-/* Profile image: add a coin-like border and round shape */
-.profile img {
+  }
+  
+  .profile img {
     border: 3px solid var(--secondary-color);
     border-radius: 50%;
-}
-
-/* Description sections: add a subtle background and pixel-dashed border */
-.description {
+  }
+  
+  .description {
     background: rgba(255, 255, 255, 0.8);
     padding: 0.5rem;
     border: 2px dashed var(--primary-color);
-}
-
-/* Education section: enhance with retro game style */
-.education-section {
+  }
+  
+  .education-section {
     background: var(--secondary-color);
     border: 3px dashed var(--primary-color);
-}
-
-/* Projects: add retro borders and shadow effects */
-.project {
+  }
+  
+  .project {
     border: 4px solid var(--accent-color);
     background-color: #fffbe6;
-}
-
-/* Project headings: use a pixel-style font for extra retro feel */
-.project-description h1, .project-description h3 {
+  }
+  
+  .project-description h1, .project-description h3 {
     font-family: 'Press Start 2P', cursive;
-}
-
-/* Project buttons: add a pixelated style and smooth hover transitions */
-.project-button button {
+  }
+  
+  .project-button button {
     border: 3px solid var(--primary-color);
     background-color: var(--accent-color);
     font-family: 'Press Start 2P', cursive;
     color: white;
     transition: transform 0.2s, background-color 0.2s;
-}
-.project-button button:hover {
+  }
+  
+  .project-button button:hover {
     transform: translateY(-3px);
     background-color: var(--primary-color);
-}
-
-/* Cloud animations: simulate slow, retro–style drifting */
-@keyframes moveClouds {
+  }
+  
+  @keyframes moveClouds {
     from { transform: translateX(-150%); }
     to { transform: translateX(150%); }
-}
-.cloud img {
+  }
+  
+  .cloud img {
     animation: moveClouds 60s linear infinite;
-}
-
-/* Cutout images: add a pixel-art border and shadow effect */
-.cutout-img {
+  }
+  
+  .cutout-img {
     border: 2px solid var(--accent-color);
     box-shadow: 2px 2px 0 var(--primary-color);
-}
-
-/* Location indicator: use retro font styling */
-.location {
+  }
+  
+  .location {
     font-family: 'Press Start 2P', cursive;
     color: var(--primary-color);
     text-shadow: 1px 1px 0 #fff;
-}
-
-/* Game Jams section: add a retro arcade vibe */
-.gamejams {
+  }
+  
+  .gamejams {
     background-color: #fffbe6;
     border: 4px dotted var(--accent-color);
     box-shadow: 4px 4px 0 var(--secondary-color);
-}
-
-/* Game Jam unit: add playful borders and a shadow for a coin-like look */
-.gamejam-unit {
+  }
+  
+  .gamejam-unit {
     background: rgba(255, 255, 255, 0.9);
     border: 2px dashed var(--primary-color);
     padding: 1rem;
     box-shadow: 2px 2px 0 var(--accent-color);
-}
-
-/* =========================
-   End Mario-Pacman Theme Overrides
-========================= */
-
-/* =========================
-   Mario-Pacman Theme Overrides (Updated – Cool Retro Accents)
-   (No deletion of existing code – just additions/overrides)
-========================= */
-
-/* --- Remove frame for non–project images (e.g. snake, ladder) --- */
-.cutout-img {
+  }
+  
+  /* =====================================
+     End Mario-Pacman Theme Overrides
+  ===================================== */
+  
+  /* =====================================
+     Mario-Pacman Theme Overrides (Updated – Cool Retro Accents)
+  ===================================== */
+  
+  /* Remove frame for non–project images */
+  .cutout-img {
     border: none;
     box-shadow: none;
-}
-
-/* --- Better frame for project pictures --- */
-.project-pic img {
-    /* Replace the plain frame with a pixel-art–inspired dashed border */
-    border: 4px dashed var(--accent-color);
-    padding: 0.5rem;
-    transition: transform 0.2s ease;
-}
-.project-pic img:hover {
-    transform: scale(1.05);
-}
-
-/* --- Add a decorative pseudo-element to each project container --- */
-.project {
-    position: relative;
-}
-.project::after {
-    content: "";
-    /* Use a pixel-corner graphic for a retro accent – ensure the asset exists at the given path */
-    background: url('Resources/img/pixel_corner.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    opacity: 0.8;
-}
-
-/* --- Optional: Add a subtle hover outline to project containers --- */
-.project:hover {
-    outline: 3px dotted var(--accent-color);
-    transition: outline 0.2s;
-}
-
-/* --- Add a subtle scanline effect over the entire page for extra retro flair --- */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.05),
-        rgba(0, 0, 0, 0.05) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.3;
-}
-
-/* --- (Retain your other cool animations, button hover/bounce, and cloud animations as before) --- */
-/* =========================
-   Additional Cool Retro Enhancements
-   (No deletion of existing code – only additions/overrides)
-========================= */
-
-/* 1. Reworked framing for project pictures using a pixel-art frame graphic */
-/* (Replace the previous project-pic img framing with this, if desired) */
-.project-pic img {
-    border: 8px solid transparent;
-    /* Use a pixel-art frame image – ensure the asset exists at the given path */
-    border-image: url('Resources/img/pixel_frame.png') 30 round;
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-.project-pic img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 8px var(--primary-color));
-}
-
-/* 2. Glitch effect for headings (subtle retro vibe) */
-@keyframes glitch {
-  0% {
-    text-shadow: 2px 2px 0 var(--secondary-color), -2px -2px 0 var(--accent-color);
   }
-  50% {
-    text-shadow: -2px 2px 0 var(--secondary-color), 2px -2px 0 var(--accent-color);
-  }
-  100% {
-    text-shadow: 2px 2px 0 var(--secondary-color), -2px -2px 0 var(--accent-color);
-  }
-}
-.info h1, .info h3, .project-description h1, .project-description h3 {
-    animation: glitch 2s infinite alternate;
-}
-
-/* 3. Floating coin particles effect */
-/* 
-   To use this effect, add one or more elements with class "coin" to your HTML,
-   e.g. <div class="coin"></div>
-*/
-@keyframes floatCoin {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
-    100% { transform: translateY(-20px) rotate(360deg); opacity: 0.4; }
-}
-.coin {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    background: url('Resources/img/coin.png') no-repeat center;
-    background-size: contain;
-    animation: floatCoin 3s infinite ease-in-out;
-    pointer-events: none;
-    z-index: 10000;
-}
-
-/* 4. Floating animation for cutout images (e.g., snake, ladder) */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-.cutout-img {
-    /*animation: float 3s ease-in-out infinite;*/
-}
-
-
-/* === Overrides: Remove glitch effect from name and email === */
-.info h1, .info h3 {
-    animation: none !important;
-    text-shadow: 1px 1px 0 black !important;
-}
-
-/* === Overrides: Creative pixel-art border for project images === */
-.project-pic img {
-    border: 8px solid transparent !important;
-    /* Use a pixel-art frame graphic – ensure 'pixel_frame.png' is in Resources/img/ */
-    border-image: url('Resources/img/pixel_frame.png') 30 round !important;
-    padding: 0.1rem !important;
-    transition: transform 0.2s ease, filter 0.2s ease !important;
-}
-.project-pic img:hover {
-    transform: scale(1.05) !important;
-    filter: drop-shadow(0 0 8px var(--primary-color)) !important;
-}
-
-.project-pic img {
-  /* Keep your pixel-art frame (which uses border-image) intact, but override the fallback colors */
-  border-bottom-color: transparent !important;
-  border-right-color: transparent !important;
-}
-
   
-.project-pic img {
-  /* Ensure the border is fully transparent as a fallback */
-  border: 8px solid transparent !important;
-  border-color: transparent !important;
-  
-  /* Apply the pixel-art frame using border-image */
-  border-image: url('Resources/img/pixel_frame.png') 30 round !important;
-  
-  /* Minimal padding and smooth transition */
-  padding: 0.1rem !important;
-  transition: transform 0.2s ease, filter 0.2s ease !important;
-}
-
-.project-pic img:hover {
-  transform: scale(1.05) !important;
-  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
-}
-.project-pic img {
-  /* Ensure the border is fully transparent as a fallback */
-  border: 8px solid transparent !important;
-  border-color: transparent !important;
-  
-  /* Apply the pixel-art frame using border-image */
-  border-image: url('Resources/img/pixel_frame.png') 30 round !important;
-  
-  /* Minimal padding and smooth transition */
-  padding: 0.1rem !important;
-  transition: transform 0.2s ease, filter 0.2s ease !important;
-}
-
-.project-pic img:hover {
-  transform: scale(1.05) !important;
-  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
-}
-.project-pic img {
-  /* Set an 8px transparent border as a fallback */
-  border: 8px solid transparent !important;
-  border-color: transparent !important;
-  
-  /* Use the pixel-art frame with no extra outset so the fallback doesn't show */
-  border-image-source: url('Resources/img/pixel_frame.png') !important;
-  border-image-slice: 30 !important;
-  border-image-repeat: round !important;
-  border-image-outset: 0 !important;
-  
-  /* Minimal padding and smooth transition */
-  padding: 0.1rem !important;
-  transition: transform 0.2s ease, filter 0.2s ease !important;
-}
-
-.project-pic img:hover {
-  transform: scale(1.05) !important;
-  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
-}
-.project-pic img {
-  border: 8px solid transparent !important;
-  /* The 'fill' keyword forces the border image to cover the entire border area */
-  border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
-  padding: 0.1rem !important;
-  transition: transform 0.2s ease, filter 0.2s ease !important;
-}
-
-.project-pic img:hover {
-  transform: scale(1.05) !important;
-  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
-}
-
-.project-pic img {
-  /* Use the new variable for the fallback color */
-  border: 8px solid var(--border-fallback) !important;
-  
-  /* Apply your pixel-art frame image with the fill keyword so it covers the whole border */
-  border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
-  
-  padding: 0.1rem !important;
-  transition: transform 0.2s ease, filter 0.2s ease !important;
-}
-
-.project-pic img:hover {
-  transform: scale(1.05) !important;
-  filter: drop-shadow(0 0 8px var(--primary-color)) !important;
-}
-
-.project-pic img {
-    /* Use the new variable for the fallback color */
+  /* Better frame for project pictures (Consolidated and Deduplicated) */
+  .project-pic img {
     border: 8px solid var(--border-fallback) !important;
-    
-    /* Apply your pixel-art frame image with the fill keyword so it covers the whole border */
     border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
-    
     padding: 0.1rem !important;
     transition: transform 0.2s ease, filter 0.2s ease !important;
   }
@@ -890,45 +581,478 @@ body::before {
     transform: scale(1.05) !important;
     filter: drop-shadow(0 0 8px var(--primary-color)) !important;
   }
-  /* --- Revised Styling for Description Sections --- */
-.description {
-    /* Use a subtle diagonal gradient to evoke a retro feel */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
-    padding: 1rem;
-    border: 2px dashed var(--primary-color); /* Retain your theme’s primary color for the dash */
-    border-radius: 8px;
-    /* A subtle shadow for depth */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* Ensure the text remains legible on the gradient */
-    color: #000;
+  
+  /* Decorative pseudo-element for project containers */
+  .project {
+    position: relative;
   }
   
-  /* --- Revised Styling for the Education Section --- */
-  .education-section {
-    /* Apply a retro-inspired gradient using the coin yellow */
-    background: linear-gradient(135deg, var(--secondary-color), rgba(255, 215, 0, 0.9));
-    padding: 1.5rem;
-    border: 3px dashed var(--primary-color); /* Use the primary color for a playful contrast */
-    border-radius: 12px;
-    /* Add a stronger shadow for a classic retro "pop" effect */
-    box-shadow: 4px 4px 0 var(--accent-color);
-    /* Maintain legibility */
-    color: #000;
-  }
-  
-  /* Optional: You can add a subtle texture overlay via a pseudo-element if desired */
- 
-  .education-section::before {
+  .project::after {
     content: "";
+    background: url('Resources/img/pixel_corner.png') no-repeat;
+    width: 50px;
+    height: 50px;
     position: absolute;
+    bottom: -10px;
+    right: -10px;
+    opacity: 0.8;
+  }
+  
+  .project:hover {
+    outline: 3px dotted var(--accent-color);
+    transition: outline 0.2s;
+  }
+  
+  /* Subtle scanline effect over the entire page */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
+  }
+  
+  /* =====================================
+     Additional Cool Retro Enhancements
+  ===================================== */
+  
+  /* Reworked framing for project pictures using a pixel-art frame graphic */
+  .project-pic img {
+    border: 8px solid var(--border-fallback) !important;
+    border-image: url('Resources/img/pixel_frame.png') 30 fill round !important;
+    padding: 0.1rem !important;
+    transition: transform 0.2s ease, filter 0.2s ease !important;
+  }
+  
+  .project-pic img:hover {
+    transform: scale(1.05) !important;
+    filter: drop-shadow(0 0 8px var(--primary-color)) !important;
+  }
+  
+  /* Glitch effect for headings (subtle retro vibe) */
+  @keyframes glitch {
+    0% {
+      text-shadow: 2px 2px 0 var(--secondary-color), -2px -2px 0 var(--accent-color);
+    }
+    50% {
+      text-shadow: -2px 2px 0 var(--secondary-color), 2px -2px 0 var(--accent-color);
+    }
+    100% {
+      text-shadow: 2px 2px 0 var(--secondary-color), -2px -2px 0 var(--accent-color);
+    }
+  }
+  .info h1, .info h3, .project-description h1, .project-description h3 {
+    animation: glitch 2s infinite alternate;
+  }
+  
+  /* Floating coin particles effect */
+  @keyframes floatCoin {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(-20px) rotate(360deg); opacity: 0.4; }
+  }
+  .coin {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background: url('Resources/img/coin.png') no-repeat center;
+    background-size: contain;
+    animation: floatCoin 3s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 10000;
+  }
+  
+  /* Floating animation for cutout images (e.g., snake, ladder) */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  .cutout-img {
+    /* Uncomment to enable floating for cutouts */
+    /* animation: float 3s ease-in-out infinite; */
+  }
+  
+  /* === Overrides: Remove glitch effect from name and email === */
+  .info h1, .info h3 {
+    animation: none !important;
+    text-shadow: 1px 1px 0 black !important;
+  }
+
+  
+  /* =====================================
+   Responsive Adjustments
+===================================== */
+
+/* For screens up to 900px wide */
+@media (max-width: 900px) {
+    /* Stack main content vertically */
+    .main {
+      flex-direction: column;
+      padding-inline: 2%;
+      height: auto;
+    }
+    
+    /* Center info elements */
+    .info {
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    
+    /* Make the top section (profile and header text) vertical */
+    .top {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    /* Scale down the profile image */
+    .profile img {
+      height: 12rem;
+      width: auto;
+      margin-bottom: 1rem;
+    }
+    
+    /* Adjust description layout to stack content */
+    .description {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+    
+    /* Reduce padding/margin on the education section */
+    .education-section {
+      width: 90%;
+      padding: 1rem;
+      margin: 1rem auto;
+    }
+    
+    /* Make project containers and main content adapt to the viewport */
+    .project, .project-main, .gamejams, #main {
+      width: 95%;
+      margin: auto;
+    }
+  }
+  
+  /* For even smaller screens up to 600px wide */
+  @media (max-width: 600px) {
+    /* Scale down headings */
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
+    
+    /* Further scale down the profile image */
+    .profile img {
+      height: 10rem;
+    }
+    
+    /* Reduce padding in description and education sections */
+    .description {
+      padding: 0.8rem;
+    }
+    .education-section {
+      padding: 1rem;
+    }
+    
+    /* For project containers, stack elements vertically */
+    .project {
+      flex-direction: column;
+      gap: 2em;
+      padding: 1em;
+    }
+    .project-description,
+    .project-pic {
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Reduce padding on project images */
+    .project-pic img {
+      padding: 1rem;
+    }
+    
+    /* Adjust project buttons to better fit narrow screens */
+    .project-button {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .project-button button {
+      width: 90%;
+    }
+  }
+  /* --- Fix the header at the top with a fixed height --- */
+.header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: url('Resources/img/retro_texture.png') repeat;
-    opacity: 0.1;
-    border-radius: 12px;
-    pointer-events: none;
+    height: 80px;  /* adjust this value as needed */
+    z-index: 1000;
   }
- 
+  
+  /* --- Ensure the wrapper (or main container) accounts for the header's space --- */
+  .wrapper {
+    padding-top: 80px;  /* This should match the header's fixed height */
+  }
+  /* --- Scroll Snap Setup --- */
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    /* Optional: force vertical scroll */
+    overflow-y: scroll;
+  }
+  
+  /* Every major section should fill the viewport */
+  .section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+  }
+  
+  /* --- Ensure the About section always fills the viewport --- */
+  #about {
+    min-height: 100vh;
+    /* If needed, adjust internal padding/margins so that the "Montreal" location is visible */
+    /* For example, you might lower the bottom margin/padding: */
+    padding-bottom: 2rem;
+  }
+  
+  /* --- Optional: Prevent overscroll on touch devices (iOS) --- */
+  body {
+    overscroll-behavior-y: contain;
+  }
+  
+  /* --- Optional: Custom Scroll Lock/Slowdown (using CSS only) --- */
+  /*
+    CSS scroll-snap already creates a “locked” scroll effect.
+    If you want further control (like easing/inertia), you might consider using
+    a JavaScript library (e.g., fullPage.js or Locomotive Scroll). 
+    However, the CSS below gives you a smooth snapping effect:
+  
+    html {
+      scroll-behavior: smooth;
+    }
+  */
+  
+  /* --- Example: Force sections to be treated as snapping targets ---
+     (Apply the .section class to your main sections in your HTML.)
+     If you haven’t already, add class="section" to your About, Projects, and Game Jams sections.
+  */
+  
+  /* For instance, in your HTML, change:
+      <div class="wrapper" id="about"> 
+     to:
+      <section class="section" id="about">
+  */
+  
+  /* If you prefer not to modify your HTML, you can target your sections by their IDs: */
+  #about,
+  #project,
+  #gamejam {
+    min-height: 100vh;
+    scroll-snap-align: start;
+  }
+  
+  /* --- (Optional) If you want to add a slight easing/inertia effect via JavaScript --- */
+  /* 
+    <script>
+    // This is a minimal example using JavaScript's wheel event.
+    // For a production-ready solution, consider a scroll-snap library.
+    (function() {
+      let ticking = false;
+      window.addEventListener('wheel', function(e) {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            // Your custom scroll logic here if desired.
+            // For now, we rely on CSS scroll-snap.
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+  </script>
+  */
+  
+  /* ---------- Ensure Each Major Section Fills the Viewport ---------- */
+#about,
+#project,
+#gamejam {
+  height: 100vh;           /* Force each section to be exactly the height of the viewport */
+  scroll-snap-align: start;/* Make each section a snap target */
+  position: relative;      /* So that absolutely positioned children are contained here */
+}
+
+/* ---------- Fix the "Montreal" Location Element ---------- */
+/* Adjust the .location element so it sits inside the visible area of the About section */
+#about .location {
+  position: absolute;
+  bottom: 150px;       /* A fixed distance from the bottom */
+  right: 10px;        /* A fixed distance from the right */
+  font-size: var(--fs-400);
+  font-weight: bold;
+  /* Optional: add a subtle background for readability */
+  background: transparent;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  z-index: 10;        /* Make sure it appears above other elements */
+}
+
+/* ---------- Improve Scroll Snapping Behavior ---------- */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  /* Remove any conflicting overflow rules if necessary */
+  overflow-y: scroll;
+}
+
+/* ---------- Optional: Adjust Section Padding for Mobile ---------- */
+/* (You can tweak these values further to your liking) */
+@media (max-width: 900px) {
+  /* Reduce padding in each section so that content fits well on smaller screens */
+  .section, #about, #project, #gamejam {
+    padding: 1rem;
+  }
+}
+
+/* ---------- Optional: If you want to slow down the scroll (inertia) ---------- */
+/* Note: Pure CSS cannot control scroll inertia much. For more refined control,
+   you’d typically use a JS library (e.g. fullPage.js). The scroll-snap with smooth behavior
+   may be sufficient on modern browsers. */
+/* --- Reworked Education Section (Updated for Larger Text) --- */
+.education-section {
+    position: relative;
+    padding: 2rem;  /* Increased padding for more breathing room */
+    background: linear-gradient(135deg, var(--secondary-color), rgba(255,215,0,0.9));
+    border: 3px dashed var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 var(--accent-color);
+    text-align: center;
+    color: #000;
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .education-section h3 {
+    font-size: 2.2rem;   /* Increase the heading font size */
+    margin-bottom: 0.5rem;
+  }
+  
+  .education-section p {
+    font-size: 1.8rem;   /* Increase the paragraph text size */
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
+  
+  /* Reserve a fixed height for the top section so the profile image stays in place */
+.info .top {
+    flex: 0 0 1rem;  /* This fixes the height to 20rem; adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: -1rem; /* Optional spacing between top and following sections */
+  }
+  
+  /* --- Increase top padding in the wrapper to ensure content starts below the fixed header --- */
+.wrapper {
+    padding-top: 250px;  /* Increase from 80px to 100px; adjust this value as needed */
+  }
+  
+  /* --- Adjust the .info .top container so the profile row has enough space --- */
+  /* Remove the negative margin and let the top section size naturally */
+  .info .top {
+    flex: 0 0 auto;   /* Remove the fixed small height (was "1rem") */
+    margin-bottom: 1rem; /* Remove negative margin; use a small positive margin instead */
+  }
+  
+  /* --- (Optional) If you want extra space above the profile image on the About page --- */
+  #about .info {
+    margin-top: 5rem;  /* Adjust as needed so the profile isn’t too close to the header */
+  }
+  /* --- Enforce a 16:9 aspect ratio for the About page’s main container --- */
+#about .main {
+    /* Remove any fixed height so that the aspect ratio drives the height */
+    height: auto;
+    /* Use the new CSS aspect-ratio property to force a 16:9 box */
+    aspect-ratio: 16 / 9;
+    /* Ensure the container is full width (up to its max) and centered */
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    /* Optionally add some padding so content isn’t cramped */
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* --- Adjust the position of the Montreal location element --- */
+  /* This will ensure it always stays inside the 16:9 frame */
+  #about .location {
+    position: absolute;
+    /* Place it a fixed distance from the bottom/right of the .main container */
+    bottom: 20px;
+    right: 20px;
+    font-size: var(--fs-400);
+    font-weight: bold;
+    background: transparent; /* or add a subtle background if needed */
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  
+  /* --- Optional: Ensure the left column (profile, email, etc.) fits well within the 16:9 area --- */
+  /* You can wrap your .info block in a container if needed or simply adjust spacing */
+  #about .info {
+    /* Add a little extra bottom margin so that your education box and bio do not run too close to the bottom */
+    margin-bottom: 1rem;
+  }
+  
+  /* --- (Optional) Responsive tweak for very small screens --- */
+  /* If the 16:9 ratio makes the About content too tall on very narrow devices, you can override here */
+  @media (max-width: 600px) {
+    #about .main {
+      /* For instance, allow a bit more height if needed */
+      aspect-ratio: auto;
+      height: auto;
+      padding: 1rem 0.5rem;
+    }
+    #about .location {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  
+  /* --- Additional CSS to keep the profile section (from profile picture up to the Montreal location) entirely on one screen and clear of the fixed header --- */
+#about {
+    /* Override any extra top padding so content starts just below the header */
+    padding-top: 80px !important;
+    /* Use the remaining viewport height after the header */
+    height: calc(100vh - 80px) !important;
+    
+    /* Arrange child elements so the top content and the location element are spaced vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  /* Make sure the Montreal location element is positioned at the bottom of #about without absolute positioning */
+  #about .location {
+    position: static !important; /* remove previous absolute positioning */
+    margin-top: auto;           /* push it to the bottom of the flex container */
+    align-self: flex-end;        /* keep it aligned to the right */
+    padding: 0.3rem 0.5rem;
+  }
   
