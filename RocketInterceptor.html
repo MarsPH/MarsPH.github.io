@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
+        <title>Project</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="sss/sss.min.js"></script>
+        <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
+        <script>jQuery(function($) {$('.slider').sss();});</script>
+
+        
+    </head>
+
+    <body>
+
+        <div style="background-color: #fabd76;" class="header">
+            <div><button><a href="index.html#about">About me</a></button></div>
+            <div><button><a href="index.html#project">Projects</a></button></div>
+            <div><button><a href="index.html#gamejam">Game Jams</a></button></div>
+        </div>
+
+        <div class="contain">
+
+            <div id="main">
+                
+                <!--Pics and (name and table)-->
+                <div class="picname">
+
+
+                    <!--pics-->
+                    <div class="picname-slide">
+                        
+                        <div class="slider">
+
+                            <img src="Resources/img/Flow/Flow3.png">
+                            <img src="Resources/img/Flow/Flow4.png">
+                            <img src="Resources/img/Flow/Flow5.png">
+                            <video controls>
+                                <source src="Resources/img/Flow/FlowPreview.mp4">
+                            </video>
+
+                        </div>
+
+                    </div>
+
+                    <!--name and table-->
+                    <div class="picname-name">
+
+                        <h1>Project Title</h1>
+
+                        <table>
+
+                            <tr>
+                                <th>
+                                    Game Type
+                                </th>
+                                <td>
+                                    Puzzle 2D
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    player count
+                                </th>
+                                <td>
+                                    Single Player
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    My Role
+                                </th>
+                                <td>
+                                    Solo Developer
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <th>
+                                    Game Engine
+                                </th>
+                                <td>
+                                    Unity
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>
+                                    Features
+                                </th>
+                                <td>
+                                    Dynamic Soft Body Physics / Stress-Based Destruction System
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+                        <div class="project-button">
+                          
+                            <button><a href="https://mahanph.itch.io/flow">Play Now <img src="Resources/img/play.svg"></a></button>
+                        
+                        </div>
+                    </div>
+
+
+                </div>
+
+                
+                <!-- describtion-->
+                <div class="description-pro">
+
+
+                    <p>
+                        I used a soft mesh body using a spring joint-based deformable system to capture the essence of the bubble theme for the Global Game Jam 2025. 
+                        This design allows the bubble to appear procedurally deformed and physics-driven, effectively simulating the characteristics of a soft bubble. 
+                        The bubble undergoes real-time vertex displacement through a reference point mapping system which I have achvied by changing the base asset, 
+                        that eventually increases its structural stress levels based on excessive deformation. If the stress level remains high for an extended period, 
+                        the bubble will pop, triggering a destruction sequence and resulting in a decrement of health.
+                    </p>
+                    <p>
+                        The game operates in a complete loop with win and lose states, pausing, and a menu. 
+                        It includes obstacles, collectibles, and water flows that guide the bubble in different directions, all created within 48 hours.
+                    </p>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </body>
+
+</html>
