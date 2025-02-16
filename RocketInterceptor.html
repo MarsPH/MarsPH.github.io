@@ -9,7 +9,7 @@
         <link href="style.css" rel="stylesheet">
         <script src="script.js"></script>
         <title>Project</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="sss/sss.min.js"></script>
         <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
         <script>jQuery(function($) {$('.slider').sss();});</script>
@@ -36,13 +36,9 @@
                     <!--pics-->
                     <div class="picname-slide">
                         
-                        <div class="slider">
-
-                            <img src="Resources/img/Flow/Flow3.png">
-                            <img src="Resources/img/Flow/Flow4.png">
-                            <img src="Resources/img/Flow/Flow5.png">
+                        /*<div class="slider">*/
                             <video controls>
-                                <source src="Resources/img/Flow/FlowPreview.mp4">
+                                <source src="Resources/img/RocketInterceptor/RocketInterceptor_Preview_editor.mp4">
                             </video>
 
                         </div>
@@ -61,12 +57,12 @@
                                     Game Type
                                 </th>
                                 <td>
-                                    Puzzle 2D
+                                    3D Arcade Shooter
                                 </td>
                             </tr>
                             <tr>
                                 <th>
-                                    player count
+                                    Player count
                                 </th>
                                 <td>
                                     Single Player
@@ -96,18 +92,14 @@
                                     Features
                                 </th>
                                 <td>
-                                    Dynamic Soft Body Physics / Stress-Based Destruction System
+                                    Purely Mechanics-Driven Enemy Behavior
                                 </td>
                             </tr>
 
 
                         </table>
 
-                        <div class="project-button">
-                          
-                            <button><a href="https://mahanph.itch.io/flow">Play Now <img src="Resources/img/play.svg"></a></button>
-                        
-                        </div>
+                  
                     </div>
 
 
@@ -119,15 +111,22 @@
 
 
                     <p>
-                        I used a soft mesh body using a spring joint-based deformable system to capture the essence of the bubble theme for the Global Game Jam 2025. 
-                        This design allows the bubble to appear procedurally deformed and physics-driven, effectively simulating the characteristics of a soft bubble. 
-                        The bubble undergoes real-time vertex displacement through a reference point mapping system which I have achvied by changing the base asset, 
-                        that eventually increases its structural stress levels based on excessive deformation. If the stress level remains high for an extended period, 
-                        the bubble will pop, triggering a destruction sequence and resulting in a decrement of health.
+                        In this prototype, the player must stop various projectiles using different 
+                        weapons, such as homing missiles, anti-air artillery, and lasers, before 
+                        they hit the player's base. This was one of my first experiences with Unity, 
+                        and I aimed to create a simple prototype to practice mathematical concepts 
+                        within the engine, which led to the development of this game.
                     </p>
+                    
                     <p>
-                        The game operates in a complete loop with win and lose states, pausing, and a menu. 
-                        It includes obstacles, collectibles, and water flows that guide the bubble in different directions, all created within 48 hours.
+                        For this project, I implemented a physics-driven interception system using 
+                        Rigidbody forces, where rockets follow dynamic flight 
+                        paths with acceleration, steering, and ascent behaviors without visual 
+                        effects. I developed multiple missile types leveraging Raycasting, 
+                       Transform.LookAt(), and Quaternion rotations
+                        for precise targeting. Enemy rockets use Vector3.Lerp() 
+                        for smooth trajectory adjustments, ensuring unpredictable movement. The 
+                        game features an adaptive difficulty system.
                     </p>
                     
                 </div>
