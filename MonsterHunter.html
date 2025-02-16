@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
+        <title>Project</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="sss/sss.min.js"></script>
+        <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
+        <script>jQuery(function($) {$('.slider').sss();});</script>
+
+        
+    </head>
+
+    <body>
+
+        <div style="background-color: #fabd76;" class="header">
+            <div><button><a href="index.html#about">About me</a></button></div>
+            <div><button><a href="index.html#project">Projects</a></button></div>
+            <div><button><a href="index.html#gamejam">Game Jams</a></button></div>
+        </div>
+
+        <div class="contain">
+
+            <div id="main">
+                
+                <!--Pics and (name and table)-->
+                <div class="picname">
+
+
+                    <!--pics-->
+                    <div class="picname-slide">
+                        
+                        <div class="slider">
+
+                            <video controls>
+                                <source src="Resources/img/MonsterHunter/MonsterHunterPreview.mp4">
+                            </video>
+                            <img src="Resources/img/MonsterHunter/MonsterHunter_formPreview.png">
+                        </div>
+
+                    </div>
+
+                    <!--name and table-->
+                    <div class="picname-name">
+
+                        <h1>Project Title</h1>
+
+                        <table>
+
+                            <tr>
+                                <th>
+                                    Game Type
+                                </th>
+                                <td>
+                                    Puzzle
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    player count
+                                </th>
+                                <td>
+                                    Single Player
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    My Role
+                                </th>
+                                <td>
+                                    Inventory System Developer
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <th>
+                                    Game Engine
+                                </th>
+                                <td>
+                                    Custom .NET-based engine (Console & WinForms)
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>
+                                    Features
+                                </th>
+                                <td>
+                                    Multithreading / Combat System                                </td>
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+
+
+                </div>
+
+                
+                <!-- describtion-->
+                <div class="description-pro">
+
+
+                    <p>
+                        In my <strong>Monster Hunter</strong> project, I applied core 
+                        <strong>object-oriented programming principles</strong> alongside 
+                        <strong>C# features</strong> to create a structured and efficient game system. 
+                        I used <strong>encapsulation</strong> with private fields and controlled 
+                        access methods, while <strong>abstraction</strong> keeps the logic modular 
+                        across <code>Hunter</code>, <code>Monster</code>, <code>Map</code>, 
+                        and <code>GameForm</code>. <strong>Inheritance</strong> defines <code>Character</code> as a base class, 
+                        allowing <strong>polymorphism</strong> where <code>MoveCharacter()</code> 
+                        behaves differently for <code>Hunter</code> and <code>Monster</code>. 
+                        <strong>Composition</strong> integrates equipment like 
+                        <code>sword</code>, <code>shield</code>, and <code>potion</code> into the 
+                        <code>Hunter</code>.
+                        
+                    </p>
+                    <p>
+                        The game runs on a <strong>multithreaded system</strong>, that handles 
+                        monster movement asynchronously with <strong>Threading</strong> 
+                        (<code>Thread</code>, <code>Thread.Sleep</code>). Monsters exhibit 
+                        <strong>simple AI behavior</strong> with randomized movement.
+                        A <strong>game loop</strong> continuously processes player input, while 
+                        <strong>exception handling</strong> (<code>try-catch</code>) ensures smooth 
+                        map loading. The game also uses <strong>lists</strong> 
+                        (<code>List&lt;Monster&gt;</code>) to track entities dynamically, 
+                        maintaining an optimized structure.
+                    </p>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </body>
+
+</html>
