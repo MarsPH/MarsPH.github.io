@@ -538,3 +538,29 @@ th
     margin: auto;
     padding-top: 1rem;
 }
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #24292e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.github-btn:hover {
+    background-color: #333;
+}
+
+.github-btn svg {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
