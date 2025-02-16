@@ -9,7 +9,7 @@
         <link href="style.css" rel="stylesheet">
         <script src="script.js"></script>
         <title>Project</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="sss/sss.min.js"></script>
         <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
         <script>jQuery(function($) {$('.slider').sss();});</script>
@@ -38,12 +38,15 @@
                         
                         <div class="slider">
 
-                            <img src="Resources/img/Flow/Flow3.png">
-                            <img src="Resources/img/Flow/Flow4.png">
-                            <img src="Resources/img/Flow/Flow5.png">
                             <video controls>
-                                <source src="Resources/img/Flow/FlowPreview.mp4">
+                                <source src="Resources/img/LightWithin/LightWithin_GamePlayPreview.mp4">
                             </video>
+                            <img src="Resources/img/LightWithin//LW_Editor.png">
+                            <video controls>
+                                <source src="Resources/img/LightWithin/LightWithin_ShadowSystemPreview.mp4">
+                            </video>
+                            <img src="Resources/img/LightWithin//LW_Damage.png">
+                    
 
                         </div>
 
@@ -52,7 +55,7 @@
                     <!--name and table-->
                     <div class="picname-name">
 
-                        <h1>Project Title</h1>
+                        <h1>Light Within</h1>
 
                         <table>
 
@@ -61,12 +64,12 @@
                                     Game Type
                                 </th>
                                 <td>
-                                    Puzzle 2D
+                                    Platformer
                                 </td>
                             </tr>
                             <tr>
                                 <th>
-                                    player count
+                                    Player count
                                 </th>
                                 <td>
                                     Single Player
@@ -96,7 +99,7 @@
                                     Features
                                 </th>
                                 <td>
-                                    Dynamic Soft Body Physics / Stress-Based Destruction System
+                                    Shadow-Based Platforming System / 3D World with 2D Gameplay on the Z-X Plane
                                 </td>
                             </tr>
 
@@ -105,7 +108,7 @@
 
                         <div class="project-button">
                           
-                            <button><a href="https://mahanph.itch.io/flow">Play Now <img src="Resources/img/play.svg"></a></button>
+                            <button><a href="https://mahanph.itch.io/lightwithin-20">Play Now <img src="Resources/img/play.svg"></a></button>
                         
                         </div>
                     </div>
@@ -119,15 +122,23 @@
 
 
                     <p>
-                        I created a soft mesh body using a spring joint-based deformable system to capture the essence of the bubble theme for the Global Game Jam 2025. 
-                        This design allows the bubble to appear procedurally deformed and physics-driven, effectively simulating the characteristics of a soft bubble. 
-                        The bubble undergoes real-time vertex displacement through a reference point mapping system, 
-                        which increases its structural stress levels based on excessive deformation. If the stress level remains high for an extended period, 
-                        the bubble will pop, triggering a destruction sequence and resulting in a decrement of health.
+                        At first glance, the game may seem like a typical 2D game, but it actually
+                        takes place in a 3D world with constrained movement on the z-x plane instead
+                        of the traditional x-y plane. During the Game Jam, I developed a custom 2D
+                        physics system within a 3D environment, where the shadows of 3D objects
+                        function as platforms for the player.
                     </p>
                     <p>
-                        The game operates in a complete loop with win and lose states, pausing, and a menu. 
-                        It includes obstacles, collectibles, and water flows that guide the bubble in different directions, all created within 48 hours.
+                        For the shadow projection, I implemented a dynamic shadow mapping system that
+                        generates a separate shadow mesh in real-time. This system calculates vertex
+                        positions using raycasting and plane intersections, projecting the shadow onto
+                        a designated surface based on directional or point light sources. The projected
+                        shadow uses a procedural mesh with an active MeshCollider, ensuring both visual
+                        accuracy and physical interaction. The system is optimized for real-time mesh
+                        transformations and collision detection, making it performant within the game.
+                        This project was a technical challenge, but it provided valuable experience in
+                        procedural geometry, physics integration, and real-time rendering techniques
+                        during the Game Jam.
                     </p>
                     
                 </div>
