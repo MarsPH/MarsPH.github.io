@@ -564,3 +564,126 @@ th
     height: 20px;
     fill: white;
 }
+
+/* === GLOBAL SMOOTHNESS === */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+/* === ENTRANCE ANIMATIONS === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === HOVER LIFT ON CARDS === */
+.project-card,
+.gamejam-unit,
+.profile img,
+.project-pic img,
+.github-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.gamejam-unit:hover,
+.project-pic:hover,
+.github-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === BUTTON GRADIENT GLOW === */
+.header button,
+.project-button button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.header button::before,
+.project-button button::before {
+  content: \"\";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.header button:hover::before,
+.project-button button:hover::before {
+  left: 100%;
+}
+/* === CUTOUT PARALLAX ON HOVER === */
+.cutout {
+  transition: transform 0.4s ease, filter 0.3s ease;
+  will-change: transform;
+}
+
+.cutout:hover {
+  transform: translateY(-10%) scale(1.1) rotate(-3deg);
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.15));
+}
+
+.cutout-img {
+  transition: transform 0.5s ease;
+}
+
+.cutout-img:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+/* === CLOUD MOTION === */
+.cloud {
+  animation: cloudDrift 40s linear infinite alternate;
+}
+
+@keyframes cloudDrift {
+  0% { transform: translateX(-10%); }
+  100% { transform: translateX(10%); }
+}
+.project-pic img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-pic img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.05) saturate(1.2);
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #222;
+}
+
+.description,
+.project-description p,
+h3,
+h1,
+h2 {
+  text-shadow: 0.3px 0.3px 0 rgba(0,0,0,0.08);
+}
+.header {
+  transition: box-shadow 0.3s ease;
+}
+
+body.scrolled .header {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
