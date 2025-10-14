@@ -22,66 +22,6 @@
 
 /* Flow-specific overrides */
 
-/* Project overview */
-.project-section {
-  margin-top: 4rem; /* Increased margin-top for better spacing between sections */
-}
-
-.project-card {
-  background: var(--gradient-card);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-  transition: var(--transition-epic);
-  max-width: 600px;
-  width: 100%;
-}
-
-.project-card:hover {
-  box-shadow: 0 0 40px var(--epic-primary);
-  transform: translateY(-5px);
-}
-
-/* Section headers */
-.section-header {
-  text-align: center;
-  margin-top: 6rem !important;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 1;
-}
-
-.section-badge {
-  display: inline-block;
-  background: var(--gradient-epic);
-  color: var(--epic-darker);
-  padding: 0.25rem 1rem;
-  border-radius: var(--radius-lg);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  position: relative;
-  z-index: 2;
-}
-
-.section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  color: var(--epic-primary);
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: rgba(248, 249, 250, 0.7);
-  position: relative;
-  z-index: 2;
-}
 
 /* Technical cards */
 .tech-grid {

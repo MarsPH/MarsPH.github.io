@@ -648,6 +648,7 @@ body {
   border-radius: 20px;
   padding: 2rem;
   transition: var(--transition-epic);
+  /* No blur for project cards, keep solid for all projects */
 }
 
 .project-card:hover {
