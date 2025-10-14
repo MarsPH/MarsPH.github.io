@@ -16,3 +16,39 @@
 }
 
 /* Rocket Interceptor-specific overrides */
+
+/* Overview layout for Project Overview section */
+.overview-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+}
+
+.overview-text-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+.overview-visual-section {
+  flex: 1;
+  max-width: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .overview-layout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .overview-text-section {
+    max-width: 100%;
+  }
+
+  .overview-visual-section {
+    max-width: 100%;
+  }
+}
