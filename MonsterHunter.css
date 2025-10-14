@@ -1,0 +1,18 @@
+/* Monster Hunter Project Page - Epic Theme Extensions */
+
+/* Import project page styles */
+@import url('project.css');
+
+/* Monster Hunter-specific hero background */
+#monsterhunter-hero .hero-background {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+}
+
+#monsterhunter-hero .hero-particles {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(156, 39, 176, 0.15) 0%, transparent 50%);
+}
+
+/* Monster Hunter-specific styles can be added here if needed */

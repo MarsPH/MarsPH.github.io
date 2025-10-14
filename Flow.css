@@ -1,7 +1,7 @@
 /* Flow Project Page - Epic Theme Extensions */
 
-/* Import main styles */
-@import url('style.css');
+/* Import project page styles */
+@import url('project.css');
 
 /* Flow-specific hero background */
 #flow-hero .hero-background {

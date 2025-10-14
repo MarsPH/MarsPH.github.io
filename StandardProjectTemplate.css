@@ -1,0 +1,18 @@
+/* Standard Project Template - Epic Theme Extensions */
+
+/* Import project page styles */
+@import url('project.css');
+
+/* Standard Project Template-specific hero background */
+#standardproject-hero .hero-background {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+}
+
+#standardproject-hero .hero-particles {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(156, 39, 176, 0.15) 0%, transparent 50%);
+}
+
+/* Standard Project Template-specific styles can be added here if needed */
