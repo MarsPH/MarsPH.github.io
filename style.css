@@ -1253,28 +1253,71 @@ body {
     padding: 0 1rem;
   }
 
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .btn-epic {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-avatar {
-    width: clamp(150px, 60vw, 250px);
-    height: clamp(150px, 60vw, 250px);
-  }
-
+  /* Mobile Hero Redesign */
   .epic-hero {
-    padding: 1rem;
-    gap: 1rem;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .hero-content .container-fluid {
+    padding: 0;
+  }
+
+  .hero-content .row {
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .hero-visual,
   .hero-text {
     width: 100%;
+    order: unset !important; /* Reset Bootstrap order */
+  }
+
+  .hero-visual {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero-avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(10, 10, 10, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn-epic {
+    width: auto;
+    min-width: 140px;
   }
 
   .about-card,
