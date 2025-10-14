@@ -58,14 +58,14 @@
   <!-- Hero Section -->
   <section class="project-hero">
     <div class="hero-background">
-      <div class="hero-particles"></div>
+      <div class="hero-particles" id="hero-particles"></div>
       <div class="hero-gradient"></div>
     </div>
     <div class="hero-content">
       <div class="container-fluid">
-        <div class="row align-items-center gx-5">
+        <div class="row align-items-center min-vh-100">
           <div class="col-lg-6">
-            <div class="hero-text bg-hero-text" data-aos="fade-right" data-aos-duration="1000">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
               <div class="hero-badge">
                 <span class="badge-text">GLOBAL GAME JAM 2025</span>
               </div>
@@ -79,37 +79,52 @@
                 Navigate through obstacles by shrinking and enlarging while avoiding sharp hazards.
                 Features dynamic soft body physics and stress-based destruction system.
               </p>
-              <div class="hero-stats d-flex gap-4">
-                <div class="stat-item text-center">
+              <div class="hero-stats">
+                <div class="stat-item">
                   <div class="stat-number" data-target="48">0</div>
                   <div class="stat-label">Hours</div>
                 </div>
-                <div class="stat-item text-center">
+                <div class="stat-item">
                   <div class="stat-number" data-target="1">0</div>
                   <div class="stat-label">Developer</div>
                 </div>
-                <div class="stat-item text-center">
+                <div class="stat-item">
                   <div class="stat-number" data-target="100">0</div>
                   <div class="stat-label">Physics</div>
                 </div>
               </div>
-              <div class="hero-actions d-flex gap-3">
-                <a href="#overview" class="btn-epic primary px-4 py-3">
-                  <i class="fas fa-play me-2"></i>
+              <div class="hero-actions">
+                <a href="#overview" class="btn-epic primary">
+                  <i class="fas fa-play"></i>
                   <span>Experience Flow</span>
                 </a>
-                <a href="https://mahanph.itch.io/flow" class="btn-epic secondary px-4 py-3" target="_blank">
-                  <i class="fas fa-external-link-alt me-2"></i>
+                <a href="https://mahanph.itch.io/flow" class="btn-epic secondary" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
                   <span>Play on Itch.io</span>
                 </a>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 d-flex justify-content-center align-items-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-            <video autoplay muted loop class="preview-video rounded-4 shadow-lg" style="max-width: 90%; max-height: 80vh; box-shadow: 0 0 40px var(--epic-primary);">
-              <source src="Resources/img/Flow/FlowPreview.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div class="col-lg-6">
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+              <div class="game-preview">
+                <div class="preview-frame">
+                  <video autoplay muted loop class="preview-video">
+                    <source src="Resources/img/Flow/FlowPreview.mp4" type="video/mp4" />
+                  </video>
+                  <div class="preview-overlay">
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="floating-elements">
+                  <div class="floating-element" style="--delay: 0s"><i class="fas fa-water"></i></div>
+                  <div class="floating-element" style="--delay: 1s"><i class="fas fa-circle"></i></div>
+                  <div class="floating-element" style="--delay: 2s"><i class="fas fa-magic"></i></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -124,8 +139,25 @@
         <h2 class="section-title">Bubble Physics Mastery</h2>
         <p class="section-subtitle">Advanced soft body physics simulation in Unity</p>
       </div>
-      <div class="row">
-        <div class="col-12">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="project-content" data-aos="fade-right">
+            <div class="project-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fas fa-water"></i>
+                </div>
+                <h3>Soft Body Physics</h3>
+              </div>
+              <div class="card-body">
+                <p class="project-text">
+                  Experience the mesmerizing world of soft body physics where bubbles deform and react to environmental forces. Navigate through challenging obstacles by mastering the delicate balance of size and shape.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
           <div class="project-visual" data-aos="fade-left">
             <div class="media-gallery">
               <div class="gallery-item main">
@@ -153,28 +185,28 @@
         <p class="section-subtitle">Advanced Unity implementation details</p>
       </div>
       <div class="tech-grid">
-        <div class="tech-card">
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="tech-icon">
             <i class="fas fa-project-diagram"></i>
           </div>
           <h3>Soft Body Physics</h3>
           <p>Implemented spring joint-based deformable mesh system for realistic bubble behavior</p>
         </div>
-        <div class="tech-card">
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
           <div class="tech-icon">
             <i class="fas fa-compress-alt"></i>
           </div>
           <h3>Stress System</h3>
           <p>Dynamic stress calculation based on vertex displacement and deformation levels</p>
         </div>
-        <div class="tech-card">
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
           <div class="tech-icon">
             <i class="fas fa-explosion"></i>
           </div>
           <h3>Destruction Sequence</h3>
           <p>Procedural destruction animation triggered by excessive stress accumulation</p>
         </div>
-        <div class="tech-card">
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
           <div class="tech-icon">
             <i class="fas fa-shapes"></i>
           </div>
@@ -185,8 +217,70 @@
     </div>
   </section>
 
-  <!-- Development Story Section -->
+  <!-- Project Details Section -->
   <section class="project-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="project-details" data-aos="fade-up">
+            <div class="details-card">
+              <h2>Project Information</h2>
+              <div class="details-grid">
+                <div class="detail-item">
+                  <div class="detail-label">Development Time</div>
+                  <div class="detail-value">48 Hours</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Team Size</div>
+                  <div class="detail-value">1</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Game Engine</div>
+                  <div class="detail-value">Unity</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Primary Language</div>
+                  <div class="detail-value">C#</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">My Role</div>
+                  <div class="detail-value">Solo Developer</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">Platform</div>
+                  <div class="detail-value">WebGL (Itch.io)</div>
+                </div>
+              </div>
+              <div class="project-features">
+                <h3>Key Features</h3>
+                <div class="features-list">
+                  <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Soft Body Mesh Physics</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Dynamic Stress Calculation</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Procedural Destruction</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>Advanced Collision Detection</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Story Section -->
+  <section class="project-section dark">
     <div class="container-fluid">
       <div class="section-header" data-aos="fade-up">
         <div class="section-badge">DEVELOPMENT STORY</div>
