@@ -91,16 +91,7 @@
   box-shadow: 0 0 30px var(--epic-primary);
 }
 
-/* Preview video */
-.preview-video {
-  border-radius: var(--radius-lg);
-  box-shadow: 0 0 40px var(--epic-primary);
-  max-width: 100%;
-  height: auto;
-  margin-right: 0; /* Remove any right margin */
-  margin-left: 0; /* Remove auto margin to allow manual left shift */
-  margin-left: -2rem; /* Further shift video left towards center */
-}
+/* Flow-specific overrides */
 
 /* Project overview */
 .project-section {
