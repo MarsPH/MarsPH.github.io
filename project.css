@@ -627,13 +627,26 @@ body {
   box-sizing: border-box;
 }
 
+/* Gallery Carousel Styles */
 .media-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  align-items: center;
-  justify-items: center;
-  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.gallery-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: calc(100% * 2); /* Show 2 slides at a time */
+}
+
+.gallery-slide {
+  flex: 0 0 50%; /* Each slide takes 50% width */
+  padding: 0 0.75rem;
+  box-sizing: border-box;
 }
 
 .gallery-item {
@@ -645,8 +658,7 @@ body {
   backdrop-filter: blur(10px);
   transition: var(--transition-epic);
   width: 100%;
-  max-width: 350px;
-  height: 200px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -657,17 +669,69 @@ body {
   box-shadow: var(--shadow-epic);
 }
 
-.gallery-item.main {
-  grid-column: span 2;
-  height: 250px;
-}
-
 .gallery-image,
 .gallery-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
+}
+
+/* Carousel Navigation */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-epic);
+  border: none;
+  border-radius: 50%;
+  color: var(--epic-darker);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-epic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-nav:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-glow);
+}
+
+.gallery-nav.prev {
+  left: 10px;
+}
+
+.gallery-nav.next {
+  right: 10px;
+}
+
+/* Carousel Indicators */
+.gallery-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--epic-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.indicator.active {
+  background: var(--epic-primary);
 }
 
 /* Technical Details Grid */
