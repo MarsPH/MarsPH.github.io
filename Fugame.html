@@ -1,142 +1,529 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fugame - Advanced inventory system and UI/UX implementation in Unity. Features modular design, drag-and-drop functionality, and seamless clue integration.">
+    <meta name="keywords" content="game development, unity, inventory system, UI/UX, team project, scriptable objects">
+    <meta name="author" content="Mahan Poorhamidian">
+    <meta property="og:title" content="Fugame - Advanced Inventory System">
+    <meta property="og:description" content="A comprehensive prison escape puzzle game featuring advanced inventory management and UI systems">
+    <meta property="og:type" content="website">
 
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="style.css" as="style">
 
-<html>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <head>
+    <!-- Custom CSS -->
+    <link href="Flow.css" rel="stylesheet">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-        <script src="script.js"></script>
-        <title>Project</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="sss/sss.min.js"></script>
-        <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
-        <script>jQuery(function($) {$('.slider').sss();});</script>
+    <title>Fugame - Advanced Inventory System | Mahan Poorhamidian</title>
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
 
-        
-    </head>
-
-    <body>
-
-        <div style="background-color: #fabd76;" class="header">
-            <div><button><a href="index.html#about">About me</a></button></div>
-            <div><button><a href="index.html#project">Projects</a></button></div>
-            <div><button><a href="index.html#gamejam">Game Jams</a></button></div>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Fugame - Prison Escape Puzzle",
+        "description": "A collaborative prison escape puzzle game featuring advanced inventory management systems",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "dateCreated": "2024",
+        "genre": "Puzzle Adventure",
+        "gamePlatform": "Desktop",
+        "applicationCategory": "Game",
+        "operatingSystem": "Windows"
+    }
+    </script>
+</head>
+<body>
+    <!-- Epic Loading Screen -->
+    <div id="epic-loader" class="epic-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <i class="fas fa-boxes"></i>
+            </div>
+            <div class="loader-text">FUGAME</div>
+            <div class="loader-subtitle">INVENTORY SYSTEM</div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
         </div>
+    </div>
 
-        <div class="contain">
-
-            <div id="main">
-                
-                <!--Pics and (name and table)-->
-                <div class="picname">
-
-
-                    <!--pics-->
-                    <div class="picname-slide">
-                        
-                        <div class="slider">
-
-                            <img src="Resources/img/Fugame/Fugame1.png">
-                            <img src="Resources/img/Fugame/Fugame2.png">
-                            <img src="Resources/img/Fugame/Fugame3.png">
-                            <video controls>
-                                <source src="Resources/img/Fugame/FugameInventoryPreview.mp4">
-                            </video>
-
-                        </div>
-
+    <!-- Epic Navigation -->
+    <nav class="epic-navbar" id="epic-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i class="fas fa-cube"></i>
                     </div>
-
-                    <!--name and table-->
-                    <div class="picname-name">
-
-                        <h1>Project Title</h1>
-
-                        <table>
-
-                            <tr>
-                                <th>
-                                    Game Type
-                                </th>
-                                <td>
-                                    Puzzle
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Player count
-                                </th>
-                                <td>
-                                    Single Player
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    My Role
-                                </th>
-                                <td>
-                                    Inventory System Developer
-                                </td>
-                            </tr>
-
-                            <tr>
-
-                                <th>
-                                    Game Engine
-                                </th>
-                                <td>
-                                    Unity
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <th>
-                                    Features
-                                </th>
-                                <td>
-                                    Dynamic Inventory System with Hotbar & Throwable Items
-                                </td>
-                            </tr>
-
-
-                        </table>
-                        <div class="project-button">
-                          
-                            <a href="https://github.com/MarsPH/Fugam-Mahan" target="_blank" class="github-btn">
-                                <svg viewBox="0 0 16 16" version="1.1" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.67 7.67 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.47 0 1.06-.01 1.91-.01 2.18 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                
-                <!-- describtion-->
-                <div class="description-pro">
-
-
-                    <p>
-                        This team project features a modular inventory system with a hot bar, allowing players to drag and drop items while supporting keyboard controls. Items rely on ScriptableObjects for efficient management. 
-                        Interfaces handle item interactions, which provides flexibility across different object types. Serialized data preserves items across scenes. Clue management also utilizes ScriptableObjects, which allows the clues to be stored in the inventory.
-                    </p>
-                    <p>
-                        For menu interaction, inventory slots, and clues, I structured them as a single journal system in this project. This journal enhances the story's narrative and integrates seamlessly with UI animations tied to the Inventory System. 
-                        The system utilizes ScriptableObjects for data persistence, Interfaces for modular item interactions, and Event-Driven Architecture to manage UI updates efficiently. Serialized Fields ensure data retention across game sessions, while Coroutines handle smooth UI transitions.
-                    </p>
-                    
-                </div>
-
+                    <span class="brand-text">MAHAN</span>
+                </a>
             </div>
 
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#hero" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#game-jams" class="nav-link">Game Jams</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Epic Hero Section -->
+    <section class="project-hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-gradient"></div>
         </div>
 
+        <div class="hero-content">
+            <div class="container-fluid">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="hero-badge">
+                                <span class="badge-text">TEAM PROJECT</span>
+                            </div>
 
-    </body>
+                            <h1 class="hero-title">
+                                <span class="title-line">FUGAME</span>
+                                <span class="title-line highlight">INVENTORY</span>
+                                <span class="title-line">MASTERPIECE</span>
+                            </h1>
 
+                            <p class="hero-description">
+                                A comprehensive prison escape puzzle adventure featuring advanced inventory management,
+                                clue interaction systems, and immersive UI/UX design. Master complex puzzle mechanics
+                                to unravel the mysteries of an abandoned correctional facility.
+                            </p>
+
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="6">0</div>
+                                    <div class="stat-label">Months</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="4">0</div>
+                                    <div class="stat-label">Developers</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="100">0</div>
+                                    <div class="stat-label">Features</div>
+                                </div>
+                            </div>
+
+                            <div class="hero-actions">
+                                <a href="#systems" class="btn-epic primary">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Explore Systems</span>
+                                </a>
+                                <a href="https://github.com/MarsPH/Fugam-Mahan" class="btn-epic secondary" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>View Source</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                            <div class="game-preview">
+                                <div class="preview-frame">
+                                    <video autoplay muted loop class="preview-video">
+                                        <source src="Resources/img/Fugame/FugameInventoryPreview.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="preview-overlay">
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floating-elements">
+                                    <div class="floating-element" style="--delay: 0s"><i class="fas fa-box"></i></div>
+                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-puzzle-piece"></i></div>
+                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-mouse-pointer"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview Section -->
+    <section class="project-section" id="systems">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">SYSTEM OVERVIEW</div>
+                <h2 class="section-title">Advanced Inventory Architecture</h2>
+                <p class="section-subtitle">Modular design with drag-and-drop functionality</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="project-content" data-aos="fade-right">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                                <h3>Modular Inventory System</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-text">
+                                    I developed a sophisticated modular inventory system with a dynamic hotbar,
+                                    allowing players to drag and drop items while supporting comprehensive
+                                    keyboard controls. The system utilizes ScriptableObjects for efficient
+                                    item management and data persistence across scenes.
+                                </p>
+                                <p class="project-text">
+                                    The inventory features interfaces for flexible item interactions, supporting
+                                    various object types and behaviors. Serialized data ensures items persist
+                                    across scene transitions, while clue management integrates seamlessly
+                                    with the inventory as a unified journal system.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="project-visual" data-aos="fade-left">
+                        <div class="media-gallery">
+                            <div class="gallery-item main">
+                                <img src="Resources/img/Fugame/Fugame1.png" alt="Fugame inventory system interface" class="gallery-image">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="Resources/img/Fugame/Fugame2.png" alt="Fugame puzzle mechanics demonstration" class="gallery-image">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="Resources/img/Fugame/Fugame3.png" alt="Fugame UI/UX implementation" class="gallery-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">TECHNICAL BREAKDOWN</div>
+                <h2 class="section-title">Architecture & Systems</h2>
+                <p class="section-subtitle">Advanced Unity implementation details</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>ScriptableObjects</h3>
+                    <p>Efficient item and clue management using Unity's ScriptableObject system for data persistence</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <h3>Drag & Drop</h3>
+                    <p>Intuitive drag-and-drop functionality with visual feedback and collision detection</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Keyboard Controls</h3>
+                    <p>Comprehensive keyboard navigation and hotkey system for efficient inventory management</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Journal System</h3>
+                    <p>Integrated clue management system with narrative enhancement and UI animations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="project-details" data-aos="fade-up">
+                        <div class="details-card">
+                            <h2>Project Information</h2>
+
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Development Time</div>
+                                    <div class="detail-value">6 Months</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Team Size</div>
+                                    <div class="detail-value">4 Developers</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Game Engine</div>
+                                    <div class="detail-value">Unity 2022.3+</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Primary Language</div>
+                                    <div class="detail-value">C#</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">My Role</div>
+                                    <div class="detail-value">Inventory System Developer</div>
+                                </div>
+                                <div class="detail-label">Platform</div>
+                                <div class="detail-value">Desktop (Windows)</div>
+                            </div>
+
+                            <div class="project-features">
+                                <h3>Key Features</h3>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Modular Inventory System with Hotbar</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Drag-and-Drop Item Management</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Comprehensive Keyboard Controls</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>ScriptableObject-Based Item System</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Integrated Journal/Clue System</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Event-Driven UI Architecture</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Cross-Scene Data Persistence</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Smooth UI Animations & Transitions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">ARCHITECTURE</div>
+                <h2 class="section-title">System Design</h2>
+                <p class="section-subtitle">Clean architecture and modular design patterns</p>
+            </div>
+
+            <div class="architecture-grid">
+                <div class="arch-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="arch-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>ScriptableObject Architecture</h3>
+                    <p>Utilized Unity's ScriptableObject system for efficient data management and cross-scene persistence</p>
+                </div>
+
+                <div class="arch-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="arch-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Interface-Based Design</h3>
+                    <p>Implemented interfaces for modular item interactions, providing flexibility across different object types</p>
+                </div>
+
+                <div class="arch-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="arch-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Event-Driven Systems</h3>
+                    <p>Built event-driven architecture for efficient UI updates and system communication</p>
+                </div>
+
+                <div class="arch-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="arch-icon">
+                        <i class="fas fa-save"></i>
+                    </div>
+                    <h3>Data Serialization</h3>
+                    <p>Implemented comprehensive data serialization for inventory and clue persistence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">DEVELOPMENT PROCESS</div>
+                <h2 class="section-title">Collaborative Development</h2>
+                <p class="section-subtitle">Team-based approach to complex system design</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Month 1</div>
+                        <h3 class="timeline-title">System Design & Planning</h3>
+                        <p class="timeline-description">
+                            Collaborated with team members to design the inventory system architecture.
+                            Created detailed specifications for drag-and-drop functionality and UI integration.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Month 2-4</div>
+                        <h3 class="timeline-title">Core Implementation</h3>
+                        <p class="timeline-description">
+                            Developed the modular inventory system with ScriptableObject integration.
+                            Implemented drag-and-drop mechanics and keyboard controls. Created the journal system.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Month 5</div>
+                        <h3 class="timeline-title">Integration & Polish</h3>
+                        <p class="timeline-description">
+                            Integrated inventory system with game mechanics and UI. Added animations,
+                            sound effects, and comprehensive testing. Optimized performance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Month 6</div>
+                        <h3 class="timeline-title">Team Collaboration</h3>
+                        <p class="timeline-description">
+                            Worked closely with other developers to ensure system compatibility.
+                            Provided technical support and implemented feature requests from team members.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Explore the Inventory System</h2>
+                <p>Ready to see advanced inventory management in action? Check out the source code and technical implementation.</p>
+
+                <div class="cta-buttons">
+                    <a href="https://github.com/MarsPH/Fugam-Mahan" class="btn-epic primary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View Source Code</span>
+                    </a>
+                    <a href="index.html" class="btn-epic outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epic Footer -->
+    <footer class="epic-footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-boxes"></i>
+                        <span>FUGAME - INVENTORY SYSTEM</span>
+                    </div>
+                    <p class="footer-tagline">Team Project - Advanced UI/UX Implementation</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Project</h4>
+                        <a href="#systems">Systems</a>
+                        <a href="https://github.com/MarsPH/Fugam-Mahan" target="_blank">Source Code</a>
+                        <a href="index.html">Portfolio</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Developer</h4>
+                        <a href="mailto:m.poorhamidian@gmail.com">Contact</a>
+                        <a href="https://mahanph.itch.io/" target="_blank">More Games</a>
+                        <a href="index.html#about">About Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Mahan Poorhamidian. Team Project - Collège LaSalle.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Epic Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

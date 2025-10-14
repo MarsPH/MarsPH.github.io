@@ -1,0 +1,513 @@
+/* Flow Project Page - Epic Theme Extensions */
+
+/* Import main styles */
+@import url('style.css');
+
+/* Flow-specific hero background */
+#flow-hero .hero-background {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+}
+
+#flow-hero .hero-particles {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 107, 107, 0.15) 0%, transparent 50%);
+}
+
+/* Hero text background */
+.bg-hero-text {
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+/* Hero title */
+.hero-title {
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  color: var(--epic-light);
+  text-shadow: 0 0 8px var(--epic-primary);
+}
+
+.title-line.highlight {
+  color: var(--epic-primary);
+  text-shadow: 0 0 12px var(--epic-primary);
+}
+
+/* Hero description */
+.hero-description {
+  font-size: 1.1rem;
+  color: rgba(248, 249, 250, 0.85);
+  line-height: 1.6;
+}
+
+/* Hero stats */
+.hero-stats .stat-item {
+  flex: 1;
+  color: var(--epic-light);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--epic-primary);
+  text-shadow: 0 0 10px var(--epic-primary);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+/* Hero actions buttons */
+.hero-actions .btn-epic {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 20px var(--epic-primary);
+  transition: var(--transition-epic);
+}
+
+.hero-actions .btn-epic.primary {
+  background: var(--epic-primary);
+  color: var(--epic-darker);
+}
+
+.hero-actions .btn-epic.primary:hover {
+  background: var(--epic-primary-dark);
+  box-shadow: 0 0 30px var(--epic-primary);
+}
+
+.hero-actions .btn-epic.secondary {
+  background: transparent;
+  border: 2px solid var(--epic-primary);
+  color: var(--epic-primary);
+}
+
+.hero-actions .btn-epic.secondary:hover {
+  background: var(--epic-primary);
+  color: var(--epic-darker);
+  box-shadow: 0 0 30px var(--epic-primary);
+}
+
+/* Preview video */
+.preview-video {
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 40px var(--epic-primary);
+  max-width: 100%;
+  height: auto;
+  margin-right: 0; /* Remove any right margin */
+  margin-left: 0; /* Remove auto margin to allow manual left shift */
+  margin-left: -2rem; /* Further shift video left towards center */
+}
+
+/* Project overview */
+.project-section {
+  margin-top: 4rem; /* Increased margin-top for better spacing between sections */
+}
+
+.project-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transition: var(--transition-epic);
+}
+
+.project-card:hover {
+  box-shadow: 0 0 40px var(--epic-primary);
+  transform: translateY(-5px);
+}
+
+/* Section headers */
+.section-header {
+  text-align: center;
+  margin-top: 6rem !important;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-badge {
+  display: inline-block;
+  background: var(--gradient-epic);
+  color: var(--epic-darker);
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--epic-primary);
+  text-shadow: 0 0 10px var(--epic-primary);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: rgba(248, 249, 250, 0.7);
+  position: relative;
+  z-index: 2;
+}
+
+/* Technical cards */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tech-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-epic);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.tech-card:hover {
+  box-shadow: 0 0 30px var(--epic-primary);
+  transform: translateY(-5px);
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+  color: var(--epic-primary);
+  margin-bottom: 1rem;
+}
+
+/* Timeline */
+.game-jams-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  background: var(--gradient-card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.timeline-marker {
+  font-size: 2rem;
+  color: var(--epic-primary);
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex-grow: 1;
+}
+
+.timeline-date {
+  color: var(--epic-primary);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-title {
+  font-weight: 800;
+  color: var(--epic-light);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+  color: rgba(248, 249, 250, 0.8);
+  line-height: 1.5;
+}
+
+/* Call to action */
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 1rem auto; /* Reduced vertical margin to tighten spacing */
+  color: var(--epic-light);
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  background: var(--gradient-epic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn-epic {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 20px var(--epic-primary);
+  transition: var(--transition-epic);
+}
+
+.cta-buttons .btn-epic.primary {
+  background: var(--epic-primary);
+  color: var(--epic-darker);
+}
+
+.cta-buttons .btn-epic.primary:hover {
+  background: var(--epic-primary-dark);
+  box-shadow: 0 0 30px var(--epic-primary);
+}
+
+.cta-buttons .btn-epic.secondary {
+  background: transparent;
+  border: 2px solid var(--epic-primary);
+  color: var(--epic-primary);
+}
+
+.cta-buttons .btn-epic.secondary:hover {
+  background: var(--epic-primary);
+  color: var(--epic-darker);
+  box-shadow: 0 0 30px var(--epic-primary);
+}
+
+/* Footer */
+.epic-footer {
+  background: #0a0a0a;
+  color: var(--epic-light);
+  padding: 3rem 1rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--epic-primary);
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: rgba(248, 249, 250, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-section h4 {
+  font-weight: 700;
+  color: var(--epic-primary);
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  display: block;
+  color: rgba(248, 249, 250, 0.7);
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--epic-primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(248, 249, 250, 0.5);
+}
+
+/* Adjust left box container margin and padding for better spacing */
+.hero-text {
+  margin-left: 1.5rem; /* Reduced margin to avoid excessive left spacing */
+  margin-top: 80px; /* Adjusted top margin to match navbar height */
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem; /* Reduced bottom padding */
+  border-radius: var(--radius-lg);
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Removed max-height and overflow-y to prevent scrollbar */
+  display: flex;
+  flex-direction: column;
+  /* Removed justify-content to prevent content clipping */
+}
+
+/* Make hero-title display flex to align title-line spans horizontally */
+.hero-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: baseline;
+}
+
+/* Reduce bottom margin of footer to reduce black space */
+.epic-footer {
+  padding-bottom: 0.5rem; /* Reduced bottom padding */
+}
+
+/* Reduce bottom margin of last project-section to reduce black space */
+.project-section:last-of-type {
+  margin-bottom: 1rem; /* Add small bottom margin */
+}
+
+/* Reduce font sizes inside the left box container */
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.hero-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.stat-number {
+  font-size: 2rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+}
+
+/* Check hero-actions and btn-epic for margin or positioning */
+.hero-actions {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-actions .btn-epic {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure hero-actions buttons have no negative margins */
+.hero-actions {
+  margin-bottom: 0;
+}
+
+/* Make hero-content row vertically centered and balanced height */
+.hero-content .row {
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Add right padding to video container to prevent video touching right edge */
+.hero-content .col-lg-7 {
+  padding-right: 2rem; /* Further increased right padding to push video more left */
+  display: flex;
+  justify-content: flex-start; /* Align video to the left within container */
+}
+
+/* Improve word wrapping for hero title */
+.hero-title .title-line {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+/* Adjust lower scroll title spacing */
+.section-header {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+
+  .section-header {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content .col-lg-5 {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-jams-timeline {
+    gap: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

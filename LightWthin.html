@@ -1,158 +1,483 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Light Within - Shadow-based survival game developed for McGameJam 2025. Features 3D world with 2D gameplay and dynamic shadow casting mechanics.">
+    <meta name="keywords" content="game development, unity, shadow physics, 3D/2D hybrid, game jam, survival game">
+    <meta name="author" content="Mahan Poorhamidian">
+    <meta property="og:title" content="Light Within - Shadow Survival Game">
+    <meta property="og:description" content="An innovative shadow-based survival experience with 3D world and 2D gameplay mechanics">
+    <meta property="og:type" content="website">
 
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="style.css" as="style">
 
-<html>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <head>
+    <!-- Custom CSS -->
+    <link href="Flow.css" rel="stylesheet">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-        <script src="script.js"></script>
-        <title>Project</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="sss/sss.min.js"></script>
-        <link rel="stylesheet" href="sss/sss.css" type="text/css" media="all">
-        <script>jQuery(function($) {$('.slider').sss();});</script>
+    <title>Light Within - Shadow Survival Game | Mahan Poorhamidian</title>
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
 
-        
-    </head>
-
-    <body>
-
-        <div style="background-color: #fabd76;" class="header">
-            <div><button><a href="index.html#about">About me</a></button></div>
-            <div><button><a href="index.html#project">Projects</a></button></div>
-            <div><button><a href="index.html#gamejam">Game Jams</a></button></div>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Light Within - Shadow Survival Game",
+        "description": "A shadow-based survival game featuring 3D world with 2D gameplay mechanics",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "dateCreated": "2025-01",
+        "genre": "Survival Platformer",
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Web Browser"
+    }
+    </script>
+</head>
+<body>
+    <!-- Epic Loading Screen -->
+    <div id="epic-loader" class="epic-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="loader-text">LIGHT WITHIN</div>
+            <div class="loader-subtitle">SHADOW SURVIVAL</div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
         </div>
+    </div>
 
-        <div class="contain">
-
-            <div id="main">
-                
-                <!--Pics and (name and table)-->
-                <div class="picname">
-
-
-                    <!--pics-->
-                    <div class="picname-slide">
-                        
-                        <div class="slider">
-
-                            <video controls>
-                                <source src="Resources/img/LightWithin/LightWithin_GamePlayPreview.mp4">
-                            </video>
-                            <img src="Resources/img/LightWithin//LW_Editor.png">
-                            <video controls>
-                                <source src="Resources/img/LightWithin/LightWithin_ShadowSystemPreview.mp4">
-                            </video>
-                            <img src="Resources/img/LightWithin//LW_Damage.png">
-                    
-
-                        </div>
-
+    <!-- Epic Navigation -->
+    <nav class="epic-navbar" id="epic-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i class="fas fa-cube"></i>
                     </div>
-
-                    <!--name and table-->
-                    <div class="picname-name">
-
-                        <h1>Light Within</h1>
-
-                        <table>
-
-                            <tr>
-                                <th>
-                                    Game Type
-                                </th>
-                                <td>
-                                    Platformer
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Player count
-                                </th>
-                                <td>
-                                    Single Player
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    My Role
-                                </th>
-                                <td>
-                                    Solo Developer
-                                </td>
-                            </tr>
-
-                            <tr>
-
-                                <th>
-                                    Game Engine
-                                </th>
-                                <td>
-                                    Unity
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <th>
-                                    Features
-                                </th>
-                                <td>
-                                    Shadow-Based Platforming System / 3D World with 2D Gameplay on the Z-X Plane
-                                </td>
-                            </tr>
-
-
-                        </table>
-
-                        <div class="project-button">
-                          
-                            <button><a href="https://mahanph.itch.io/lightwithin-20">Play Now <img src="Resources/img/play.svg"></a></button>
-                            <a href="https://github.com/MarsPH/LightWithin" target="_blank" class="github-btn">
-                                <svg viewBox="0 0 16 16" version="1.1" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.67 7.67 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.47 0 1.06-.01 1.91-.01 2.18 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                                </svg>
-                                View on GitHub
-                            </a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                
-                <!-- describtion-->
-                <div class="description-pro">
-
-
-                    <p>
-                        At first glance, the game may seem like a typical 2D game, but it actually
-                        takes place in a 3D world with constrained movement on the z-x plane instead
-                        of the traditional x-y plane. During the Game Jam, I developed a custom 2D
-                        physics system within a 3D environment, where the shadows of 3D objects
-                        function as platforms for the player.
-                    </p>
-                    <p>
-                        For the shadow projection, I implemented a dynamic shadow mapping system that
-                        generates a separate shadow mesh in real-time. This system calculates vertex
-                        positions using raycasting and plane intersections, projecting the shadow onto
-                        a designated surface based on directional or point light sources. The projected
-                        shadow uses a procedural mesh with an active MeshCollider, ensuring both visual
-                        accuracy and physical interaction. The system is optimized for real-time mesh
-                        transformations and collision detection, making it performant within the game.
-                        This project was a technical challenge, but it provided valuable experience in
-                        procedural geometry, physics integration, and real-time rendering techniques
-                        during the Game Jam.
-                    </p>
-                    
-                </div>
-
+                    <span class="brand-text">MAHAN</span>
+                </a>
             </div>
 
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#hero" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#game-jams" class="nav-link">Game Jams</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Epic Hero Section -->
+    <section class="project-hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-gradient"></div>
         </div>
 
+        <div class="hero-content">
+            <div class="container-fluid">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="hero-badge">
+                                <span class="badge-text">MCGAMEJAM 2025</span>
+                            </div>
 
-    </body>
+                            <h1 class="hero-title">
+                                <span class="title-line">LIGHT</span>
+                                <span class="title-line highlight">WITHIN</span>
+                                <span class="title-line">SHADOW SURVIVAL</span>
+                            </h1>
 
+                            <p class="hero-description">
+                                An innovative shadow-based survival experience developed in 48 hours.
+                                Control a shadow entity that must avoid light sources while navigating
+                                a 3D world with 2D gameplay mechanics on the Z-X plane.
+                            </p>
+
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="48">0</div>
+                                    <div class="stat-label">Hours</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="1">0</div>
+                                    <div class="stat-label">Developer</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="3">0</div>
+                                    <div class="stat-label">Dimensions</div>
+                                </div>
+                            </div>
+
+                            <div class="hero-actions">
+                                <a href="#gameplay" class="btn-epic primary">
+                                    <i class="fas fa-play"></i>
+                                    <span>Enter the Shadows</span>
+                                </a>
+                                <a href="https://mahanph.itch.io/lightwithin-20" class="btn-epic secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Play on Itch.io</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                            <div class="game-preview">
+                                <div class="preview-frame">
+                                    <video autoplay muted loop class="preview-video">
+                                        <source src="Resources/img/LightWithin/LightWithin_GamePlayPreview.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="preview-overlay">
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floating-elements">
+                                    <div class="floating-element" style="--delay: 0s"><i class="fas fa-moon"></i></div>
+                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-sun"></i></div>
+                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-shapes"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview Section -->
+    <section class="project-section" id="gameplay">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">GAME OVERVIEW</div>
+                <h2 class="section-title">Shadow Physics Innovation</h2>
+                <p class="section-subtitle">3D world with 2D gameplay mechanics</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="project-content" data-aos="fade-right">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <h3>3D/2D Hybrid System</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-text">
+                                    At first glance, the game appears to be a typical 2D experience, but it actually
+                                    takes place in a 3D world with constrained movement on the Z-X plane instead
+                                    of the traditional X-Y plane. This unique approach creates fascinating spatial
+                                    challenges and visual depth.
+                                </p>
+                                <p class="project-text">
+                                    I developed a custom 2D physics system within the 3D environment where the shadows
+                                    of 3D objects function as platforms for the player. This creates a unique
+                                    gameplay mechanic where light and shadow become tangible elements of the world.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="project-visual" data-aos="fade-left">
+                        <div class="media-gallery">
+                            <div class="gallery-item main">
+                                <img src="Resources/img/LightWithin/LW_Editor.png" alt="Light Within editor view showing 3D/2D hybrid system" class="gallery-image">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="Resources/img/LightWithin/LW_Damage.png" alt="Light Within damage system demonstration" class="gallery-image">
+                            </div>
+                            <div class="gallery-item">
+                                <video autoplay muted loop class="gallery-video">
+                                    <source src="Resources/img/LightWithin/LightWithin_ShadowSystemPreview.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">TECHNICAL BREAKDOWN</div>
+                <h2 class="section-title">Shadow & Physics Systems</h2>
+                <p class="section-subtitle">Advanced Unity implementation details</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Shadow Mapping</h3>
+                    <p>Dynamic shadow mapping system that generates real-time shadow meshes for platforming</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D/2D Hybrid</h3>
+                    <p>Custom physics system operating in 3D space with 2D gameplay constraints</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Light Physics</h3>
+                    <p>Directional and point light sources affecting shadow generation and gameplay</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                    <h3>Procedural Meshes</h3>
+                    <p>Real-time mesh generation for shadow platforms with collision detection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="project-details" data-aos="fade-up">
+                        <div class="details-card">
+                            <h2>Project Information</h2>
+
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Development Time</div>
+                                    <div class="detail-value">48 Hours</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Team Size</div>
+                                    <div class="detail-value">Solo Developer</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Game Engine</div>
+                                    <div class="detail-value">Unity 2022.3+</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Primary Language</div>
+                                    <div class="detail-value">C#</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Physics System</div>
+                                    <div class="detail-value">Custom 3D/2D Hybrid</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Platform</div>
+                                    <div class="detail-value">Web Browser</div>
+                                </div>
+                            </div>
+
+                            <div class="project-features">
+                                <h3>Key Features</h3>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Dynamic Shadow Mapping System</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>3D World with 2D Gameplay Mechanics</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Real-time Procedural Mesh Generation</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Advanced Light Physics Integration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Custom Collision Detection System</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Performance Optimized Shadow Rendering</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Story Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">DEVELOPMENT STORY</div>
+                <h2 class="section-title">48-Hour Innovation</h2>
+                <p class="section-subtitle">From concept to shadow physics in two days</p>
+            </div>
+
+            <div class="story-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Hour 1-6</div>
+                        <h3 class="timeline-title">Concept & Research</h3>
+                        <p class="timeline-description">
+                            Explored shadow-based gameplay mechanics and 3D/2D hybrid concepts.
+                            Researched shadow mapping techniques and Unity's rendering pipeline.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Hour 7-24</div>
+                        <h3 class="timeline-title">Shadow System Development</h3>
+                        <p class="timeline-description">
+                            Implemented dynamic shadow mapping with raycasting and plane intersections.
+                            Created procedural mesh generation for shadow platforms with collision.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Hour 25-40</div>
+                        <h3 class="timeline-title">Gameplay Integration</h3>
+                        <p class="timeline-description">
+                            Integrated shadow platforms into gameplay mechanics. Added light sources,
+                            player controls, and survival elements. Balanced difficulty and physics.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">Hour 41-48</div>
+                        <h3 class="timeline-title">Polish & Optimization</h3>
+                        <p class="timeline-description">
+                            Optimized shadow rendering performance, fine-tuned physics parameters,
+                            and added visual effects. Conducted extensive testing and bug fixes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Experience Light Within</h2>
+                <p>Ready to master the shadows? Play the game and experience the unique 3D/2D hybrid mechanics.</p>
+
+                <div class="cta-buttons">
+                    <a href="https://mahanph.itch.io/lightwithin-20" class="btn-epic primary" target="_blank">
+                        <i class="fas fa-play"></i>
+                        <span>Play Now</span>
+                    </a>
+                    <a href="https://github.com/MarsPH/LightWithin" class="btn-epic secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View Source</span>
+                    </a>
+                    <a href="index.html" class="btn-epic outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epic Footer -->
+    <footer class="epic-footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-moon"></i>
+                        <span>LIGHT WITHIN - SHADOW SURVIVAL</span>
+                    </div>
+                    <p class="footer-tagline">McGameJam 2025 Project</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Project</h4>
+                        <a href="#gameplay">Gameplay</a>
+                        <a href="https://mahanph.itch.io/lightwithin-20" target="_blank">Play Game</a>
+                        <a href="https://github.com/MarsPH/LightWithin" target="_blank">Source Code</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Developer</h4>
+                        <a href="index.html">Portfolio</a>
+                        <a href="mailto:m.poorhamidian@gmail.com">Contact</a>
+                        <a href="https://mahanph.itch.io/" target="_blank">More Games</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Mahan Poorhamidian. McGameJam 2025 Project.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Epic Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
