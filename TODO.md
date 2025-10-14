@@ -1,17 +1,25 @@
-# Project Standardization TODO
+# Project Pages Layout Fix TODO
 
-## Phase 1: Standardize Preview Images
-- [x] Update project.css to make game previews bigger and more prominent
-- [x] Remove conflicting overrides from Flow.css
-- [x] Remove conflicting overrides from other project CSS files
-- [ ] Ensure consistent aspect ratios and sizing across all projects
+## Information Gathered
+- index.html has clean hero with padding, 50/50 split but responsive, sections use containers with rows.
+- Project pages use min-vh-100 for hero (too tall), small video (max-width 600px), sections with 50/50 splits feel cramped on PC.
+- StandardProjectTemplate.html is basic, actual pages are detailed but need layout improvements.
 
-## Phase 2: Test and Verify
-- [ ] Test all project pages for consistent preview sizing
-- [ ] Verify responsiveness on different screen sizes
-- [ ] Check that previews are properly centered and visible
+## Plan
+- Update project.css: Remove min-vh-100 from hero, adjust padding; increase video size to full width in column; adjust column proportions to 7/5 for better balance.
+- Update StandardProjectTemplate.html: Apply new layout structure.
+- Update all project HTML files (LightWthin.html, RocketInterceptor.html, MonsterHunter.html, Fugame.html, Flow.html): Sync with template, ensure consistent structure.
 
-## Phase 3: Additional Standardization
-- [ ] Review and standardize hero section layouts
-- [ ] Ensure consistent spacing and typography
-- [ ] Verify all project pages follow the same design patterns
+## Dependent Files to be edited
+- project.css
+- StandardProjectTemplate.html
+- LightWthin.html
+- RocketInterceptor.html
+- MonsterHunter.html
+- Fugame.html
+- Flow.html
+
+## Followup steps
+- Test layouts on PC for cleanliness and professionalism.
+- Ensure responsive design works on mobile.
+- Verify Bootstrap integration is proper.
