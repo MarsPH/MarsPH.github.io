@@ -1220,8 +1220,8 @@ body {
   }
 
   .hero-avatar {
-    width: 300px;
-    height: 300px;
+    width: clamp(200px, 50vw, 300px);
+    height: clamp(200px, 50vw, 300px);
   }
 
   .projects-grid {
@@ -1260,6 +1260,21 @@ body {
   .btn-epic {
     width: 100%;
     justify-content: center;
+  }
+
+  .hero-avatar {
+    width: clamp(150px, 60vw, 250px);
+    height: clamp(150px, 60vw, 250px);
+  }
+
+  .epic-hero {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .hero-visual,
+  .hero-text {
+    width: 100%;
   }
 
   .about-card,
