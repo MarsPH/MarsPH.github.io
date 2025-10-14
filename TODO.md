@@ -11,13 +11,13 @@
 - Update all project HTML files (LightWthin.html, RocketInterceptor.html, MonsterHunter.html, Fugame.html, Flow.html): Sync with template, ensure consistent structure.
 
 ## Dependent Files to be edited
-- project.css
-- StandardProjectTemplate.html
-- LightWthin.html
-- RocketInterceptor.html
-- MonsterHunter.html
-- Fugame.html
-- Flow.html
+- project.css ✅
+- StandardProjectTemplate.html ✅
+- LightWthin.html ✅
+- RocketInterceptor.html ✅
+- MonsterHunter.html ✅
+- Fugame.html ✅
+- Flow.html ✅
 
 ## Followup steps
 - Test layouts on PC for cleanliness and professionalism.
