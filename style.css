@@ -1368,6 +1368,37 @@ body {
     height: auto;
     min-height: 500px;
   }
+
+  /* Mobile: hide project details by default; reveal on tap (hover/focus) */
+  .project-card-epic .project-content {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    transform: translateY(100%);
+    transition: var(--transition-epic);
+    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    padding: 1.5rem;
+  }
+  .project-card-epic .project-overlay {
+    opacity: 0;
+    transition: var(--transition-epic);
+  }
+
+  /* On tap (mobile hover/focus), expand card and show full text */
+  .project-card-epic:hover,
+  .project-card-epic:focus-within {
+    height: auto;
+    min-height: 400px;
+  }
+  .project-card-epic:hover .project-content,
+  .project-card-epic:focus-within .project-content {
+    position: relative;
+    transform: none;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .project-card-epic:hover .project-overlay,
+  .project-card-epic:focus-within .project-overlay {
+    display: none;
+  }
 }
 
 /* Epic Accessibility */
