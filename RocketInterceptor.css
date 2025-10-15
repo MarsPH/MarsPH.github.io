@@ -20,4 +20,26 @@
   filter: blur(1.5px);
 }
 
+/* Prevent hero title overflow specifically for Rocket Interceptor */
+#rocketinterceptor-hero .hero-title {
+  word-wrap: break-word;       /* legacy alias */
+  overflow-wrap: anywhere;     /* allow breaking anywhere to avoid overflow */
+  hyphens: auto;               /* hyphenate long words where possible */
+}
+
+#rocketinterceptor-hero .hero-title .title-line {
+  white-space: normal;         /* allow wrapping (override Flow.css nowrap) */
+  word-break: break-word;      /* break long unbroken strings */
+  overflow-wrap: anywhere;     /* ensure wrap even without spaces */
+  max-width: 100%;
+}
+
+/* Responsive safety: gently reduce title size on narrower viewports */
+@media (max-width: 480px) {
+  #rocketinterceptor-hero .hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.3rem);
+    line-height: 1.12;
+  }
+}
+
 /* ...rest of Flow.css content unchanged... */
