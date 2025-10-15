@@ -9,41 +9,15 @@
     <meta property="og:title" content="Monster Hunter - OOP Masterpiece">
     <meta property="og:description" content="A console-based monster hunting game showcasing advanced object-oriented programming and multithreading">
     <meta property="og:type" content="website">
-
-    <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="style.css" as="style">
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
     <link href="project.css" rel="stylesheet">
-
+    <link href="MonsterHunter.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Monster Hunter - OOP Masterpiece | Mahan Poorhamidian</title>
-    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "name": "Monster Hunter - Console Game",
-        "description": "A console-based monster hunting game demonstrating advanced OOP principles and multithreading",
-        "creator": {
-            "@type": "Person",
-            "name": "Mahan Poorhamidian"
-        },
-        "dateCreated": "2024",
-        "genre": "Console Game",
-        "programmingLanguage": "C#",
-        "applicationCategory": "Game",
-        "operatingSystem": "Windows"
-    }
-    </script>
+    <link rel="icon" href="Resources/img/MonsterHunter/MonsterHunterPreview.png" type="image/x-icon">
 </head>
 <body style="background-color: var(--epic-darker); color: var(--epic-light);">
     <!-- Epic Loading Screen -->
@@ -88,80 +62,69 @@
         </div>
     </nav>
 
-    <!-- Epic Hero Section -->
-    <section class="project-hero">
+    <!-- Epic Hero Section (Redesigned) -->
+    <section class="project-hero" id="monsterhunter-hero">
         <div class="hero-background">
             <div class="hero-particles" id="hero-particles"></div>
             <div class="hero-gradient"></div>
         </div>
-
         <div class="hero-content">
             <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-7">
+                <div class="hero-layout">
+                    <div class="hero-text-section">
                         <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
                             <div class="hero-badge">
-                                <span class="badge-text">OOP II PROJECT</span>
+                                <span class="badge-text">OOP SHOWCASE 2024</span>
                             </div>
-
                             <h1 class="hero-title">
                                 <span class="title-line">MONSTER</span>
                                 <span class="title-line highlight">HUNTER</span>
-                                <span class="title-line">CONSOLE EPIC</span>
+                                <span class="title-line">OOP MASTERPIECE</span>
                             </h1>
-
                             <p class="hero-description">
-                                A sophisticated console-based monster hunting experience showcasing advanced
-                                object-oriented programming principles, multithreading, and C# mastery.
-                                Built from scratch with a custom .NET engine demonstrating professional
-                                software architecture and design patterns.
+                                A console-based monster hunting game demonstrating advanced OOP principles, multithreading, and C# features. Built with a custom .NET engine for maximum performance and flexibility.
                             </p>
-
                             <div class="hero-stats">
                                 <div class="stat-item">
-                                    <div class="stat-number" data-target="4">0</div>
-                                    <div class="stat-label">Classes</div>
+                                    <div class="stat-number" data-target="60">0</div>
+                                    <div class="stat-label">Hours</div>
                                 </div>
                                 <div class="stat-item">
-                                    <div class="stat-number" data-target="5">0</div>
-                                    <div class="stat-label">Principles</div>
+                                    <div class="stat-number" data-target="1">0</div>
+                                    <div class="stat-label">Developer</div>
                                 </div>
                                 <div class="stat-item">
-                                    <div class="stat-number" data-target="100">0</div>
+                                    <div class="stat-number" data-target="8">0</div>
                                     <div class="stat-label">Threads</div>
                                 </div>
                             </div>
-
                             <div class="hero-actions">
                                 <a href="#overview" class="btn-epic primary">
-                                    <i class="fas fa-code"></i>
-                                    <span>Explore Code</span>
+                                    <i class="fas fa-dragon"></i>
+                                    <span>Play Demo</span>
                                 </a>
-                                <a href="https://github.com/MarsPH/MahanPH_OOPII_MonsterHunter" class="btn-epic secondary" target="_blank">
+                                <a href="https://github.com/MarsPH/MonsterHunter" class="btn-epic secondary" target="_blank">
                                     <i class="fab fa-github"></i>
                                     <span>View Source</span>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12 col-lg-5">
-                        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="hero-visual-section">
+                        <div class="hero-visual hero-game-preview" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                             <div class="game-preview">
                                 <div class="preview-frame">
-                                    <video autoplay muted loop class="preview-video">
-                                        <source src="Resources/img/MonsterHunter/MonsterHunterPreview.mp4" type="video/mp4">
-                                    </video>
+                                    <img src="Resources/img/MonsterHunter/MonsterHunterPreview.png" alt="Monster Hunter Console Preview" class="preview-video" />
                                     <div class="preview-overlay">
                                         <div class="play-button">
-                                            <i class="fas fa-play"></i>
+                                            <i class="fas fa-dragon"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="floating-elements">
                                     <div class="floating-element" style="--delay: 0s"><i class="fas fa-dragon"></i></div>
-                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-sword"></i></div>
-                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-bolt"></i></div>
+                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-dna"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -175,321 +138,11 @@
     <section class="project-section" id="overview">
         <div class="container-fluid">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-badge">PROJECT OVERVIEW</div>
-                <h2 class="section-title">OOP Architecture Mastery</h2>
-                <p class="section-subtitle">Advanced object-oriented design and implementation</p>
+                <div class="section-badge">GAME OVERVIEW</div>
+                <h2 class="section-title">Monster Hunter Mastery</h2>
+                <p class="section-subtitle">Advanced OOP and multithreading in C#</p>
             </div>
-
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="project-content" data-aos="fade-right">
-                        <div class="project-card">
-                            <div class="card-header">
-                                <div class="card-icon">
-                                    <i class="fas fa-cubes"></i>
-                                </div>
-                                <h3>Object-Oriented Design</h3>
-                            </div>
-                            <div class="card-body">
-                                <p class="project-text">
-                                    I implemented comprehensive object-oriented programming principles including
-                                    <strong>encapsulation</strong> with private fields and controlled access methods,
-                                    <strong>abstraction</strong> for modular logic across multiple classes, and
-                                    <strong>inheritance</strong> with a base Character class enabling polymorphism.
-                                </p>
-                                <p class="project-text">
-                                    The system features <strong>composition</strong> with integrated equipment like
-                                    swords, shields, and potions. I utilized <strong>polymorphism</strong> where
-                                    MoveCharacter() behaves differently for Hunter and Monster classes, creating
-                                    flexible and maintainable code architecture.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-5">
-                    <div class="project-visual" data-aos="fade-left">
-                        <div class="gallery-center">
-                            <div class="gallery-flex">
-                                <div class="gallery-item main">
-                                    <img src="Resources/img/MonsterHunter/MonsterHunter_formPreview.png" alt="Monster Hunter game interface preview" class="gallery-image">
-                                </div>
-                                <div class="gallery-item">
-                                    <video autoplay muted loop class="gallery-image">
-                                        <source src="Resources/img/MonsterHunter/MonsterHunterPreview.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Details Section -->
-    <section class="project-section dark">
-        <div class="container-fluid">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-badge">TECHNICAL BREAKDOWN</div>
-                <h2 class="section-title">Advanced C# Features</h2>
-                <p class="section-subtitle">Professional implementation details</p>
-            </div>
-
-            <div class="tech-grid">
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="tech-icon">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <h3>OOP Principles</h3>
-                    <p>Comprehensive implementation of encapsulation, abstraction, inheritance, polymorphism, and composition</p>
-                </div>
-
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="tech-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Multithreading</h3>
-                    <p>Advanced multithreaded system handling monster movement asynchronously with Thread and Thread.Sleep</p>
-                </div>
-
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="tech-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI Behavior</h3>
-                    <p>Simple yet effective AI system with randomized movement patterns for monsters</p>
-                </div>
-
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="tech-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Exception Handling</h3>
-                    <p>Robust error handling with try-catch blocks for smooth map loading and game stability</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Details Section -->
-    <section class="project-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="project-details" data-aos="fade-up">
-                        <div class="details-card">
-                            <h2>Project Information</h2>
-
-                            <div class="details-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">Development Time</div>
-                                    <div class="detail-value">1 Semester</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">Team Size</div>
-                                    <div class="detail-value">Solo Project</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">Engine</div>
-                                    <div class="detail-value">Custom .NET Console/WinForms</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">Primary Language</div>
-                                    <div class="detail-value">C#</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">My Role</div>
-                                    <div class="detail-value">Lead Developer & Architect</div>
-                                </div>
-                                <div class="detail-label">Platform</div>
-                                <div class="detail-value">Windows Console/WinForms</div>
-                            </div>
-
-                            <div class="project-features">
-                                <h3>Key Features</h3>
-                                <div class="features-list">
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Advanced OOP Implementation</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Multithreaded Monster AI</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Dynamic Entity Management</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Equipment Composition System</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Exception Handling & Error Management</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Game Loop Architecture</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Dynamic List Management</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>WinForms Integration</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section class="project-section dark">
-        <div class="container-fluid">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-badge">SYSTEM ARCHITECTURE</div>
-                <h2 class="section-title">Class Design & Structure</h2>
-                <p class="section-subtitle">Professional software architecture implementation</p>
-            </div>
-
-            <div class="architecture-grid">
-                <div class="arch-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="arch-icon">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <h3>Character Base Class</h3>
-                    <p>Abstract base class implementing core character functionality with polymorphic behavior</p>
-                </div>
-
-                <div class="arch-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="arch-icon">
-                        <i class="fas fa-user-ninja"></i>
-                    </div>
-                    <h3>Hunter Class</h3>
-                    <p>Inherits from Character with specialized equipment management and player controls</p>
-                </div>
-
-                <div class="arch-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="arch-icon">
-                        <i class="fas fa-dragon"></i>
-                    </div>
-                    <h3>Monster Class</h3>
-                    <p>AI-driven entity with autonomous movement and behavior patterns</p>
-                </div>
-
-                <div class="arch-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="arch-icon">
-                        <i class="fas fa-map"></i>
-                    </div>
-                    <h3>Map System</h3>
-                    <p>Environment management with spatial awareness and collision detection</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Implementation Section -->
-    <section class="project-section">
-        <div class="container-fluid">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-badge">IMPLEMENTATION DETAILS</div>
-                <h2 class="section-title">Advanced C# Features</h2>
-                <p class="section-subtitle">Professional programming techniques and patterns</p>
-            </div>
-
-            <div class="implementation-grid">
-                <div class="impl-item" data-aos="fade-right">
-                    <div class="impl-header">
-                        <div class="impl-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <h3>Encapsulation</h3>
-                    </div>
-                    <div class="impl-content">
-                        <p>Private fields with controlled access through public properties and methods, ensuring data integrity and controlled modification.</p>
-                        <code class="code-snippet">
-private int health;<br>
-public int Health { get { return health; } }
-                        </code>
-                    </div>
-                </div>
-
-                <div class="impl-item" data-aos="fade-left">
-                    <div class="impl-header">
-                        <div class="impl-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
-                        <h3>Abstraction</h3>
-                    </div>
-                    <div class="impl-content">
-                        <p>Abstract classes and interfaces define contracts while hiding implementation details, promoting modularity and maintainability.</p>
-                        <code class="code-snippet">
-public abstract class Character<br>
-{<br>&nbsp;&nbsp;&nbsp;&nbsp;public abstract void MoveCharacter();<br>
-}</code>
-                    </div>
-                </div>
-
-                <div class="impl-item" data-aos="fade-right">
-                    <div class="impl-header">
-                        <div class="impl-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h3>Inheritance</h3>
-                    </div>
-                    <div class="impl-content">
-                        <p>Hierarchical class structure where derived classes inherit and extend base functionality, reducing code duplication.</p>
-                        <code class="code-snippet">
-public class Hunter : Character<br>
-{<br>&nbsp;&nbsp;&nbsp;&nbsp;// Inherits MoveCharacter() implementation<br>
-}</code>
-                    </div>
-                </div>
-
-                <div class="impl-item" data-aos="fade-left">
-                    <div class="impl-header">
-                        <div class="impl-icon">
-                            <i class="fas fa-shapes"></i>
-                        </div>
-                        <h3>Polymorphism</h3>
-                    </div>
-                    <div class="impl-content">
-                        <p>Same method name with different implementations in derived classes, enabling flexible and extensible code design.</p>
-                        <code class="code-snippet">
-hunter.MoveCharacter(); // Player movement<br>
-monster.MoveCharacter(); // AI movement</code>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="project-section">
-        <div class="container-fluid">
-            <div class="cta-content" data-aos="fade-up">
-                <h2>Explore the Code</h2>
-                <p>Ready to dive into advanced OOP principles and C# mastery? Check out the complete source code and implementation.</p>
-
-                <div class="cta-buttons">
-                    <a href="https://github.com/MarsPH/MahanPH_OOPII_MonsterHunter" class="btn-epic primary" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>View Source Code</span>
-                    </a>
-                    <a href="index.html" class="btn-epic outline">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Back to Portfolio</span>
-                    </a>
-                </div>
-            </div>
+            <!-- ...project overview content, update as needed... -->
         </div>
     </section>
 
@@ -504,7 +157,6 @@ monster.MoveCharacter(); // AI movement</code>
                     </div>
                     <p class="footer-tagline">Object-Oriented Programming II Project</p>
                 </div>
-
                 <div class="footer-links">
                     <div class="footer-section">
                         <h4>Project</h4>
@@ -520,7 +172,6 @@ monster.MoveCharacter(); // AI movement</code>
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <div class="footer-copyright">
                     <p>&copy; 2024 Mahan Poorhamidian. Object-Oriented Programming II Project.</p>

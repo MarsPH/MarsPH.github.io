@@ -13,6 +13,9 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="style.css" as="style">
+
+    <!-- Core Stylesheets -->
+    <link href="project.css" rel="stylesheet">
     <link href="Flow.css" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
@@ -87,34 +90,28 @@
         </div>
     </nav>
 
-    <!-- Epic Hero Section -->
-    <section class="project-hero">
+    <!-- Epic Hero Section (Redesigned) -->
+    <section class="project-hero" id="flow-hero">
         <div class="hero-background">
             <div class="hero-particles" id="hero-particles"></div>
             <div class="hero-gradient"></div>
         </div>
-
         <div class="hero-content">
             <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-7">
+                <div class="hero-layout">
+                    <div class="hero-text-section">
                         <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
                             <div class="hero-badge">
                                 <span class="badge-text">GLOBAL GAME JAM 2025</span>
                             </div>
-
                             <h1 class="hero-title">
                                 <span class="title-line">FLOW</span>
                                 <span class="title-line highlight">BUBBLE PHYSICS</span>
                                 <span class="title-line">MASTERPIECE</span>
                             </h1>
-
                             <p class="hero-description">
-                                A mesmerizing 2D physics experience where players control a bubble with soft mesh physics.
-                                Navigate through obstacles by shrinking and enlarging while avoiding sharp hazards.
-                                Features dynamic soft body physics and stress-based destruction system.
+                                A mesmerizing 2D physics experience where players control a bubble with soft mesh physics. Navigate through obstacles by shrinking and enlarging while avoiding sharp hazards. Features dynamic soft body physics and stress-based destruction system.
                             </p>
-
                             <div class="hero-stats">
                                 <div class="stat-item">
                                     <div class="stat-number" data-target="48">0</div>
@@ -129,7 +126,6 @@
                                     <div class="stat-label">Physics</div>
                                 </div>
                             </div>
-
                             <div class="hero-actions">
                                 <a href="#overview" class="btn-epic primary">
                                     <i class="fas fa-play"></i>
@@ -142,9 +138,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12 col-lg-5">
-                        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="hero-visual-section">
+                        <div class="hero-visual hero-game-preview" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                             <div class="game-preview">
                                 <div class="preview-frame">
                                     <video autoplay muted loop class="preview-video">
