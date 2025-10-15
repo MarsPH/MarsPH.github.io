@@ -69,22 +69,40 @@ class EpicPortfolio {
       }
     });
 
-    // Smooth scrolling for nav links
+    // Smooth scrolling and cross-page navigation for nav links
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+        const href = link.getAttribute('href') || '';
 
-        if (targetElement) {
-          const offsetTop = targetElement.offsetTop - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+        // Same-page anchor (e.g., '#about')
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.slice(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            const offsetTop = targetElement.offsetTop - 80;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+
+          // Close mobile menu
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          return;
         }
 
-        // Close mobile menu
+        // Cross-page anchor (e.g., 'index.html#projects') -> allow default navigation
+        if (href.includes('#')) {
+          // Close mobile menu for better UX before navigating
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          return; // do not preventDefault
+        }
+
+        // Any other link: just close menu and allow default
         navMenu.classList.remove('active');
         navToggle.classList.remove('active');
       });
