@@ -14,6 +14,7 @@ class EpicPortfolio {
     this.setupNavigation();
     this.setupScrollEffects();
     this.setupAnimations();
+    this.setupLightbox();
     this.setupCounters();
     this.setupParticles();
     this.setupIntersectionObserver();
@@ -164,6 +165,85 @@ class EpicPortfolio {
     techItems.forEach((item, index) => {
       item.style.animationDelay = `${index * 0.1}s`;
     });
+  }
+
+  // Lightbox for gallery images (applies to all project pages)
+  setupLightbox() {
+    try {
+      // Create overlay container
+      const overlay = document.createElement('div');
+      overlay.className = 'epic-lightbox-overlay';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.tabIndex = -1;
+
+      overlay.innerHTML = `
+        <div class="epic-lightbox-content">
+          <button class="epic-lightbox-close" aria-label="Close">&times;</button>
+          <img class="epic-lightbox-image" alt="Focused image" />
+          <div class="epic-lightbox-caption"></div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      // Inject minimal CSS for the lightbox
+      const css = `
+        .epic-lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 9998; padding: 2rem; }
+        .epic-lightbox-overlay.active { display: flex; animation: lbFadeIn 0.2s ease; }
+        .epic-lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+        .epic-lightbox-image { max-width: 90vw; max-height: 80vh; width: auto; height: auto; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(0,212,255,0.2); }
+        .epic-lightbox-caption { color: rgba(255,255,255,0.85); font-size: 0.95rem; text-align: center; max-width: 90vw; }
+        .epic-lightbox-close { position: absolute; top: -12px; right: -12px; width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, var(--epic-primary), var(--epic-purple)); color: #000; font-size: 1.2rem; box-shadow: 0 0 20px rgba(0,212,255,0.6); display: flex; align-items: center; justify-content: center; }
+        .epic-lightbox-close:hover { filter: brightness(0.95); }
+        @keyframes lbFadeIn { from { opacity: 0 } to { opacity: 1 } }
+        /* Indicate clickability for overview images */
+        #overview img.gallery-image, .project-visual img.gallery-image { cursor: zoom-in; }
+      `;
+      const style = document.createElement('style');
+      style.textContent = css;
+      document.head.appendChild(style);
+
+      const imgEl = overlay.querySelector('.epic-lightbox-image');
+      const captionEl = overlay.querySelector('.epic-lightbox-caption');
+      const closeBtn = overlay.querySelector('.epic-lightbox-close');
+      const openOverlay = (src, alt) => {
+        imgEl.src = src;
+        imgEl.alt = alt || '';
+        captionEl.textContent = alt || '';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        overlay.focus();
+      };
+      const closeOverlay = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      // Close interactions
+      closeBtn.addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeOverlay(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('active')) closeOverlay(); });
+
+      // Bind click handlers to overview/gallery images across pages
+      const bindLightbox = () => {
+        const candidates = document.querySelectorAll('#overview img.gallery-image, .project-visual img.gallery-image');
+        candidates.forEach(img => {
+          if (img.dataset.lbBound) return; // prevent duplicate binding
+          img.dataset.lbBound = '1';
+          img.addEventListener('click', () => openOverlay(img.src, img.alt));
+        });
+      };
+
+      bindLightbox();
+
+      // Rebind on DOM mutations if needed (e.g., dynamic content)
+      const mo = new MutationObserver(() => bindLightbox());
+      mo.observe(document.body, { childList: true, subtree: true });
+
+    } catch (err) {
+      console.error('Lightbox setup error:', err);
+    }
   }
 
   // Counter Animation
