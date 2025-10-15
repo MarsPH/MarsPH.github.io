@@ -3,21 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rocket Interceptor - 3D arcade shooter prototype featuring physics-driven enemy behavior and advanced mathematical implementations in Unity.">
-    <meta name="keywords" content="Unity, 3D game, physics simulation, arcade shooter, mathematical concepts, prototype">
+    <meta name="description" content="Rocket Interceptor - Fast-paced arcade prototype featuring precision flight, lock-on targeting, and obstacle-dense levels.">
+    <meta name="keywords" content="game development, unity, arcade, rocket, shooter, prototype">
     <meta name="author" content="Mahan Poorhamidian">
-    <meta property="og:title" content="Rocket Interceptor - Physics Prototype">
-    <meta property="og:description" content="A 3D arcade shooter prototype showcasing advanced physics simulation and mathematical concepts">
+    <meta property="og:title" content="Rocket Interceptor - Arcade Prototype">
+    <meta property="og:description" content="High-speed precision flight and interception mechanics in an arcade-style prototype.">
     <meta property="og:type" content="website">
+
+    <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="style.css" as="style">
+
+    <!-- Core Stylesheets -->
     <link href="project.css" rel="stylesheet">
+    <!-- Reuse Flow's refined hero/layout styles -->
+    <link href="Flow.css" rel="stylesheet">
+    <!-- Rocket-specific overrides (hero background, accents) -->
     <link href="RocketInterceptor.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <title>Rocket Interceptor - Physics Prototype | Mahan Poorhamidian</title>
-    <link rel="icon" href="Resources/img/RocketInterceptor/RocketInterceptorPreview.png" type="image/x-icon">
+
+    <title>Rocket Interceptor | Mahan Poorhamidian</title>
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Rocket Interceptor",
+        "description": "An arcade-style rocket interception prototype with precision flight and lock-on systems.",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "genre": "Arcade Shooter",
+        "applicationCategory": "Game",
+        "operatingSystem": "Cross-platform"
+    }
+    </script>
 </head>
 <body style="background-color: var(--epic-darker); color: var(--epic-light);">
     <!-- Epic Loading Screen -->
@@ -26,13 +55,14 @@
             <div class="loader-logo">
                 <i class="fas fa-rocket"></i>
             </div>
-            <div class="loader-text">ROCKET INTERCEPTOR</div>
-            <div class="loader-subtitle">PHYSICS PROTOTYPE</div>
+            <div class="loader-text">ROCKET</div>
+            <div class="loader-subtitle">INTERCEPTOR</div>
             <div class="loader-progress">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
         </div>
     </div>
+
     <!-- Epic Navigation -->
     <nav class="epic-navbar" id="epic-navbar">
         <div class="nav-container">
@@ -44,6 +74,7 @@
                     <span class="brand-text">MAHAN</span>
                 </a>
             </div>
+
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html#hero" class="nav-link">Home</a>
                 <a href="index.html#about" class="nav-link">About</a>
@@ -51,6 +82,7 @@
                 <a href="index.html#game-jams" class="nav-link">Game Jams</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </div>
+
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
                 <span></span>
@@ -58,7 +90,8 @@
             </div>
         </div>
     </nav>
-    <!-- Epic Hero Section (Redesigned) -->
+
+    <!-- Epic Hero Section (Copied from Flow, customized for Rocket) -->
     <section class="project-hero" id="rocketinterceptor-hero">
         <div class="hero-background">
             <div class="hero-particles" id="hero-particles"></div>
@@ -70,38 +103,38 @@
                     <div class="hero-text-section">
                         <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
                             <div class="hero-badge">
-                                <span class="badge-text">PHYSICS PROTOTYPE 2024</span>
+                                <span class="badge-text">ARCADE PROTOTYPE</span>
                             </div>
                             <h1 class="hero-title">
                                 <span class="title-line">ROCKET</span>
                                 <span class="title-line highlight">INTERCEPTOR</span>
-                                <span class="title-line">PHYSICS PROTOTYPE</span>
+                                <span class="title-line">HIGH-SPEED ACTION</span>
                             </h1>
                             <p class="hero-description">
-                                A 3D arcade shooter prototype featuring physics-driven enemy behavior, advanced mathematical implementations, and dynamic gameplay. Built in Unity for rapid prototyping and demonstration.
+                                A fast-paced arcade prototype focusing on precision flight, obstacle-dense navigation, and lock-on interception mechanics. Built with Unity, this prototype experiments with responsive controls and rapid feedback for an intense gameplay loop.
                             </p>
                             <div class="hero-stats">
                                 <div class="stat-item">
-                                    <div class="stat-number" data-target="36">0</div>
-                                    <div class="stat-label">Hours</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-number" data-target="1">0</div>
-                                    <div class="stat-label">Developer</div>
+                                    <div class="stat-number" data-target="300">0</div>
+                                    <div class="stat-label">Top Speed</div>
                                 </div>
                                 <div class="stat-item">
                                     <div class="stat-number" data-target="5">0</div>
-                                    <div class="stat-label">Systems</div>
+                                    <div class="stat-label">Targets</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="100">0</div>
+                                    <div class="stat-label">Precision</div>
                                 </div>
                             </div>
                             <div class="hero-actions">
                                 <a href="#overview" class="btn-epic primary">
-                                    <i class="fas fa-rocket"></i>
-                                    <span>Play Prototype</span>
+                                    <i class="fas fa-play"></i>
+                                    <span>See Overview</span>
                                 </a>
-                                <a href="https://github.com/MarsPH/RocketInterceptor" class="btn-epic secondary" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Source</span>
+                                <a href="index.html" class="btn-epic secondary">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <span>Back to Portfolio</span>
                                 </a>
                             </div>
                         </div>
@@ -111,18 +144,18 @@
                             <div class="game-preview">
                                 <div class="preview-frame">
                                     <video autoplay muted loop class="preview-video">
-                                        <source src="Resources/img/RocketInterceptor/RocketInterceptorPreview.mp4" type="video/mp4">
+                                        <source src="Resources/img/RocketInterceptor/RocketInterceptor_Preview_editor.mp4" type="video/mp4">
                                     </video>
                                     <div class="preview-overlay">
                                         <div class="play-button">
-                                            <i class="fas fa-rocket"></i>
+                                            <i class="fas fa-play"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="floating-elements">
                                     <div class="floating-element" style="--delay: 0s"><i class="fas fa-rocket"></i></div>
-                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-bolt"></i></div>
-                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-crosshairs"></i></div>
+                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-bullseye"></i></div>
+                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-arrows-to-dot"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -131,14 +164,16 @@
             </div>
         </div>
     </section>
+
     <!-- Project Overview Section -->
     <section class="project-section" id="overview">
         <div class="container-fluid">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-badge">GAME OVERVIEW</div>
-                <h2 class="section-title">Physics-Driven Arcade Prototype</h2>
-                <p class="section-subtitle">Advanced Unity physics and math</p>
+                <h2 class="section-title">High-Speed Interception</h2>
+                <p class="section-subtitle">Precision flight and lock-on targeting</p>
             </div>
+
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="project-content" data-aos="fade-right">
@@ -147,29 +182,30 @@
                                 <div class="card-icon">
                                     <i class="fas fa-rocket"></i>
                                 </div>
-                                <h3>Physics Simulation</h3>
+                                <h3>Core Gameplay</h3>
                             </div>
                             <div class="card-body">
                                 <p class="project-text">
-                                    Experience a physics-driven arcade shooter where rockets and enemies interact with advanced Rigidbody forces, dynamic flight paths, and mathematical targeting systems. Master interception and precision in a mechanics-first design.
+                                    Pilot an interceptor through tight spaces while tracking and engaging targets. The prototype emphasizes readable motion, responsive acceleration, and snap-turn adjustments to maintain control at speed.
                                 </p>
                                 <p class="project-text">
-                                    The prototype features multiple weapon systems, adaptive difficulty, and smooth trajectory interpolation—demonstrating advanced Unity and C# skills.
+                                    Systems explored include lock-on targeting, obstacle avoidance, and dynamic difficulty pacing. The aim is to create a satisfying loop with quick retries and high feedback density.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-5">
                     <div class="project-visual" data-aos="fade-left">
                         <div class="gallery-center">
                             <div class="gallery-flex">
                                 <div class="gallery-item main">
-                                    <img src="Resources/img/RocketInterceptor/RocketInterceptorPreview.png" alt="Rocket Interceptor Preview" class="gallery-image">
+                                    <img src="Resources/img/RocketInterceptor/RocketInteceptor1.png" alt="Rocket Interceptor gameplay" class="gallery-image">
                                 </div>
                                 <div class="gallery-item">
                                     <video autoplay muted loop class="gallery-image">
-                                        <source src="Resources/img/RocketInterceptor/RocketInterceptorPreview.mp4" type="video/mp4">
+                                        <source src="Resources/img/RocketInterceptor/RocketInterceptor_Preview_editor.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
@@ -179,46 +215,52 @@
             </div>
         </div>
     </section>
+
     <!-- Technical Details Section -->
     <section class="project-section dark">
         <div class="container-fluid">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-badge">TECHNICAL IMPLEMENTATION</div>
-                <h2 class="section-title">Physics & Systems</h2>
-                <p class="section-subtitle">Advanced Unity implementation details</p>
+                <h2 class="section-title">Systems & Mechanics</h2>
+                <p class="section-subtitle">Unity-based gameplay systems</p>
             </div>
+
             <div class="tech-grid">
                 <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="tech-icon">
-                        <i class="fas fa-project-diagram"></i>
+                        <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Physics Simulation</h3>
-                    <p>Advanced Rigidbody physics system with dynamic flight paths, acceleration, and steering behaviors</p>
+                    <h3>Lock-on Targeting</h3>
+                    <p>Target acquisition and retention with feedback cues for alignment and fire windows.</p>
                 </div>
+
                 <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="tech-icon">
-                        <i class="fas fa-crosshairs"></i>
+                        <i class="fas fa-route"></i>
                     </div>
-                    <h3>Targeting Systems</h3>
-                    <p>Multiple missile types using Raycasting, Transform.LookAt(), and Quaternion rotations for precision</p>
+                    <h3>Obstacle Navigation</h3>
+                    <p>Tight-space navigation with acceleration and turn-rate tuning for precise control.</p>
                 </div>
+
                 <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="tech-icon">
-                        <i class="fas fa-random"></i>
+                        <i class="fas fa-gauge-high"></i>
                     </div>
-                    <h3>Dynamic Movement</h3>
-                    <p>Vector3.Lerp() implementation for smooth trajectory adjustments and unpredictable enemy behavior</p>
+                    <h3>Difficulty Pacing</h3>
+                    <p>Scaling challenge via spawn timing, speed ramps, and reactive tuning.</p>
                 </div>
+
                 <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
                     <div class="tech-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-gamepad"></i>
                     </div>
-                    <h3>Adaptive Difficulty</h3>
-                    <p>Dynamic difficulty scaling system that adjusts challenge based on player performance</p>
+                    <h3>Responsive Controls</h3>
+                    <p>Input smoothing and clamped banking for a snappy, readable feel.</p>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Project Details Section -->
     <section class="project-section">
         <div class="container-fluid">
@@ -227,14 +269,11 @@
                     <div class="project-details" data-aos="fade-up">
                         <div class="details-card">
                             <h2>Project Specifications</h2>
+
                             <div class="details-grid">
                                 <div class="detail-item">
-                                    <div class="detail-label">Development Time</div>
-                                    <div class="detail-value">48 Hours</div>
-                                </div>
-                                <div class="detail-item">
                                     <div class="detail-label">Team Size</div>
-                                    <div class="detail-value">1</div>
+                                    <div class="detail-value">Solo</div>
                                 </div>
                                 <div class="detail-item">
                                     <div class="detail-label">Game Engine</div>
@@ -245,48 +284,37 @@
                                     <div class="detail-value">C#</div>
                                 </div>
                                 <div class="detail-item">
-                                    <div class="detail-label">My Role</div>
-                                    <div class="detail-value">Solo Developer</div>
+                                    <div class="detail-label">Project Type</div>
+                                    <div class="detail-value">Prototype</div>
                                 </div>
                                 <div class="detail-item">
                                     <div class="detail-label">Platform</div>
-                                    <div class="detail-value">WebGL (Itch.io)</div>
+                                    <div class="detail-value">PC/Web</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Perspective</div>
+                                    <div class="detail-value">Arcade/Action</div>
                                 </div>
                             </div>
+
                             <div class="project-features">
                                 <h3>Key Features</h3>
                                 <div class="features-list">
                                     <div class="feature-item">
                                         <i class="fas fa-check"></i>
-                                        <span>Physics-driven enemy behavior</span>
+                                        <span>Lock-on targeting and alignment feedback</span>
                                     </div>
                                     <div class="feature-item">
                                         <i class="fas fa-check"></i>
-                                        <span>Multiple weapon systems</span>
+                                        <span>Fast, responsive flight controls</span>
                                     </div>
                                     <div class="feature-item">
                                         <i class="fas fa-check"></i>
-                                        <span>Advanced mathematical implementation</span>
+                                        <span>Obstacle-dense level navigation</span>
                                     </div>
                                     <div class="feature-item">
                                         <i class="fas fa-check"></i>
-                                        <span>Dynamic flight path simulation</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Adaptive difficulty system</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Precision targeting mechanics</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Smooth trajectory interpolation</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-check"></i>
-                                        <span>Mechanics-first game design</span>
+                                        <span>Rapid retry loop for iteration</span>
                                     </div>
                                 </div>
                             </div>
@@ -296,20 +324,18 @@
             </div>
         </div>
     </section>
+
     <!-- Call to Action Section -->
     <section class="project-section">
         <div class="container-fluid">
             <div class="cta-content" data-aos="fade-up">
-                <h2>Experience Rocket Interceptor</h2>
-                <p>Ready to master interception and physics-driven gameplay? Play the prototype and explore the source code.</p>
+                <h2>Explore Rocket Interceptor</h2>
+                <p>Review the gameplay overview and media, or return to the portfolio.</p>
+
                 <div class="cta-buttons">
-                    <a href="https://mahanph.itch.io/rocketinterceptor" class="btn-epic primary" target="_blank">
-                        <i class="fas fa-play"></i>
-                        <span>Play Now</span>
-                    </a>
-                    <a href="https://github.com/MarsPH/RocketInterceptor" class="btn-epic secondary" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>View Source</span>
+                    <a href="#overview" class="btn-epic primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>View Gameplay</span>
                     </a>
                     <a href="index.html" class="btn-epic outline">
                         <i class="fas fa-arrow-left"></i>
@@ -319,6 +345,7 @@
             </div>
         </div>
     </section>
+
     <!-- Epic Footer -->
     <footer class="epic-footer">
         <div class="container-fluid">
@@ -326,32 +353,33 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <i class="fas fa-rocket"></i>
-                        <span>ROCKET INTERCEPTOR - PHYSICS PROTOTYPE</span>
+                        <span>ROCKET INTERCEPTOR</span>
                     </div>
-                    <p class="footer-tagline">Unity Learning Project - Physics & Mathematics</p>
+                    <p class="footer-tagline">Arcade Prototype</p>
                 </div>
+
                 <div class="footer-links">
                     <div class="footer-section">
                         <h4>Project</h4>
                         <a href="#overview">Gameplay</a>
-                        <a href="https://mahanph.itch.io/rocketinterceptor" target="_blank">Play Game</a>
-                        <a href="https://github.com/MarsPH/RocketInterceptor" target="_blank">Source Code</a>
+                        <a href="index.html">Portfolio</a>
                     </div>
                     <div class="footer-section">
                         <h4>Developer</h4>
-                        <a href="index.html">Portfolio</a>
+                        <a href="index.html#projects">More Projects</a>
                         <a href="mailto:m.poorhamidian@gmail.com">Contact</a>
-                        <a href="https://mahanph.itch.io/" target="_blank">More Games</a>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    <p>&copy; 2025 Mahan Poorhamidian. Unity Learning Project.</p>
+                    <p>&copy; 2025 Mahan Poorhamidian.</p>
                 </div>
             </div>
         </div>
     </footer>
+
     <!-- Epic Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
