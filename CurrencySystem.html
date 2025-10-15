@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modular Currency System - Universal, reusable in-game economy framework for Unreal Engine 5 with multi-currency, UI feedback, passive income, and persistent saving/loading.">
+    <meta name="keywords" content="Unreal Engine, C++, Blueprints, Gameplay Tags, Economy System, Modular, Interfaces, Delegates, SaveGame">
+    <meta name="author" content="Mahan Poorhamidian">
+    <meta property="og:title" content="Modular Currency System - Unreal Engine 5">
+    <meta property="og:description" content="Universal, reusable in-game economy framework featuring multi-currency, UI feedback, passive income, and save/load.">
+    <meta property="og:type" content="website">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="style.css" as="style">
+
+    <!-- Core Stylesheets -->
+    <link href="project.css" rel="stylesheet">
+    <link href="Flow.css" rel="stylesheet">
+    <link href="Fugame.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Modular Currency System | Mahan Poorhamidian</title>
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Modular Currency System",
+        "description": "Universal, reusable in-game economy framework for Unreal Engine 5 with multi-currency support, UI feedback, passive income, and persistent saving/loading.",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "genre": "Systems / Framework",
+        "applicationCategory": "Game Systems",
+        "operatingSystem": "Windows",
+        "programmingLanguage": ["C++", "Blueprints"]
+    }
+    </script>
+
+    <!-- Per-page minimal overrides -->
+    <style>
+      #currency-hero .hero-title { overflow-wrap:anywhere; word-wrap:break-word; hyphens:auto; }
+      #currency-hero .hero-title .title-line { white-space:normal; word-break:break-word; overflow-wrap:anywhere; max-width:100%; }
+      .preview-image { width: 100%; height: 100%; object-fit: cover; border-radius: 2rem; box-shadow: 0 0 32px 0 #00d4ff22; display:block; }
+      @media (max-width: 480px) { #currency-hero .hero-title { font-size: clamp(1.6rem, 7vw, 2.3rem); line-height:1.12; } }
+    </style>
+</head>
+<body style="background-color: var(--epic-darker); color: var(--epic-light);">
+    <!-- Epic Loading Screen -->
+    <div id="epic-loader" class="epic-loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <i class="fas fa-coins"></i>
+            </div>
+            <div class="loader-text">CURRENCY SYSTEM</div>
+            <div class="loader-subtitle">UNREAL ENGINE 5</div>
+            <div class="loader-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Epic Navigation -->
+    <nav class="epic-navbar" id="epic-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <span class="brand-text">MAHAN</span>
+                </a>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#hero" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#game-jams" class="nav-link">Game Jams</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero" id="currency-hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container-fluid">
+                <div class="hero-layout">
+                    <div class="hero-text-section">
+                        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="hero-badge">
+                                <span class="badge-text">SYSTEMS PROJECT</span>
+                            </div>
+                            <h1 class="hero-title">
+                                <span class="title-line">MODULAR</span>
+                                <span class="title-line highlight">CURRENCY SYSTEM</span>
+                                <span class="title-line">UNREAL ENGINE 5</span>
+                            </h1>
+                            <p class="hero-description">
+                                Universal, reusable in-game economy framework built in C++ and Blueprints. Supports multiple currencies via Gameplay Tags, real-time UI updates, passive income orchestration, and persistent save/load — designed for clean modular integration across projects.
+                            </p>
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="3">0</div>
+                                    <div class="stat-label">Core Components</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="2">0</div>
+                                    <div class="stat-label">Interfaces</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-target="9">0</div>
+                                    <div class="stat-label">Showcase Shots</div>
+                                </div>
+                            </div>
+                            <div class="hero-actions">
+                                <a href="#overview" class="btn-epic primary">
+                                    <i class="fas fa-diagram-project"></i>
+                                    <span>See Overview</span>
+                                </a>
+                                <a href="https://github.com/MarsPH/CurrencySystem" class="btn-epic secondary" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    <span>View on Github</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual-section">
+                        <div class="hero-visual hero-game-preview" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                            <div class="game-preview">
+                                <div class="preview-frame">
+                                    <img class="preview-image" src="Resources/img/CurrencySystem/CurrencySystem9_ShowcaseOverViewMap.png" alt="Currency System Overview">
+                                    <div class="preview-overlay">
+                                        <div class="play-button">
+                                            <i class="fas fa-coins"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floating-elements">
+                                    <div class="floating-element" style="--delay: 0s"><i class="fas fa-coins"></i></div>
+                                    <div class="floating-element" style="--delay: 1s"><i class="fas fa-university"></i></div>
+                                    <div class="floating-element" style="--delay: 2s"><i class="fas fa-sitemap"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview Section -->
+    <section class="project-section" id="overview">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">SYSTEM OVERVIEW</div>
+                <h2 class="section-title">Universal, Tag-Driven Economy</h2>
+                <p class="section-subtitle">Multi-currency, passive income, and save/load — portable across projects</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="project-content" data-aos="fade-right">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <h3>Core Features</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-text">
+                                    The Currency Component tracks balances with TMap&lt;FGameplayTag, int32&gt; and exposes AddCurrency() and ApplyTransaction() for atomic, multi-resource operations. UI widgets subscribe via multicast delegates for real-time feedback.
+                                </p>
+                                <p class="project-text">
+                                    Costable actors define purchasable/bankable entities through IICostable and maintain CostBundles. Passive income sources implement IPassiveIncomeSource and are orchestrated by the Economy Manager to apply timed deposits or drains, either to the player or to a bank actor.
+                                </p>
+                                <p class="project-text">
+                                    The system persists player balances, bank states, and passive configuration via UE SaveGame, with clean serialization managed by the Economy Manager.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="project-visual" data-aos="fade-left">
+                        <div class="gallery-center">
+                            <div class="gallery-flex">
+                                <div class="gallery-item main">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem9_ShowcaseOverViewMap.png" alt="Currency System: Overview Map" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem1.png" alt="Currency System: UI Overview" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem2_BasicIncrease.png" alt="Basic Increase" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem3_BasicDecrease.png" alt="Basic Decrease" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem4_MultipleIncreaseDecrease(Trade).png" alt="Trade: Multi Increase/Decrease" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem5_PassiveIncrease.png" alt="Passive Increase" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem6_PassiveDecrease.png" alt="Passive Decrease" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem7_MultiplePassive.png" alt="Multiple Passive Sources" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/CurrencySystem/CurrencySystem8_PassiveIntoBank.png" alt="Passive Income Into Bank" class="gallery-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">TECHNICAL IMPLEMENTATION</div>
+                <h2 class="section-title">Interfaces • Delegates • Components</h2>
+                <p class="section-subtitle">Clean architecture, tag-driven data, and robust serialization</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Gameplay Tags</h3>
+                    <p>Currency types keyed via FGameplayTag. Flexible, project-agnostic currency definitions and bundles.</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon"><i class="fas fa-bell"></i></div>
+                    <h3>Delegates & UI</h3>
+                    <p>Multicast delegates broadcast balance changes to widgets for responsive, real-time UI feedback.</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-icon"><i class="fas fa-cubes"></i></div>
+                    <h3>Component Design</h3>
+                    <p>Currency, Economy Manager, and Passive Cost components provide clear separation of concerns.</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="tech-icon"><i class="fas fa-save"></i></div>
+                    <h3>SaveGame</h3>
+                    <p>UE SaveGame stores balances, bank states, and passive configuration. Simple SaveEconomy/LoadEconomy API.</p>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="tech-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Interfaces</h3>
+                    <p>IICostable & IPassiveIncomeSource ensure consistent contracts for purchases, banks, and income sources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Breakdown -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">ARCHITECTURE</div>
+                <h2 class="section-title">Economy System Composition</h2>
+                <p class="section-subtitle">High cohesion, low coupling — designed for portability</p>
+            </div>
+
+            <div class="architecture-grid">
+                <div class="arch-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="arch-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Currency Component</h3>
+                    <p>Maintains TMap&lt;FGameplayTag, int32&gt; balances and applies atomic transactions with validation and delegate updates.</p>
+                </div>
+                <div class="arch-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="arch-icon"><i class="fas fa-building-columns"></i></div>
+                    <h3>Costable Actor</h3>
+                    <p>Implements IICostable with CostBundle, vanishable/emptiable states, and world-space cost widget.</p>
+                </div>
+                <div class="arch-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="arch-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Passive Income</h3>
+                    <p>UPassiveCostComponent + IPassiveIncomeSource managed by Economy Manager for timed income/drain per tag.</p>
+                </div>
+                <div class="arch-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="arch-icon"><i class="fas fa-database"></i></div>
+                    <h3>Save & Load</h3>
+                    <p>UE SaveGame class persists player, banks, and passive sources. Manager handles serialization lifecycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Notes -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">IMPLEMENTATION</div>
+                <h2 class="section-title">Key Data Structures</h2>
+                <p class="section-subtitle">Representative snippets for core types</p>
+            </div>
+
+            <div class="implementation-grid">
+                <div class="impl-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="impl-header">
+                        <div class="impl-icon"><i class="fas fa-code"></i></div>
+                        <h3>Balances & Bundles</h3>
+                    </div>
+                    <div class="impl-content">
+<pre class="code-snippet">// Currency balances per tag
+TMap<FGameplayTag, int32> CurrencyBalances;
+
+// Transaction bundle
+TMap<FGameplayTag, int32> CostBundle; // positive = deposit, negative = withdraw
+</pre>
+                    </div>
+                </div>
+                <div class="impl-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="impl-header">
+                        <div class="impl-icon"><i class="fas fa-stream"></i></div>
+                        <h3>Atomic Transactions</h3>
+                    </div>
+                    <div class="impl-content">
+<pre class="code-snippet">bool ApplyTransaction(const TMap<FGameplayTag,int32>& Bundle)
+{
+    // 1) Validate affordability for all negative entries
+    // 2) Apply all changes atomically
+    // 3) Broadcast updates via delegates for UI
+    return true;
+}
+</pre>
+                    </div>
+                </div>
+                <div class="impl-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="impl-header">
+                        <div class="impl-icon"><i class="fas fa-plug"></i></div>
+                        <h3>Passive Source Contract</h3>
+                    </div>
+                    <div class="impl-content">
+<pre class="code-snippet">// IPassiveIncomeSource
+virtual void GetYieldPerTag(TMap<FGameplayTag,int32>& OutYield) const = 0;
+virtual float GetIntervalFor(const FGameplayTag& Tag) const = 0;
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Journal -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">DEVELOPMENT JOURNAL</div>
+                <h2 class="section-title">Milestones</h2>
+                <p class="section-subtitle">Focused, iterative systems development</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"><i class="fas fa-plus-circle"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">2025-09-12</div>
+                        <h3 class="timeline-title">Core Currency API</h3>
+                        <p class="timeline-description">Added AddCurrency() and SpendCurrency(). Implemented ICostable and overlap-based purchases.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"><i class="fas fa-tv"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">2025-09-15</div>
+                        <h3 class="timeline-title">UI Feedback</h3>
+                        <p class="timeline-description">Built WBP_HUD and WBP_CurrencyUI with delegate-driven, real-time updates.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"><i class="fas fa-tags"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">2025-09-16</div>
+                        <h3 class="timeline-title">Gameplay Tags</h3>
+                        <p class="timeline-description">Switched balances to TMap&lt;FGameplayTag, int32&gt; with multi-resource logic.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"><i class="fas fa-layer-group"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">2025-09-18</div>
+                        <h3 class="timeline-title">Transaction Bundles</h3>
+                        <p class="timeline-description">Introduced atomic multi-currency transaction bundles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"><i class="fas fa-clock"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">2025-09-21 → 2025-09-29</div>
+                        <h3 class="timeline-title">Passive Income</h3>
+                        <p class="timeline-description">Built UPassiveCostComponent, Economy Manager, and IPassiveIncomeSource with timer logic and bug fixes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"><i class="fas fa-database"></i></div>
+                    <div class="timeline-content">
+                        <div class="timeline-time">2025-10-03 → 2025-10-06</div>
+                        <h3 class="timeline-title">Save & Bank Support</h3>
+                        <p class="timeline-description">Added bank deposits, multi-currency support, and save/load with stability improvements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Explore the Economy Framework</h2>
+                <p>Review architecture and media, or return to the portfolio.</p>
+
+                <div class="cta-buttons">
+                    <a href="#overview" class="btn-epic primary">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Back to Overview</span>
+                    </a>
+                    <a href="index.html" class="btn-epic outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="epic-footer">
+        <div class="container-fluid">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-coins"></i>
+                        <span>MODULAR CURRENCY SYSTEM</span>
+                    </div>
+                    <p class="footer-tagline">Unreal Engine 5 • C++ & Blueprints</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Project</h4>
+                        <a href="#overview">Overview</a>
+                        <a href="index.html">Portfolio</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Developer</h4>
+                        <a href="mailto:m.poorhamidian@gmail.com">Contact</a>
+                        <a href="index.html#about">About Me</a>
+                        <a href="index.html#projects">More Projects</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Mahan Poorhamidian. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
