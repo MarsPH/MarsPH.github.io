@@ -1,330 +1,617 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mahan Poorhamidian -  Game Developer Portfolio. Epic showcase of Unity, Unreal Engine, and advanced game development projects.">
+    <meta name="keywords" content="game development, unity, unreal engine,  games, programming, C#, C++, portfolio, game developer, epic">
+    <meta name="author" content="Mahan Poorhamidian">
+    <meta property="og:title" content="Mahan Poorhamidian -  Game Developer">
+    <meta property="og:description" content="Epic portfolio showcasing advanced game development skills in Unity and Unreal Engine">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+    <link rel="preload" href="style.css" as="style">
 
-<html>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-        <title>My Portfolio</title>
-        <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/game-controller.png" type="image/png">
-    </head>
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+
+    <title>Mahan Poorhamidian - Game Developer</title>
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
+
+    <!-- Epic Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mahan Poorhamidian",
+        "jobTitle": "Game Developer",
+        "worksFor": {
+            "@type": "EducationalOrganization",
+            "name": "Collège LaSalle"
+        },
+        "knowsAbout": ["Game Development", "Unity", "Unreal Engine", "C#", "C++", "Programming", "Games"],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Game Developer",
+            "occupationLocation": {
+                "@type": "City",
+                "name": "Montreal"
+            }
+        },
+        "sameAs": [
+            "https://mahanph.itch.io/"
+        ],
+        "portfolio": "https://marsph.github.io"
+    }
+    </script>
+</head>
     <body>
+        <!-- Epic Loading Screen -->
+        <div id="epic-loader" class="epic-loader">
+            <div class="loader-content">
+                <div class="loader-logo">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="loader-text">MAHAN POORHAMIDIAN</div>
+                <div class="loader-subtitle">GAME DEVELOPER</div>
+                <div class="loader-progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Skip Navigation -->
+        <a href="#main-content" class="epic-skip-link">Skip to main content</a>
 
+        <!-- Epic Navigation -->
+        <nav class="epic-navbar" id="epic-navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="#hero" class="brand-link">
+                        <div class="brand-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <span class="brand-text">MAHAN</span>
+                    </a>
+                </div>
 
-        <div class="wrapper" id="about">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#game-jams" class="nav-link">Game Jams</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
 
-            <div class="header">
-                <div><button><a href="#about">About me</a></button></div>
-                <div><button><a href="#project">Projects</a></button></div>
-                <div><button><a href="#gamejam">Game Jams</a></button></div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Epic Hero Section -->
+        <section id="hero" class="epic-hero">
+            <div class="hero-background">
+                <div class="hero-particles" id="hero-particles"></div>
+                <div class="hero-gradient"></div>
             </div>
 
-            <div class="main">
+            <div class="hero-content">
+                <div class="container-fluid px-3 px-md-5">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-6 order-2 order-lg-1">
+                            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="hero-badge">
+                                    <span class="badge-text">AVAILABLE FOR HIRE</span>
+                                </div>
 
-                <div class="info">
-                    <div class="top">
-                        <div class="profile"><img src="Resources/img/ProfilePicture.png"></div>
+                                <h1 class="hero-title">
+                                    <span class="title-line">GAME</span>
+                                    <span class="title-line">DEVELOPER</span>
+                                    <span class="title-line highlight"></span>
+                                </h1>
 
-                        <div>
-                            <h3>m.poorhamidian@gmail.com</h3>
-                            <h1>Mahan Poorhamidian</h1>
+                                <p class="hero-description">
+                                    Crafting immersive worlds and unforgettable gaming experiences with cutting-edge technology.
+                                    Unity, Unreal Engine, and beyond - pushing the boundaries of interactive entertainment.
+                                </p>
+
+                                <div class="hero-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number" data-target="5">0</div>
+                                        <div class="stat-label">Projects</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number" data-target="3">0</div>
+                                        <div class="stat-label">Game Jams</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number" data-target="2026">0</div>
+                                        <div class="stat-label">Graduation</div>
+                                    </div>
+                                </div>
+
+                                <div class="hero-actions">
+                                    <a href="#projects" class="btn-epic primary">
+                                        <i class="fas fa-rocket"></i>
+                                        <span>View My Work</span>
+                                    </a>
+                                    <a href="mailto:m.poorhamidian@gmail.com" class="btn-epic secondary">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email Me</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 order-1 order-lg-2">
+                            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <div class="hero-avatar">
+                                    <div class="avatar-frame">
+                                        <img src="Resources/img/ProfilePicture.png" alt="Mahan Poorhamidian" class="avatar-image">
+                                        <div class="avatar-glow"></div>
+                                    </div>
+                                    <div class="floating-elements">
+                                        <div class="floating-element" style="--delay: 0s"><i class="fas fa-gamepad"></i></div>
+                                        <div class="floating-element" style="--delay: 1s"><i class="fas fa-cube"></i></div>
+                                        <div class="floating-element" style="--delay: 2s"><i class="fas fa-code"></i></div>
+                                        <div class="floating-element" style="--delay: 3s"><i class="fas fa-palette"></i></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="description">
-                        <div class="vertical">BIO</div>
-                        <div class="line"></div>
-                        <div>
-                            <p>
-                                I am a passionate game development student currently pursuing a <span style="font-weight: bold;">DEC </span> in <span style="font-weight: bold;">Computer Science: Game Development</span> 
-                                at <span style="font-weight: bold;">Collège LaSalle.</span><br>I am eager to explore opportunities in game development, programming, and game design. <br>
-                                Expected Gradutation Date: <span style="font-weight: bold;">May 2026</span> <br>
-                                <em>Some of my favorite games: Age of Empires, Warno, Crusader Kings , and Minecraft :)</em>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="scroll-text">Scroll to explore</div>
+            </div>
+        </section>
+
+    <!-- Epic About Section -->
+    <section id="about" class="epic-section">
+        <div class="container px-3 px-md-5">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">ABOUT ME</div>
+                <h2 class="section-title">The Developer Behind the Magic</h2>
+                <p class="section-subtitle">Passionate about creating extraordinary gaming experiences</p>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="about-content" data-aos="fade-right">
+                        <div class="about-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-user-astronaut"></i>
+                                </div>
+                                <h3>Who I Am</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="about-text">
+                                    I'm a dedicated game development student at <strong>Collège LaSalle</strong>,
+                                    pursuing a DEC in Computer Science with a specialization in Game Development.
+                                    My journey in game development is fueled by an insatiable curiosity for creating
+                                    immersive, innovative gaming experiences that push the boundaries of interactive entertainment.
+                                </p>
+                                <p class="about-text">
+                                    With expertise in both <strong>Unity</strong> and <strong>Unreal Engine</strong>,
+                                    I bring together technical proficiency and creative vision to craft games that
+                                    captivate and inspire players worldwide.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="about-visual" data-aos="fade-left">
+                        <div class="tech-stack">
+                            <h4>Technical Arsenal</h4>
+                            <div class="tech-grid">
+                                <div class="tech-item" data-tech="Unity">
+                                    <i class="fab fa-unity"></i>
+                                    <span>Unity</span>
+                                </div>
+                                <div class="tech-item" data-tech="Unreal">
+                                    <i class="fas fa-cube"></i>
+                                    <span>Unreal Engine</span>
+                                </div>
+                                <div class="tech-item" data-tech="C#">
+                                    <i class="fab fa-microsoft"></i>
+                                    <span>C#</span>
+                                </div>
+                                <div class="tech-item" data-tech="C++">
+                                    <i class="fas fa-code"></i>
+                                    <span>C++</span>
+                                </div>
+                                <div class="tech-item" data-tech="Blender">
+                                    <i class="fas fa-cube"></i>
+                                    <span>Blender</span>
+                                </div>
+                                <div class="tech-item" data-tech="Photoshop">
+                                    <i class="fab fa-adobe"></i>
+                                    <span>Photoshop</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epic Projects Section -->
+    <section id="projects" class="epic-section dark">
+        <div class="container px-3 px-md-5">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">PORTFOLIO</div>
+                <h2 class="section-title">Epic Game Development Journey</h2>
+                <p class="section-subtitle">Showcasing technical excellence and creative innovation</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Flow -->
+                <article class="project-card-epic" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-background">
+                        <img src="Resources/img/Flow/Flow2.png" alt="Flow Game Screenshot" class="project-bg">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-category">Global Game Jam 2025</div>
+                            <h3 class="project-title">Flow</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                A mesmerizing 2D physics experience where players manipulate soft-body bubble physics
+                                through challenging geometric environments. Master the art of size manipulation and
+                                momentum to navigate treacherous obstacles.
                             </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">Soft Body Physics</span>
+                                <span class="tech-tag">2D Physics</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="Flow.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Details</span>
+                            </a>
+                            <a href="https://mahanph.itch.io/flow" class="project-link primary" target="_blank">
+                                <i class="fas fa-play"></i>
+                                <span>Play Now</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="description">
-                        <div class="vertical">SKILLS</div>
-                        <div class="line"></div>
-                        <div>
-                            <p>
-                                🕹️ <span style="font-weight: bold;">Game Development,</span> – Unity, Unreal Engine (Blueprints & C++)<br>
-                                💡 <span style="font-weight: bold;">Programming</span> – C, C++, C#, Python<br>
-                                🛠️ <span style="font-weight: bold;">Tools</span> – Git, Blender (Basic), Shader Graph, Adobe Photoshop, Adobe Premiere
+                </article>
+
+                <!-- Project 2: Light Within -->
+                <article class="project-card-epic large" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-background">
+                        <img src="Resources/img/LightWithin/LW2.png" alt="Light Within Game Screenshot" class="project-bg">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-category">McGameJam 2025</div>
+                            <h3 class="project-title">Light Within</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                An innovative shadow-based survival experience developed in 48 hours.
+                                Control a shadow entity that must avoid light sources while navigating
+                                a 2D world built on a 3D plane with dynamic shadow casting mechanics.
                             </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">Shadow Physics</span>
+                                <span class="tech-tag">48-Hour Jam</span>
+                                <span class="tech-tag">3D/2D Hybrid</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="LightWthin.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Details</span>
+                            </a>
+                            <a href="https://mahanph.itch.io/lightwithin-20" class="project-link primary" target="_blank">
+                                <i class="fas fa-play"></i>
+                                <span>Play Now</span>
+                            </a>
                         </div>
                     </div>
+                </article>
 
-    
-                </div>
-                <div class="poster">
-                    <img src="Resources/img/You are KOONI.png">
-                </div>
-
-                <div class="location">
-                    <div>Montreal</div>
-                    <div><img style="width: 2rem;" src="Resources/img/location-sign-svgrepo-com.svg"></div>
-                </div>
-
-                <div class="cutout center"><img class="cutout-img" src="Resources/img/Mario-Pipe-PNG-Cutout2.png"></div>
-
-            </div>
-
-        </div>
-
-        <div class="wrapper" id="project">
-            <div class="cloud">
-                <img src="Resources/img/cloud.png">
-                <img src="Resources/img/cloud.png">
-                <img src="Resources/img/cloud.png">
-                <img src="Resources/img/cloud.png">
-                <img src="Resources/img/cloud.png">
-                <img src="Resources/img/cloud.png">
-            </div>
-
-            <div class="project-main">
-                
-                <div class="project">
-
-                    <div class="project-pic">
-                        <img src="Resources/img/Flow/Flow2.png">
+                <!-- Project 3: Fugame -->
+                <article class="project-card-epic" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-background">
+                        <img src="Resources/img/Fugame/FugameCover2.png" alt="Fugame Screenshot" class="project-bg">
+                        <div class="project-overlay"></div>
                     </div>
-
-                    <div class="project-description">
-                        <h3>Project #1</h3>
-                        <h1>Flow</h1>
-                        <p>
-                            Flow is a 2D game I created for the Global Game Jam 2025. In this game, the player controls a line that can push the main character, which is a bubble with a soft mesh. However, players must be cautious of sharp spots and narrow areas. To navigate through obstacles, players may need to shrink or enlarge the bubble to avoid popping.
-                        </p>
-
-                        <p>
-                            The most challenging part was working with soft mesh in Unity, which can be quite buggy. However, it taught me a lot about the subject, and I learned important lessons about soft body meshes while doing something I hadn't tried before
-                        </p>
-
-                        <div class="project-button">
-                            <button><a href="Flow.html">View Details <img src="Resources/img/detail.svg"></a></button>
-                            <button><a href="https://mahanph.itch.io/flow">Play Now <img src="Resources/img/play.svg"></a></button>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-category">Team Project</div>
+                            <h3 class="project-title">Fugame</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                A collaborative prison escape puzzle adventure focusing on inventory management,
+                                clue interaction systems, and immersive UI/UX design. Master complex puzzle
+                                mechanics to unravel the mysteries of an abandoned correctional facility.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">Inventory System</span>
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Team Development</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="Fugame.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Details</span>
+                            </a>
                         </div>
                     </div>
+                </article>
 
-                </div>
-
-                <div class="cutout right"><img class="cutout-img" src="Resources/img/dies.png"></div>
-
-            </div>
-        </div>
-        <div class="wrapper" >
-    
-            <div class="project-main">
-                
-                <div class="project">
-                    
-
-                    <div class="project-description">
-                        <h3>Project #2</h3>
-                        <h1>Fugame</h1>
-                        <p>
-                            Fugame is a prison escape puzzle game that I developed as a team project for my Game Engine I course in college. The game revolves around a prisoner trying to escape from an abandoned and ruined prison by solving puzzles and finding clues.
-                        </p>
-                        <p>
-                            I mainly focused on the inventory system, clue interactions, and the HUD. Although working with item interaction and usage was challenging, I learned a great deal from the experience.
-                        </p>
-
-
-                        <div class="project-button">
-                            <button><a href="Fugame.html">View Details <img src="Resources/img/detail.svg"></a></button>
+                <!-- Project 4: Rocket Interceptor -->
+                <article class="project-card-epic" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="project-background">
+                        <img src="Resources/img/RocketInterceptor/RocketInteceptor1.png" alt="Rocket Interceptor Screenshot" class="project-bg">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-category">Unity Learn Project</div>
+                            <h3 class="project-title">Rocket Interceptor</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                An intense arcade-style defense experience testing advanced 3D mathematics
+                                and projectile physics. Engage with procedurally challenging rocket variants
+                                in this mathematically-driven space defense simulation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">3D Math</span>
+                                <span class="tech-tag">Physics</span>
+                                <span class="tech-tag">Procedural Generation</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="RocketInterceptor.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Details</span>
+                            </a>
                         </div>
                     </div>
+                </article>
 
-
-                    <div class="project-pic">
-                        <img src="Resources/img/Fugame/FugameCover2.png">
+                <!-- Project 5: Monster Hunter -->
+                <article class="project-card-epic" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="project-background">
+                        <img src="Resources/img/MonsterHunter/MonsterHunter1.png" alt="Monster Hunter Screenshot" class="project-bg">
+                        <div class="project-overlay"></div>
                     </div>
-
-                </div>
-
-                <div class="cutout left"><img class="cutout-img"  src="Resources/img/ladder.png"></div>
-
-            </div>
-        </div>
-
-        
-
-        <div class="wrapper">
-
-            <div class="project-main">
-                
-                <div class="project">
-                    
-
-                    <div class="project-description">
-                        <h3>Project #3</h3>
-                        <h1>Light Within</h1>
-                        <p>
-                            "Light Within" is a 2D video game that I developed for McGameJam 2025 within 48 hours. The game follows the journey of a shadow that has lost its physical body and is trying to regain it. Players must navigate through the environment while avoiding sources of light, as exposure to light will increase their stress levels.
-                        </p>
-
-                        <p>
-                            I developed this 2D game on a 3D X-Z plane in Unity to allow for shadows to be cast on the ground, serving as a surface for the character to move on. To achieve this, I created a script that generates a fake shadow with physical properties for the character.
-                        </p>
-
-                        <div class="project-button">
-                            <button><a href="LightWthin.html">View Details <img src="Resources/img/detail.svg"></a></button>
-                            <button><a href="https://mahanph.itch.io/lightwithin-20">Play Now <img src="Resources/img/play.svg"></a></button>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-category">OOP II Project</div>
+                            <h3 class="project-title">Monster Hunter</h3>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-description">
+                                A comprehensive console-based gaming experience demonstrating advanced
+                                object-oriented programming principles. Built from the ground up without
+                                engine dependencies to showcase deep programming architecture knowledge.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">OOP</span>
+                                <span class="tech-tag">Console Development</span>
+                                <span class="tech-tag">System Architecture</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="MonsterHunter.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>View Details</span>
+                            </a>
                         </div>
                     </div>
-
-
-                    <div class="project-pic">
-                        <img src="Resources/img/LightWithin/LW2.png">
-                    </div>
-
-                </div>
-
-                <div class="cutout left"><img class="cutout-img" style="rotate: 200deg;" src="Resources/img/snake (2).png"></div>
-
+                </article>
             </div>
         </div>
+    </section>
 
-        <div class="wrapper">
-
-            <div class="project-main">
-                
-                <div class="project">
-
-                    <div class="project-pic">
-                        <img src="Resources/img/RocketInterceptor/RocketInteceptor1.png">
-                    </div>
-
-                    <div class="project-description">
-                        <h3>Project #4</h3>
-                        <h1>Rocket Interceptor</h1>
-                        <p>
-                            Rocket Interceptor is a project I developed after completing the junior programming course on Unity Learn. This short prototype i about a player whose goal is to destroy incoming rockets, which each have unique features. As the player survives longer, the game becomes increasingly challenging.
-                        </p>
-
-                        <p>
-                            I created this prototype to test and improve my knowledge of math in 3D games, and for that I created various classes of projectiles for both offensive and defensive purposes. One of the main challenges was to design rockets that appeared realistic without relying on any visual effects, using only mechanics instead.
-                        </p>
-
-                        <div class="project-button">
-                            <button><a href="RocketInterceptor.html">View Details <img src="Resources/img/detail.svg"></a></button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="cutout right"><img class="cutout-img" src="Resources/img/ladder.png"></div>
-
-            </div>
-        </div>
-
-       
-        <div class="wrapper">
-
-            <div class="project-main">
-                
-                <div class="project">
-
-                    <div class="project-pic">
-                        <img src="Resources/img/MonsterHunter/MonsterHunter1.png">
-                    </div>
-
-                    <div class="project-description">
-                        <h3>Project #5</h3>
-                        <h1>Monster Hunter</h1>
-                        <p>
-                            I created a game called Monster Hunter for my OOP II class to demonstrate the concepts of object-oriented programming in C#. The game was developed using only Console and Windows Forms, which presented a significant challenge.
-                        </p>
-
-                        <p>
-                            Instead of using a game engine, I had to work at a lower level to develop a 2D game. Although challenging, this project provided me with extensive knowledge of advanced programming concepts.
-                        </p>
-
-                        <div class="project-button">
-                            <button><a href="MonsterHunter.html">View Details <img src="Resources/img/detail.svg"></a></button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="cutout right"><img class="cutout-img" src="Resources/img/dies.png"></div>
-
-            </div>
-        </div>
-
-        <div class="wrapper-mini" id="gamejam">
-
-            <div id="shameful-afterthought">
-
-                <div>
-                    <h1 style="font-family: gummy;">GAME JAMS</h1>
-                </div>
-
-                <div class="gamejams">
-
-                    <!--specfic Game jams-->
-                    <div class="gamejam-unit">
-
-                        <div class="gamejam-pic">
-                            <img src="Resources/img/McGameJam2.png">
-                        </div>
-                        
-                        <div class="short">
-
-                            <h3>McGame Jam 2025</h3>
-                            <P>I created the game "Light Within" as a solo Developer. </P>
-                            <h4>Date:  January 2025</H4>
-
-                        </div>
-                    </div>
-
-                    <div class="gamejam-unit">
-
-                        <div class="gamejam-pic">
-                            <img src="Resources/img/GlobalGameJam.jpg">
-                        </div>
-                        
-                        <div class="short">
-
-                            <h3>Global Game Jam 2025</h3>
-                            <P>I developed the flow as a solo developer and attended the Concordia game jam site in person.</P>
-                            <h4>Date: January 2025</H4>
-
-                        </div>
-                    </div>
-
-                    <div class="gamejam-unit">
-
-                        <div class="gamejam-pic">
-                            <img src="Resources/img/McGillXR.png">
-                        </div>
-                        
-                        <div class="short">
-
-                            <h3>NeuroVR 2024</h3>
-                            <P>I developed a mixed reality experience in Unity for people in distress, teaming with psychology students, and we became the runners-up.</P>
-                            <h4>Date: March 2024</H4>
-
-                        </div>
-                    </div>
-
-                </div>
-
+    <!-- Epic Game Jams Section -->
+    <section id="game-jams" class="epic-section">
+        <div class="container px-3 px-md-5">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">GAME JAMS</div>
+                <h2 class="section-title">Rapid Development Excellence</h2>
+                <p class="section-subtitle">48-hour challenges that showcase creative problem-solving</p>
             </div>
 
+            <div class="game-jams-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2025</div>
+                        <h3 class="timeline-title">McGameJam 2025</h3>
+                        <p class="timeline-description">
+                            Solo development of "Light Within" - a shadow-based survival game
+                            created under extreme time constraints. Demonstrated rapid prototyping
+                            and innovative physics implementation.
+                        </p>
+                        <div class="timeline-achievement">Solo Developer</div>
+                    </div>
+                </div>
 
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2025</div>
+                        <h3 class="timeline-title">Global Game Jam 2025</h3>
+                        <p class="timeline-description">
+                            Participated at Concordia University, developing "Flow" - a physics-based
+                            bubble manipulation game. Showcased soft-body physics expertise and
+                            creative problem-solving under pressure.
+                        </p>
+                        <div class="timeline-achievement">In-Person Participation</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 2024</div>
+                        <h3 class="timeline-title">NeuroVR 2024</h3>
+                        <p class="timeline-description">
+                            Collaborative mixed reality experience for therapeutic applications.
+                            Worked alongside psychology students to create an immersive VR solution
+                            for mental health support. Achieved runner-up position.
+                        </p>
+                        <div class="timeline-achievement">Runner-Up</div>
+                    </div>
+                </div>
+            </div>
         </div>
-<script>
-  window.addEventListener('scroll', () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 10);
-  });
-</script>
+    </section>
 
+    <!-- Epic Contact Section -->
+    <section id="contact" class="epic-section dark">
+        <div class="container px-3 px-md-5">
+            <div class="contact-content">
+                <div class="contact-header" data-aos="fade-up">
+                    <h2 class="contact-title">Ready to Create Something Epic?</h2>
+                    <p class="contact-subtitle">Let's collaborate on groundbreaking gaming experiences</p>
+                </div>
 
-    </body>
+                <div class="contact-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p>Direct communication for project inquiries</p>
+                        <a href="mailto:m.poorhamidian@gmail.com" class="contact-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </a>
+                    </div>
 
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                        <h3>View My Games</h3>
+                        <p>Explore my published games on itch.io</p>
+                        <a href="https://mahanph.itch.io/" class="contact-button" target="_blank">
+                            <i class="fas fa-gamepad"></i>
+                            Visit Profile
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>Connect on LinkedIn</h3>
+                        <p>View my professional profile and experience</p>
+                        <a href="https://www.linkedin.com/in/mahan-ph/" class="contact-button" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                            Visit LinkedIn
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Academic Background</h3>
+                        <p>Computer Science: Game Development</p>
+                        <div class="academic-info">
+                            <span class="institution">Collège LaSalle</span>
+                            <span class="graduation">Expected: May 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Epic Footer -->
+    <footer class="epic-footer">
+        <div class="container px-3 px-md-5">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i>
+                        <span>MAHAN POORHAMIDIAN</span>
+                    </div>
+                    <p class="footer-tagline">Game Developer & Digital Craftsman</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Navigation</h4>
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#game-jams">Game Jams</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <a href="mailto:m.poorhamidian@gmail.com">Email</a>
+                        <a href="https://mahanph.itch.io/" target="_blank">Itch.io</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Mahan Poorhamidian. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/MarsPH" class="social-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <!-- TODO: Add your LinkedIn URL below and uncomment -->
+                     <a href="https://www.linkedin.com/in/mahan-ph/" class="social-link" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a> 
+                    <!-- TODO: Add your Twitter/X URL below and uncomment -->
+                    <!-- <a href="https://twitter.com/YOUR_USERNAME" class="social-link" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Epic Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
