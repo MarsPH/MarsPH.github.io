@@ -23,6 +23,13 @@
 
     <!-- Custom CSS -->
     <link href="Flow.css" rel="stylesheet">
+    
+    <!-- Per-page override: prevent hero title overflow -->
+    <style>
+      .project-hero .hero-title { overflow-wrap:anywhere; word-wrap:break-word; hyphens:auto; }
+      .project-hero .hero-title .title-line { white-space:normal; word-break:break-word; overflow-wrap:anywhere; max-width:100%; }
+      @media (max-width: 480px) { .project-hero .hero-title { font-size: clamp(1.6rem, 7vw, 2.3rem); line-height:1.12; } }
+    </style>
 
     <title>Epic Game Project - AAA Development | Mahan Poorhamidian</title>
     <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">

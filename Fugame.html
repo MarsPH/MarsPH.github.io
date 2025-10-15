@@ -9,15 +9,49 @@
     <meta property="og:title" content="Fugame - Advanced Inventory System">
     <meta property="og:description" content="A comprehensive prison escape puzzle game featuring advanced inventory management and UI systems">
     <meta property="og:type" content="website">
+
+    <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="style.css" as="style">
+
+    <!-- Core Stylesheets -->
     <link href="project.css" rel="stylesheet">
+    <link href="Flow.css" rel="stylesheet">
     <link href="Fugame.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Fugame - Advanced Inventory System | Mahan Poorhamidian</title>
-    <link rel="icon" href="Resources/img/Fugame/FugamePreview.png" type="image/x-icon">
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Fugame - Advanced Inventory System",
+        "description": "A comprehensive prison escape puzzle game featuring advanced inventory management, modular UI/UX, and seamless clue integration.",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "genre": "Puzzle / Systems",
+        "applicationCategory": "Game",
+        "operatingSystem": "Cross-platform"
+    }
+    </script>
+
+    <!-- Per-page override: prevent hero title overflow -->
+    <style>
+      #fugame-hero .hero-title { overflow-wrap:anywhere; word-wrap:break-word; hyphens:auto; }
+      #fugame-hero .hero-title .title-line { white-space:normal; word-break:break-word; overflow-wrap:anywhere; max-width:100%; }
+      @media (max-width: 480px) { #fugame-hero .hero-title { font-size: clamp(1.6rem, 7vw, 2.3rem); line-height:1.12; } }
+    </style>
 </head>
 <body style="background-color: var(--epic-darker); color: var(--epic-light);">
     <!-- Epic Loading Screen -->
@@ -62,7 +96,7 @@
         </div>
     </nav>
 
-    <!-- Epic Hero Section (Redesigned) -->
+    <!-- Hero Section (Flow-based) -->
     <section class="project-hero" id="fugame-hero">
         <div class="hero-background">
             <div class="hero-particles" id="hero-particles"></div>
@@ -114,10 +148,12 @@
                         <div class="hero-visual hero-game-preview" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                             <div class="game-preview">
                                 <div class="preview-frame">
-                                    <img src="Resources/img/Fugame/FugamePreview.png" alt="Fugame Inventory System Preview" class="preview-video" />
+                                    <video autoplay muted loop class="preview-video">
+                                        <source src="Resources/img/Fugame/FugameInventoryPreview.mp4" type="video/mp4">
+                                    </video>
                                     <div class="preview-overlay">
                                         <div class="play-button">
-                                            <i class="fas fa-boxes"></i>
+                                            <i class="fas fa-play"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -142,11 +178,189 @@
                 <h2 class="section-title">Fugame Inventory Mastery</h2>
                 <p class="section-subtitle">Advanced modular inventory and UI/UX</p>
             </div>
-            <!-- ...project overview content, update as needed... -->
+
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="project-content" data-aos="fade-right">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <h3>Modular Inventory</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-text">
+                                    Built a highly modular inventory using Scriptable Objects, enabling item definitions, stacking rules, and category-specific behaviors. Drag-and-drop interactions integrate with the UI layer for intuitive equipping and combining.
+                                </p>
+                                <p class="project-text">
+                                    The system supports dynamic tooltips, quick-use items, and data-driven clue integration to unlock puzzle pathways. Focused on clarity and responsiveness for a clean player experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="project-visual" data-aos="fade-left">
+                        <div class="gallery-center">
+                            <div class="gallery-flex">
+                                <div class="gallery-item main">
+                                    <img src="Resources/img/Fugame/FugameCover.png" alt="Fugame main screenshot" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/Fugame/Fugame1.png" alt="Fugame UI" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/Fugame/Fugame2.png" alt="Fugame gameplay" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/Fugame/Fugame3.png" alt="Fugame inventory" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <video autoplay muted loop class="gallery-image">
+                                        <source src="Resources/img/Fugame/FugameInventoryPreview.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Epic Footer -->
+    <!-- Technical Details Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">TECHNICAL IMPLEMENTATION</div>
+                <h2 class="section-title">Systems & UI</h2>
+                <p class="section-subtitle">Unity systems powering the experience</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Scriptable Objects</h3>
+                    <p>Data-driven items, categories, and rules for flexible inventory behavior.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <h3>Drag & Drop</h3>
+                    <p>Responsive UI interactions for moving, equipping, and combining items.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Modular UI</h3>
+                    <p>Reusable components with clear separation of concerns and events.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Clue System</h3>
+                    <p>Inventory-integrated clues to gate puzzle progress and narrative beats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="project-details" data-aos="fade-up">
+                        <div class="details-card">
+                            <h2>Project Specifications</h2>
+
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Development Time</div>
+                                    <div class="detail-value">72 Hours</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Team Size</div>
+                                    <div class="detail-value">4</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Game Engine</div>
+                                    <div class="detail-value">Unity</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Primary Language</div>
+                                    <div class="detail-value">C#</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">My Role</div>
+                                    <div class="detail-value">UI/Systems</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Platform</div>
+                                    <div class="detail-value">PC</div>
+                                </div>
+                            </div>
+
+                            <div class="project-features">
+                                <h3>Key Features</h3>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Modular, data-driven inventory</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Drag-and-drop interactions</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Clue integration for puzzles</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Responsive UI/UX with tooltips</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Explore Fugame</h2>
+                <p>Review the inventory systems and UI, or dive into the codebase.</p>
+
+                <div class="cta-buttons">
+                    <a href="https://github.com/MarsPH/Fugame" class="btn-epic primary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View Repository</span>
+                    </a>
+                    <a href="index.html" class="btn-epic outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="epic-footer">
         <div class="container-fluid">
             <div class="footer-content">
@@ -167,8 +381,8 @@
                     <div class="footer-section">
                         <h4>Developer</h4>
                         <a href="mailto:m.poorhamidian@gmail.com">Contact</a>
-                        <a href="https://mahanph.itch.io/" target="_blank">More Games</a>
                         <a href="index.html#about">About Me</a>
+                        <a href="index.html#projects">More Projects</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +394,7 @@
         </div>
     </footer>
 
-    <!-- Epic Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>

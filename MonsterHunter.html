@@ -9,15 +9,49 @@
     <meta property="og:title" content="Monster Hunter - OOP Masterpiece">
     <meta property="og:description" content="A console-based monster hunting game showcasing advanced object-oriented programming and multithreading">
     <meta property="og:type" content="website">
+
+    <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="style.css" as="style">
+
+    <!-- Core Stylesheets -->
     <link href="project.css" rel="stylesheet">
+    <link href="Flow.css" rel="stylesheet">
     <link href="MonsterHunter.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Monster Hunter - OOP Masterpiece | Mahan Poorhamidian</title>
-    <link rel="icon" href="Resources/img/MonsterHunter/MonsterHunterPreview.png" type="image/x-icon">
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Monster Hunter - OOP Masterpiece",
+        "description": "A console-based monster hunting game demonstrating advanced OOP principles, multithreading, and C# features.",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "genre": "Console / Systems",
+        "applicationCategory": "Game",
+        "operatingSystem": "Cross-platform"
+    }
+    </script>
+
+    <!-- Per-page override: prevent hero title overflow -->
+    <style>
+      #monsterhunter-hero .hero-title { overflow-wrap:anywhere; word-wrap:break-word; hyphens:auto; }
+      #monsterhunter-hero .hero-title .title-line { white-space:normal; word-break:break-word; overflow-wrap:anywhere; max-width:100%; }
+      @media (max-width: 480px) { #monsterhunter-hero .hero-title { font-size: clamp(1.6rem, 7vw, 2.3rem); line-height:1.12; } }
+    </style>
 </head>
 <body style="background-color: var(--epic-darker); color: var(--epic-light);">
     <!-- Epic Loading Screen -->
@@ -62,7 +96,7 @@
         </div>
     </nav>
 
-    <!-- Epic Hero Section (Redesigned) -->
+    <!-- Hero Section (Flow-based) -->
     <section class="project-hero" id="monsterhunter-hero">
         <div class="hero-background">
             <div class="hero-particles" id="hero-particles"></div>
@@ -114,10 +148,12 @@
                         <div class="hero-visual hero-game-preview" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                             <div class="game-preview">
                                 <div class="preview-frame">
-                                    <img src="Resources/img/MonsterHunter/MonsterHunterPreview.png" alt="Monster Hunter Console Preview" class="preview-video" />
+                                    <video autoplay muted loop class="preview-video">
+                                        <source src="Resources/img/MonsterHunter/MonsterHunterPreview.mp4" type="video/mp4">
+                                    </video>
                                     <div class="preview-overlay">
                                         <div class="play-button">
-                                            <i class="fas fa-dragon"></i>
+                                            <i class="fas fa-play"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -142,11 +178,179 @@
                 <h2 class="section-title">Monster Hunter Mastery</h2>
                 <p class="section-subtitle">Advanced OOP and multithreading in C#</p>
             </div>
-            <!-- ...project overview content, update as needed... -->
+
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="project-content" data-aos="fade-right">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-dna"></i>
+                                </div>
+                                <h3>OOP Architecture</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-text">
+                                    Designed with SOLID principles, composition over inheritance, and clear boundaries. Systems include battle flow, creature AI, inventory, and event-driven UI for console rendering.
+                                </p>
+                                <p class="project-text">
+                                    Multithreading handles battle simulations and logging without blocking the main input loop, ensuring responsiveness even under heavy load.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="project-visual" data-aos="fade-left">
+                        <div class="gallery-center">
+                            <div class="gallery-flex">
+                                <div class="gallery-item main">
+                                    <img src="Resources/img/MonsterHunter/MonsterHunter_formPreview.png" alt="Monster Hunter screenshot" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/MonsterHunter/MonsterHunter1.png" alt="Monster Hunter console UI" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <video autoplay muted loop class="gallery-image">
+                                        <source src="Resources/img/MonsterHunter/MonsterHunterPreview.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Epic Footer -->
+    <!-- Technical Details Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">TECHNICAL IMPLEMENTATION</div>
+                <h2 class="section-title">Architecture & Systems</h2>
+                <p class="section-subtitle">.NET and C# implementation details</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fas fa-diagram-project"></i>
+                    </div>
+                    <h3>SOLID Design</h3>
+                    <p>Composition-first design, modular subsystems, and clear abstractions.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-threads"></i>
+                    </div>
+                    <h3>Multithreading</h3>
+                    <p>Threading for simulations and logs while keeping input responsive.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>Console UI</h3>
+                    <p>Event-driven rendering with state-driven components.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Battle System</h3>
+                    <p>Turn-based mechanics with strategy-focused creature design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="project-details" data-aos="fade-up">
+                        <div class="details-card">
+                            <h2>Project Specifications</h2>
+
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Development Time</div>
+                                    <div class="detail-value">60 Hours</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Team Size</div>
+                                    <div class="detail-value">1</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Engine</div>
+                                    <div class="detail-value">.NET</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Primary Language</div>
+                                    <div class="detail-value">C#</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Platform</div>
+                                    <div class="detail-value">Windows</div>
+                                </div>
+                            </div>
+
+                            <div class="project-features">
+                                <h3>Key Features</h3>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>OOP-heavy architecture</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Multithreaded simulations</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Console rendering components</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Turn-based battle flow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Explore Monster Hunter</h2>
+                <p>Review the OOP systems and console UI design.</p>
+
+                <div class="cta-buttons">
+                    <a href="https://github.com/MarsPH/MahanPH_OOPII_MonsterHunter" class="btn-epic primary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View Repository</span>
+                    </a>
+                    <a href="index.html" class="btn-epic outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="epic-footer">
         <div class="container-fluid">
             <div class="footer-content">
@@ -173,14 +377,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-copyright">
+                <div class="footeropyright">
                     <p>&copy; 2024 Mahan Poorhamidian. Object-Oriented Programming II Project.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Epic Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>

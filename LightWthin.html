@@ -9,15 +9,50 @@
     <meta property="og:title" content="Light Within - Shadow Survival Game">
     <meta property="og:description" content="An innovative shadow-based survival experience with 3D world and 2D gameplay mechanics">
     <meta property="og:type" content="website">
+
+    <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
     <link rel="preload" href="style.css" as="style">
+
+    <!-- Core Stylesheets -->
     <link href="project.css" rel="stylesheet">
+    <link href="Flow.css" rel="stylesheet">
     <link href="LightWthin.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Light Within - Shadow Survival Game | Mahan Poorhamidian</title>
-    <link rel="icon" href="Resources/img/LightWithin/LightWithinPreview.png" type="image/x-icon">
+    <link rel="icon" href="Resources/img/ghost.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Light Within - Shadow Survival Game",
+        "description": "An innovative shadow-based survival experience developed in 48 hours. Control a shadow entity in a 3D world with 2D gameplay.",
+        "creator": {
+            "@type": "Person",
+            "name": "Mahan Poorhamidian"
+        },
+        "dateCreated": "2025",
+        "genre": "Survival / Action",
+        "applicationCategory": "Game",
+        "operatingSystem": "Cross-platform"
+    }
+    </script>
+
+    <!-- Per-page override: prevent hero title overflow -->
+    <style>
+      #lightwithin-hero .hero-title { overflow-wrap:anywhere; word-wrap:break-word; hyphens:auto; }
+      #lightwithin-hero .hero-title .title-line { white-space:normal; word-break:break-word; overflow-wrap:anywhere; max-width:100%; }
+      @media (max-width: 480px) { #lightwithin-hero .hero-title { font-size: clamp(1.6rem, 7vw, 2.3rem); line-height:1.12; } }
+    </style>
 </head>
 <body style="background-color: var(--epic-darker); color: var(--epic-light);">
     <!-- Epic Loading Screen -->
@@ -45,6 +80,7 @@
                     <span class="brand-text">MAHAN</span>
                 </a>
             </div>
+
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html#hero" class="nav-link">Home</a>
                 <a href="index.html#about" class="nav-link">About</a>
@@ -61,7 +97,7 @@
         </div>
     </nav>
 
-    <!-- Epic Hero Section (Redesigned) -->
+    <!-- Hero Section (Flow-based) -->
     <section class="project-hero" id="lightwithin-hero">
         <div class="hero-background">
             <div class="hero-particles" id="hero-particles"></div>
@@ -143,11 +179,189 @@
                 <h2 class="section-title">Light Within Innovation</h2>
                 <p class="section-subtitle">3D/2D hybrid shadow survival</p>
             </div>
-            <!-- ...project overview content, update as needed... -->
+
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="project-content" data-aos="fade-right">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h3>Shadow Mechanics</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-text">
+                                    Navigate a 3D world with gameplay constrained to a 2D plane. Dynamic lighting and shadow casting create tense scenarios as you evade illumination and survive.
+                                </p>
+                                <p class="project-text">
+                                    Features real-time shadow detection, light-based hazards, and spatial puzzles driven by light movement and occlusion.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="project-visual" data-aos="fade-left">
+                        <div class="gallery-center">
+                            <div class="gallery-flex">
+                                <div class="gallery-item main">
+                                    <img src="Resources/img/LightWithin/LW1.png" alt="Light Within gameplay" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/LightWithin/LW2.png" alt="Light Within level" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/LightWithin/LW_Editor.png" alt="Light Within editor" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <img src="Resources/img/LightWithin/LW_Damage.png" alt="Light Within damage" class="gallery-image">
+                                </div>
+                                <div class="gallery-item">
+                                    <video autoplay muted loop class="gallery-image">
+                                        <source src="Resources/img/LightWithin/LightWithin_ShadowSystemPreview.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Epic Footer -->
+    <!-- Technical Details Section -->
+    <section class="project-section dark">
+        <div class="container-fluid">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">TECHNICAL IMPLEMENTATION</div>
+                <h2 class="section-title">Lighting & Systems</h2>
+                <p class="section-subtitle">Unity implementation details</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Dynamic Lighting</h3>
+                    <p>Real-time lights with custom falloff and shadow-based triggers.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-vector-square"></i>
+                    </div>
+                    <h3>2D Plane in 3D</h3>
+                    <p>Constrained 2D motion in a 3D world for clean control and readability.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <i class="fas fa-arrows-to-circle"></i>
+                    </div>
+                    <h3>Shadow Detection</h3>
+                    <p>Hazard and safe-zone logic driven by shadow cast evaluation.</p>
+                </div>
+
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <i class="fas fa-gauge-high"></i>
+                    </div>
+                    <h3>Optimization</h3>
+                    <p>Batching, culling, and selective updates for jam-time performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="project-details" data-aos="fade-up">
+                        <div class="details-card">
+                            <h2>Project Specifications</h2>
+
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Development Time</div>
+                                    <div class="detail-value">48 Hours</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Team Size</div>
+                                    <div class="detail-value">1</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Game Engine</div>
+                                    <div class="detail-value">Unity</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Primary Language</div>
+                                    <div class="detail-value">C#</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Platform</div>
+                                    <div class="detail-value">WebGL/PC</div>
+                                </div>
+                            </div>
+
+                            <div class="project-features">
+                                <h3>Key Features</h3>
+                                <div class="features-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>3D environment with 2D gameplay</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Dynamic shadow and light hazards</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Shadow-based puzzle interactions</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Optimized for jam constraints</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="project-section">
+        <div class="container-fluid">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Experience Light Within</h2>
+                <p>Play the jam build or view the source code.</p>
+
+                <div class="cta-buttons">
+                    <a href="https://mahanph.itch.io/lightwithin-20" class="btn-epic primary" target="_blank">
+                        <i class="fas fa-play"></i>
+                        <span>Play on Itch.io</span>
+                    </a>
+                    <a href="https://github.com/MarsPH/LightWithin" class="btn-epic secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View Source</span>
+                    </a>
+                    <a href="index.html" class="btn-epic outline">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="epic-footer">
         <div class="container-fluid">
             <div class="footer-content">
@@ -181,7 +395,7 @@
         </div>
     </footer>
 
-    <!-- Epic Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
