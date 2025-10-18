@@ -566,16 +566,59 @@ class EpicPortfolio {
     const projectCards = document.querySelectorAll('.project-card-epic');
 
     projectCards.forEach(card => {
+      let tapCount = 0;
+      let tapTimer;
+
       card.addEventListener('click', (e) => {
         // Prevent navigation if clicking on buttons/links
         if (e.target.closest('.project-link') || e.target.closest('a')) {
           return;
         }
 
-        // Find the "View Details" link within this card
-        const viewDetailsLink = card.querySelector('.project-link:not(.primary)');
-        if (viewDetailsLink && viewDetailsLink.href) {
-          window.location.href = viewDetailsLink.href;
+        // Check if we're on mobile (screen width < 577px)
+        const isMobile = window.innerWidth < 577;
+
+        if (isMobile) {
+          // Mobile: double-tap behavior
+          tapCount++;
+
+          if (tapCount === 1) {
+            // First tap: show description (simulate hover)
+            card.classList.add('mobile-hover');
+            card.querySelector('.project-content').style.transform = 'translateY(0)';
+            card.querySelector('.project-content').style.position = 'relative';
+            card.querySelector('.project-overlay').style.opacity = '0';
+            card.style.height = 'auto';
+            card.style.minHeight = '400px';
+
+            // Reset tap count after 2 seconds
+            clearTimeout(tapTimer);
+            tapTimer = setTimeout(() => {
+              tapCount = 0;
+              // Hide description after timeout
+              card.classList.remove('mobile-hover');
+              card.querySelector('.project-content').style.transform = 'translateY(100%)';
+              card.querySelector('.project-content').style.position = 'absolute';
+              card.querySelector('.project-overlay').style.opacity = '1';
+              card.style.height = '';
+              card.style.minHeight = '';
+            }, 2000);
+          } else if (tapCount === 2) {
+            // Second tap: navigate to project
+            clearTimeout(tapTimer);
+            tapCount = 0;
+
+            const viewDetailsLink = card.querySelector('.project-link:not(.primary)');
+            if (viewDetailsLink && viewDetailsLink.href) {
+              window.location.href = viewDetailsLink.href;
+            }
+          }
+        } else {
+          // Desktop: direct navigation on click
+          const viewDetailsLink = card.querySelector('.project-link:not(.primary)');
+          if (viewDetailsLink && viewDetailsLink.href) {
+            window.location.href = viewDetailsLink.href;
+          }
         }
       });
 
