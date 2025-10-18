@@ -28,6 +28,19 @@ class EpicPortfolio {
     const loader = document.getElementById('epic-loader');
     const progressBar = document.getElementById('progress-bar');
 
+    // Get current page identifier (filename without extension)
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+
+    // Check if loader has already been shown for this specific page in this session
+    const loaderShownKey = `epicLoaderShown_${currentPage}`;
+    const loaderShown = sessionStorage.getItem(loaderShownKey);
+    if (loaderShown) {
+      // Skip loading animation and show content immediately
+      loader.style.display = 'none';
+      this.startMainAnimations();
+      return;
+    }
+
     let progress = 0;
     const interval = setInterval(() => {
       progress += Math.random() * 15;
@@ -38,6 +51,8 @@ class EpicPortfolio {
           loader.style.opacity = '0';
           setTimeout(() => {
             loader.style.display = 'none';
+            // Mark loader as shown for this specific page in this session
+            sessionStorage.setItem(loaderShownKey, 'true');
             this.startMainAnimations();
           }, 500);
         }, 500);
