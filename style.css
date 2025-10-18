@@ -1185,7 +1185,9 @@ body {
   .project-card-epic:hover .project-content {
     position: relative;
     transform: none;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
+    height: auto;
+    min-height: 100%;
   }
 
   .project-card-epic:hover .project-overlay {
