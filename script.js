@@ -20,6 +20,7 @@ class EpicPortfolio {
     this.setupIntersectionObserver();
     this.setupKeyboardNavigation();
     this.setupPerformanceOptimizations();
+    this.setupProjectCardClicks();
   }
 
   // Epic Loading Screen
@@ -542,6 +543,29 @@ class EpicPortfolio {
       item.addEventListener('mouseleave', () => {
         item.style.transform = 'translateY(0) scale(1)';
       });
+    });
+  }
+
+  // Setup project card click navigation
+  setupProjectCardClicks() {
+    const projectCards = document.querySelectorAll('.project-card-epic');
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Prevent navigation if clicking on buttons/links
+        if (e.target.closest('.project-link') || e.target.closest('a')) {
+          return;
+        }
+
+        // Find the "View Details" link within this card
+        const viewDetailsLink = card.querySelector('.project-link:not(.primary)');
+        if (viewDetailsLink && viewDetailsLink.href) {
+          window.location.href = viewDetailsLink.href;
+        }
+      });
+
+      // Add cursor pointer to indicate clickability
+      card.style.cursor = 'pointer';
     });
   }
 }
