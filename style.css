@@ -1175,6 +1175,26 @@ body {
   }
 }
 
+/* Desktop Project Card Hover Expansion */
+@media (min-width: 577px) {
+  .project-card-epic:hover {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .project-card-epic:hover .project-content {
+    position: relative;
+    transform: none;
+    background: rgba(0, 0, 0, 0.9);
+    height: auto;
+    min-height: 100%;
+  }
+
+  .project-card-epic:hover .project-overlay {
+    opacity: 0;
+  }
+}
+
 /* Epic Responsive Design */
 @media (max-width: 768px) {
   .nav-menu {
