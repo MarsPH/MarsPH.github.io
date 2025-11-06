@@ -583,6 +583,7 @@ body {
   background: linear-gradient(135deg, var(--epic-gray) 0%, var(--epic-darker) 100%);
   display: flex;
   align-items: center;
+  padding: 4rem 0;
 }
 
 .about-content {
