@@ -939,6 +939,85 @@ body {
   font-weight: 500;
 }
 
+/* Contributors Section */
+.contributors-section {
+  margin-top: 3rem;
+}
+
+.contributors-section h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--epic-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contributors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.contributor-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition-epic);
+}
+
+.contributor-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-epic);
+  border-color: var(--epic-primary);
+}
+
+.contributor-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-epic);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--epic-darker);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contributor-info {
+  flex: 1;
+}
+
+.contributor-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--epic-primary);
+  margin-bottom: 0.25rem;
+}
+
+.contributor-role {
+  font-size: 0.9rem;
+  color: rgba(248, 249, 250, 0.7);
+  margin-bottom: 0.5rem;
+}
+
+.contributor-link {
+  font-size: 0.85rem;
+  color: var(--epic-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.contributor-link:hover {
+  color: var(--epic-primary);
+  text-decoration: underline;
+}
+
 /* Architecture Grid */
 .architecture-grid {
   display: grid;
